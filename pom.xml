@@ -5,11 +5,13 @@
     <artifactId>open-house</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-    <configVars>
-        <includes>
-            <include>src/main/webapp/WEB-INF/static</include>
-        </includes>
-    </configVars>
+    <configuration>
+        <configVars>
+            <includes>
+                <include>src/main/webapp/WEB-INF/static</include>
+            </includes>
+        </configVars>
+    <configuration>
     <dependencies>
         <dependency>
             <groupId>javax</groupId>
