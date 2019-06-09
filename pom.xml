@@ -13,6 +13,9 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
+    <includes>
+        <include>src/main/webapp/WEB-INF/static</include>
+    </includes>
     <build>
         <finalName>open-house</finalName>
                   <plugins>
