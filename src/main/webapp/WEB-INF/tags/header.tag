@@ -1,6 +1,6 @@
 <nav>
   <div class="nav-wrapper cyan darken-4">
-    <a href="#!" class="brand-logo">Logo</a>
+    <a href="#!" class="brand-logo"><img src="../static/img/logo-w.png" /></a>
     <ul class="right hide-on-med-and-down">
       <li><a href="/mission">Our Mission</a></li>
       <li><a href="/contact">Contact Us</a></li>
