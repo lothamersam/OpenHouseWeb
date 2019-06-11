@@ -9,6 +9,18 @@
     font-family: 'Permanent Marker', cursive;
     font-size: 24px;
 }
+
 .nav-wrapper ul {
     font-family: 'Arvo', serif;
+}
+
+.header-img-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Oswald', cursive;
+    color: white;
+    font-size: 4em;
+    text-shadow: 3px 5px 3px black;
 }

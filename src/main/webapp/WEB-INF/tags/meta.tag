@@ -5,7 +5,7 @@
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css" />
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Oswald:500|Arvo|Permanent+Marker&display=swap" rel="stylesheet">
 
 	<link href="../static/css/header.css" rel="stylesheet" />
 
