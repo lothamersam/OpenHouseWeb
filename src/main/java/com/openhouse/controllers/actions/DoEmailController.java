@@ -29,7 +29,7 @@ public class DoEmailController extends HttpServlet {
             throws ServletException, IOException {
         Email from = new Email("avaschmidt12@gmail.com");
         String subject = "Testing MY EMAIL SERVICE!";
-        Email to = new Email("lothamer.sam@gmail.com");
+        Email to = new Email("avaschmidt12@gmail.com");
         Content content = new Content("text/plain", "If I make a request to a certain part of nicks website it sends AN EMAIL!");
         Mail mail = new Mail(from, subject, to, content);
 
