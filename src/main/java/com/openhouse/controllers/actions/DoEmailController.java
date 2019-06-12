@@ -33,7 +33,7 @@ public class DoEmailController extends HttpServlet {
         Content content = new Content("text/plain", "If I make a request to a certain part of nicks website it sends AN EMAIL!");
         Mail mail = new Mail(from, subject, to, content);
 
-        SendGrid sg = new SendGrid(System.getenv("SEND_GRID_API_KEY"));
+        SendGrid sg = new SendGrid(System.getenv("SENDGRID_API_KEY"));
         Request emailRequest = new Request();
         try {
             emailRequest.method = Method.POST;
