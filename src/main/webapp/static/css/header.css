@@ -55,3 +55,30 @@ nav.home-navbar{
     padding-left: 15px;
     border-left: 2px solid #00acc1;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .collapsible-header {
+    position: relative;
+  }
+  
+  .test {
+    position: absolute;
+    right: 0;
+  }
+
+  .promo i {
+    margin: 40px 0;
+    color: #006064;
+    font-size: 7rem;
+    display: block;
+}
+.promo-caption {
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
