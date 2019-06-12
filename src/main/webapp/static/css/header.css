@@ -14,13 +14,32 @@
     font-family: 'Arvo', serif;
 }
 
-.header-img-text {
+.header-img-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: 'Oswald', cursive;
+   
+}
+
+.header-img-container .header-img-header {
     color: white;
+    clear: both;
+    display: block;
     font-size: 4em;
     text-shadow: 3px 5px 3px black;
+    font-family: 'Oswald', sans-serif;
+}
+
+.header-img-container .header-img-text {
+    font-size: 2em;
+    text-shadow: 3px 5px 3px black;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+nav.home-navbar{
+    background-color: rgba(0, 0, 0, 0) !important;
+    box-shadow: none !important;
+    -webkit-box-shade: none !important;
 }
