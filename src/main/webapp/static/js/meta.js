@@ -2,6 +2,12 @@ $(document).ready(function () {
     $(".dropdown-trigger").dropdown();
     $(".button-collapse").sideNav();
     $('.parallax').parallax();
+    $('.scrollspy').scrollSpy();
+
+    $('.table-of-contents').pushpin({
+        top: 500,
+        offset: 0
+      });
 
     var typed = new Typed('.element', {
         strings: ["", "inclusive.", "educational.", "accessible."],
