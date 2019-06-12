@@ -24,7 +24,7 @@
                 Open House Theatre Company
             </span>
             <span class="header-img-text">
-                A theatre experience that is
+                A theatrical experience that is
                 <span class="element"></span>
             </span>
         </div>
