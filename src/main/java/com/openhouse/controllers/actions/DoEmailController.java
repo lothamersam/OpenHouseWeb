@@ -27,13 +27,13 @@ public class DoEmailController extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Email from = new Email("test@example.com");
-        String subject = "Hello World from the SendGrid Java Library!";
+        Email from = new Email("ava.schmidt@gmail.com");
+        String subject = "Testing MY EMAIL SERVICE!";
         Email to = new Email("lothamer.sam@gmail.com");
-        Content content = new Content("text/plain", "Hello, Email!");
+        Content content = new Content("text/plain", "If I make a request to a certain part of nicks website it sends AN EMAIL!");
         Mail mail = new Mail(from, subject, to, content);
 
-        SendGrid sg = new SendGrid(System.getenv("SENDGRID_API_KEY"));
+        SendGrid sg = new SendGrid(System.getenv("SEND_GRID_API_KEY"));
         Request emailRequest = new Request();
         try {
             emailRequest.method = Method.POST;
