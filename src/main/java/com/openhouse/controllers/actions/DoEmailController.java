@@ -27,7 +27,7 @@ public class DoEmailController extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Email from = new Email("ava.schmidt@gmail.com");
+        Email from = new Email("avaschmidt12@gmail.com");
         String subject = "Testing MY EMAIL SERVICE!";
         Email to = new Email("lothamer.sam@gmail.com");
         Content content = new Content("text/plain", "If I make a request to a certain part of nicks website it sends AN EMAIL!");
