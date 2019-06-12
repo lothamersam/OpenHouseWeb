@@ -8,7 +8,7 @@ $(document).ready(function () {
     });
 
     $('.table-of-contents').pushpin({
-        top: 500,
+        top: 300,
         offset: 0
     });
 

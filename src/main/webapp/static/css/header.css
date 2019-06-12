@@ -82,3 +82,6 @@ body {
     margin-top: 5px;
     margin-bottom: 0;
 }
+.parallax-container {
+    height: 300px;
+  }
