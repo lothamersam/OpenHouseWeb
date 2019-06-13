@@ -26,13 +26,13 @@
     color: white;
     clear: both;
     display: block;
-    font-size: 4em;
+    font-size: 2.5rem;
     text-shadow: 3px 5px 3px black;
     font-family: 'Oswald', sans-serif;
 }
 
 .header-img-container .header-img-text {
-    font-size: 2em;
+    font-size: 1.2rem;
     text-shadow: 3px 5px 3px black;
     font-family: 'Montserrat', sans-serif;
     color: white;
@@ -84,4 +84,27 @@ body {
 }
 .parallax-container {
     height: 300px;
-  }
+}
+
+.parallax-container-small {
+    height: 64px !important;
+}
+.top-row {
+    margin-top: 1em;
+}
+.parallax-container-small>.dropdown-content {
+    z-index: 1000;
+}
+.standard-navbar-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 64px;
+}
+.standard-navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}

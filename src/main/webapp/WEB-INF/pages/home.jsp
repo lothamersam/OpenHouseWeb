@@ -96,6 +96,7 @@
 	</main>
 
 	<script language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+	<script language="javascript" src="../static/js/home.js"></script>
 </body>
 
 </html>
