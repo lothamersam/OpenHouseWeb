@@ -26,7 +26,7 @@ public final class ParameterService {
         }
 
         final Content content = new Content();
-        content.setType(ContentType.TEXT_HTML.toString());
+        content.setType("text/html");
 
         final StringBuilder messageBody = new StringBuilder();
         messageBody.append(String.format("<h3>%s - %s %s</h3><br><h5>%s", 
