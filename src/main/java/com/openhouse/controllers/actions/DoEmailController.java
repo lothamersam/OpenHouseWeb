@@ -23,9 +23,7 @@ public class DoEmailController extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            
-            emailService.sendFromRequest(request);
 
-            response.getWriter().write();
+            response.getWriter().write(emailService.sendFromRequest(request) ? "true" : "false");
     }
 }
