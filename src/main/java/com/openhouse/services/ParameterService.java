@@ -33,7 +33,7 @@ public final class ParameterService {
                 request.getParameter("email")));
        
         if(null != request.getParameter("phoneNumber")) {
-            messageBody.append(String.format(" - %s", request.getParameter("phoneNumber"));
+            messageBody.append(String.format(" - %s", request.getParameter("phoneNumber")));
         }
         
         messageBody.append("%n%n");
