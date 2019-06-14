@@ -29,7 +29,7 @@ public final class ParameterService {
         content.setType("text/html");
 
         final StringBuilder messageBody = new StringBuilder();
-        messageBody.append(String.format("<h3>%s - %s %s</h3><br><h5>%s", 
+        messageBody.append(String.format("<h3>%s - %s %s</h3><h5>%s", 
                 request.getParameter("category"), 
                 request.getParameter("firstName"), 
                 request.getParameter("lastName"),
@@ -39,7 +39,7 @@ public final class ParameterService {
             messageBody.append(String.format(" - %s", request.getParameter("phoneNumber")));
         }
         
-        messageBody.append("</h5><br><br>");
+        messageBody.append("</h5>");
         messageBody.append("<p>" + request.getParameter("message") + "</p>");
 
         content.setValue(messageBody.toString());

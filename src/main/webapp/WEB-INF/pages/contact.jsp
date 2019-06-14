@@ -34,7 +34,7 @@
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<select name"category" required>
+							<select name="category" required>
 								<option value="" disabled selected>Choose category</option>
 								<option value="Sponsorship/Advertisment">Sponsorship/Advertisment</option>
 								<option value="Performance">Performance</option>
