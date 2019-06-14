@@ -34,7 +34,7 @@
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<select name"subject" required>
+							<select name"category" required>
 								<option value="" disabled selected>Choose category</option>
 								<option value="Sponsorship/Advertisment">Sponsorship/Advertisment</option>
 								<option value="Performance">Performance</option>
@@ -49,7 +49,7 @@
 					<div class="row">
 						<div class="input-field col s12">
 							<textarea name="message" id="textarea1" class="materialize-textarea" required></textarea>
-							<label for="textarea1">Textarea</label>
+							<label for="textarea1">Message Body</label>
 						</div>
 					</div>
 

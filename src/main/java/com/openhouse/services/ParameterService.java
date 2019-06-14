@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import com.sendgrid.Mail;
 import com.sendgrid.Email;
 import com.sendgrid.Personalization;
+
+import org.apache.http.entity.ContentType;
+
 import com.sendgrid.Content;
 
 public final class ParameterService {
@@ -23,10 +26,10 @@ public final class ParameterService {
         }
 
         final Content content = new Content();
-        content.setType("text/plain");
+        content.setType(ContentType.TEXT_HTML.toString());
 
         final StringBuilder messageBody = new StringBuilder();
-        messageBody.append(String.format("%s - %s %s%n %s", 
+        messageBody.append(String.format("<h3>%s - %s %s</h3><br><h5>%s", 
                 request.getParameter("category"), 
                 request.getParameter("firstName"), 
                 request.getParameter("lastName"),
@@ -36,8 +39,8 @@ public final class ParameterService {
             messageBody.append(String.format(" - %s", request.getParameter("phoneNumber")));
         }
         
-        messageBody.append("%n%n");
-        messageBody.append(request.getParameter("message"));
+        messageBody.append("</h5><br><br>");
+        messageBody.append("<p>" + request.getParameter("message") + "</p>");
 
         content.setValue(messageBody.toString());
         mail.addContent(content);
