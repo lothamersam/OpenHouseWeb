@@ -8,8 +8,6 @@ import com.sendgrid.Mail;
 import com.sendgrid.Email;
 import com.sendgrid.Personalization;
 
-import org.apache.http.entity.ContentType;
-
 import com.sendgrid.Content;
 
 public final class ParameterService {
@@ -21,7 +19,7 @@ public final class ParameterService {
         Personalization personalization = new Personalization();
         personalization.addTo(new Email(System.getenv("OPENHOUSE_EMAIL")));
         
-        if(CONTACT_DIRECTOR.equals(request.getParameter("subject"))) {
+        if(CONTACT_DIRECTOR.equals(request.getParameter("category"))) {
             personalization.addCc(new Email(System.getenv("DIRECTOR_EMAIL")));
         }
 
