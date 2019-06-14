@@ -37,7 +37,7 @@ public final class ParameterService {
         }
         
         messageBody.append("%n%n");
-        messageBody.append(request.getParameter("message");
+        messageBody.append(request.getParameter("message"));
 
         content.setValue(messageBody.toString());
         mail.addContent(content);
