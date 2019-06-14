@@ -7,7 +7,7 @@
           <ul class="right hide-on-med-and-down">
               <li><a href="/mission">Our Mission</a></li>
               <li><a href="/contact">Contact Us</a></li>
-              <li><a href="/upcoming">Upcoming Produtions</a></li>
+              <li><a href="/upcoming">Upcoming Productions</a></li>
               <li><a class="dropdown-button" href="#!" data-activates="about-us-dropdown">About Us<i
                           class="material-icons right">arrow_drop_down</i></a></li>
           </ul>
