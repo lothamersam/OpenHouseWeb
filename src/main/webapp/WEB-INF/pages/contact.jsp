@@ -14,7 +14,7 @@
 				<form id="contactForm" class="col s12" action="/action/email">
 					<div class="card">
 						<div class="card-content">
-							<span class="card-title">Contact Our Team</span> 
+							<span class="card-title">Contact Our Team</span>
 							<%-- Place for data base support --%>
 							Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum, non auctor magnis mollis
 							viverra cubilia pharetra donec, euismod parturient velit diam ultrices mi senectus. Metus
@@ -65,8 +65,11 @@
 								</div>
 							</div>
 
-							<button class="btn waves-effect waves-light" type="submit" name="action">Submit
+							<button class="btn waves-effect waves-light cyan" type="submit" name="action">Submit
 								<i class="material-icons right">send</i>
+							</button>
+							<button class="btn-flat waves-effect waves-cyan" type="reset" name="reset">Reset
+								<i class="material-icons right">refresh</i>
 							</button>
 						</div>
 					</div>
@@ -75,6 +78,8 @@
 		</div>
 
 	</main>
+
+	<tags:footer />
 
 	<script src="/static/js/standardPage.js"></script>
 	<script lang="javascript" src="/static/js/contact.js"></script>

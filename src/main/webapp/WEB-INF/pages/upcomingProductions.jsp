@@ -8,5 +8,7 @@
 	
 	<body>
 		<tags:header />
+
+		<tags:footer />
 	</body>
 </html>

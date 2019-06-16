@@ -29,7 +29,7 @@
             </span>
         </div>
         <div class="parallax grey lighten-1">
-            <img src="../static/img/header-tix.jpg" style="opacity:1!important;">
+            <img src="/static/img/header-tix.jpg" style="opacity:1!important;">
         </div>
     </div>
 </div>

@@ -4,9 +4,16 @@
 
 
 <html>
-	<tags:meta title="Home" />
-	
-	<body>
+<tags:meta title="Home" />
+
+<body>
+	<main>
 		<tags:header />
-	</body>
+
+
+	</main>
+
+	<tags:footer />
+</body>
+
 </html>

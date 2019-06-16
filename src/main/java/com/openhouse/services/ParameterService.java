@@ -14,9 +14,9 @@ public final class ParameterService {
     private static final String CONTACT_DIRECTOR = "Contact Director";
 
     public Mail getMailFromRequest(HttpServletRequest request) throws IllegalFormatException {
-        Mail mail = new Mail();
+        final Mail mail = new Mail();
         
-        Personalization personalization = new Personalization();
+        final Personalization personalization = new Personalization();
         personalization.addTo(new Email(System.getenv("OPENHOUSE_EMAIL")));
         
         if(CONTACT_DIRECTOR.equals(request.getParameter("category"))) {

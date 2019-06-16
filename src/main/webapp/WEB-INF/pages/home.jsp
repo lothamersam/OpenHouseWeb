@@ -63,21 +63,21 @@
 					<div class="row">
 						<div class="col s4">
 							<div class="center promo">
-								<i class="material-icons">flash_on</i>
+								<i class="material-icons cyan-text">flash_on</i>
 								<p class="promo-caption">Get invloved fast</p>
 								<p class="light center">Lorem ipsum dolor sit amet consectetur, adipiscing elit duis nascetur.</p>
 							</div>
 						</div>
 						<div class="col s4">
 							<div class="center promo">
-								<i class="material-icons">group</i>
+								<i class="material-icons cyan-text">group</i>
 								<p class="promo-caption">Experience Focused</p>
 								<p class="light center">Lorem ipsum dolor sit amet consectetur, adipiscing elit duis nascetur.</p>
 							</div>
 						</div>
 						<div class="col s4">
 							<div class="center promo">
-								<i class="material-icons">settings</i>
+								<i class="material-icons cyan-text">settings</i>
 								<p class="promo-caption">Easy to work with</p>
 								<p class="light center">Lorem ipsum dolor sit amet consectetur, adipiscing elit duis nascetur.</p>
 							</div>
@@ -95,8 +95,10 @@
 		</div>
 	</main>
 
+	<tags:footer />
+
 	<script language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
-	<script language="javascript" src="../static/js/home.js"></script>
+	<script language="javascript" src="/static/js/home.js"></script>
 </body>
 
 </html>
