@@ -1,6 +1,8 @@
 $(document).ready(function () {
     $(".dropdown-trigger").dropdown();
     $(".button-collapse").sideNav();
+    $('.modal').modal();
+    $(".button-collapse").sideNav();
     $('.parallax').parallax({
         height: 70
     });
@@ -17,5 +19,5 @@ $(document).ready(function () {
 
     $(document).ready(function () {
         $('select').material_select();
-    });    
+    });
 });
