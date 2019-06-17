@@ -30,7 +30,7 @@
 			<div class="card">
 				<div class="card-image">
 					<img src="/static/img/test2.jpg" class="circle responsive-img">
-					<span class="card-title">Card Title</span>
+					<span class="card-title">Debby G</span>
 				</div>
 				<div class="card-content">
 					<p>I am a very simple card. I am good at containing small bits of information.
