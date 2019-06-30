@@ -22,7 +22,7 @@ public class StaffDao {
 			
 			while(results.next()){
 				staffMembers.add(new StaffMemberTO(
-					results.getString(0), results.getString(1), results.getString(2), results.getString(3)));
+					results.getString(1), results.getString(2), results.getString(3), results.getString(4)));
 			}
 		} catch (URISyntaxException | SQLException e) {
 			System.out.println("There was an error when querying the database! " + e.getMessage());
