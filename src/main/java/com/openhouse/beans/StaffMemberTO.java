@@ -12,4 +12,20 @@ public class StaffMemberTO {
         this.title = title;
         this.bio = bio;
     }
+
+    public String getFirstName() {
+        return this.firstName;
+    }
+
+    public String getLastName() {
+        return this.lastName;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    public String getBio() {
+        return this.bio;
+    }
 }
