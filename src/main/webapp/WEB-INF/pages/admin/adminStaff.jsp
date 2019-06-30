@@ -40,15 +40,16 @@
     </div>
 
     <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-            <a id="menu" class="btn btn-floating btn-large cyan"><i class="material-icons">menu</i></a>
-          </div>
+        <a id="menu" class="btn btn-floating btn-large cyan"><i class="material-icons">menu</i></a>
+    </div>
 
-          <div class="tap-target cyan" data-activates="menu">
-                <div class="tap-target-content white-text">
-                  <h5>I am here</h5>
-                  <p class="white-text">Provide value and encourage return visits by introducing users to new features and functionality at contextually relevant moments.</p>
-                </div>
-              </div>
+    <div class="tap-target blue" data-activates="menu">
+        <div class="tap-target-content white-text">
+            <h5>Free Time Learning</h5>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            Lorem Ipsum has been the industry's standard dummy text...</p>
+        </div>
+    </div>
 
 
     <c:forEach items="${staffMembers}" var="member">
