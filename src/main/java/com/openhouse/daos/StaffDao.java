@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Collections;
+import java.util.ArrayList;
 
 import com.openhouse.beans.StaffMemberTO;
 
@@ -14,7 +14,7 @@ public class StaffDao {
 	private final String SELECT_ALL_STAFF = "SELECT * FROM oh_staff";
 
 	public List<StaffMemberTO> getStaffList() {
-		List<StaffMemberTO> staffMembers = Collections.<StaffMemberTO>emptyList();
+		List<StaffMemberTO> staffMembers = new ArrayList<>();
 
 		try (Connection connection = DatabaseConnection.getConnection()) {
 			Statement statement = connection.createStatement();
@@ -41,5 +41,9 @@ public class StaffDao {
 
 	public boolean editStafffMember(StaffMemberTO staffMemeber) { 
 		return false;
+	}
+
+	public void getStaffPhoto(StaffMemberTO staffMember){
+		
 	}
 }
