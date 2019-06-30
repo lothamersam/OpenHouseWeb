@@ -3,6 +3,8 @@ $(document).ready(function () {
     $(".button-collapse").sideNav();
     $('.modal').modal();
     $(".button-collapse").sideNav();
+    $('select').material_select();
+    $('.tooltipped').tooltip({delay: 50});
     $('.parallax').parallax({
         height: 70
     });
@@ -16,10 +18,4 @@ $(document).ready(function () {
         top: 300,
         offset: 0
     });
-
-    $(document).ready(function () {
-        $('select').material_select();
-    });
-
-    
 });

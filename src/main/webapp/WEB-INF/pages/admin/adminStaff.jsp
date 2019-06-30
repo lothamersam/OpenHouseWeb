@@ -11,7 +11,12 @@
     <tags:header />
 
     <div class="top-row container">
-        <a class="waves-effect waves-teal btn-flat modal-trigger" href="#newMemberModal">Add a staff member</a>
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large red modal-trigger tooltipped" href="#newMemberModal"
+                data-position="bottom" data-delay="50" data-tooltip="Add a staff member">                      
+                <i class="large material-icons">mode_edit</i>
+            </a>
+        </div>
 
         <div class="row ">
             <c:forEach items="${staffMembers}" var="member" varStatus="status">
