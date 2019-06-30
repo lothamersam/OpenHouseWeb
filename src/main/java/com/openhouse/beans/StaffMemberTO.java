@@ -14,7 +14,7 @@ public class StaffMemberTO {
         this.lastName = lastName;
         this.title = title;
         this.bio = bio;
-        this.imagePath = ("".equals(imagePath)) ?  "/static/img/blank.jpg" : imagePath;        
+        this.imagePath = (null == imagePath) ?  "/static/img/blank.jpg" : imagePath;        
     }
 
     public int getId() {

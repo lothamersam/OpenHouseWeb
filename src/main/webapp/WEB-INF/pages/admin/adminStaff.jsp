@@ -13,7 +13,7 @@
     <div class="top-row container">
         <div class="fixed-action-btn">
             <a class="btn-floating btn-large red modal-trigger tooltipped" href="#newMemberModal"
-                data-position="bottom" data-delay="50" data-tooltip="Add a staff member">                      
+                data-position="left" data-delay="50" data-tooltip="Add a staff member">                      
                 <i class="large material-icons">mode_edit</i>
             </a>
         </div>
