@@ -11,7 +11,11 @@ import java.util.ArrayList;
 import com.openhouse.beans.StaffMemberTO;
 
 public class StaffDao {
-	private static final String SELECT_ALL_STAFF = "SELECT id, first_name, last_name, title, bio, image_path FROM oh_staff";
+	private static final String SELECT_ALL_STAFF = 
+		"SELECT " 
+	+ 		"id, first_name, last_name, title, bio, image_path " 
+	+ 	"FROM " 
+	+ 		"oh_staff";
 
 	public List<StaffMemberTO> getStaffList() {
 		List<StaffMemberTO> staffMembers = new ArrayList<>();
