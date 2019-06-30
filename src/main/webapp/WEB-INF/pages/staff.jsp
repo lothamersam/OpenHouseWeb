@@ -15,7 +15,7 @@
 			<div class="col s12 m12 l4">
 				<div class="card">
 					<div class="card-image">
-						<img src="/static/img/director.jpg" class="circle responsive-img">
+						<img src="${member.imagePath}" class="circle responsive-img">
 						<a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger"
 							href="#${member.firstName}"><i class="material-icons">add</i></a>
 					</div>
