@@ -14,7 +14,7 @@ public class StaffDao {
 	private final String SELECT_ALL_STAFF = "SELECT * FROM oh_staff";
 
 	public List<StaffMemberTO> getStaffList() {
-		List<StaffMemberTO> staffMembers = Collections.emptyList();
+		List<StaffMemberTO> staffMembers = Collections.<StaffMemberTO>emptyList();
 
 		try (Connection connection = DatabaseConnection.getConnection()) {
 			Statement statement = connection.createStatement();
