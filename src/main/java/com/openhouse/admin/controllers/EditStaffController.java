@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.openhouse.factory.DaoFactory;
 import com.openhouse.daos.StaffDao;
 
-@WebServlet("/staff")
+@WebServlet("/admin/staff")
 public class EditStaffController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
