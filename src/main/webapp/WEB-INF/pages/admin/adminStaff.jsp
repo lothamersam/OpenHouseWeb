@@ -11,7 +11,7 @@
     <tags:header />
 
     <div class="top-row container">
-        <a class="waves-effect waves-teal btn-flat" onclick="$('.tap-target').tapTarget('open');">Need help?</a>
+        <a class="waves-effect waves-teal btn-flat" id="addStaff"">Need help?</a>
 
         <div class="row ">
             <c:forEach items="${staffMembers}" var="member" varStatus="status">
@@ -24,6 +24,7 @@
                         <div class="card-image">
                             <img src="${member.imagePath}" class="circle responsive-img">
                             <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger"
+                                id="deleteStaff"
                                 href="#${member.firstName}"><i class="material-icons">delete</i></a>
                         </div>
                         <div class="card-content">
@@ -38,19 +39,6 @@
             </c:forEach>
         </div>
     </div>
-
-    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-        <a id="menu" class="btn btn-floating btn-large cyan"><i class="material-icons">menu</i></a>
-    </div>
-
-    <div class="tap-target blue" data-activates="menu">
-        <div class="tap-target-content white-text">
-            <h5>Free Time Learning</h5>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-            Lorem Ipsum has been the industry's standard dummy text...</p>
-        </div>
-    </div>
-
 
     <c:forEach items="${staffMembers}" var="member">
         <div id="${member.firstName}" class="modal modal-fixed-footer">

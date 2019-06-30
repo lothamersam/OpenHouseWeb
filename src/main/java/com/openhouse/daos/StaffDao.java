@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import com.openhouse.beans.StaffMemberTO;
 
 public class StaffDao {
-	private static final String SELECT_ALL_STAFF = "SELECT first_name, last_name, title, bio, image_path FROM oh_staff";
+	private static final String SELECT_ALL_STAFF = "SELECT id, first_name, last_name, title, bio, image_path FROM oh_staff";
 
 	public List<StaffMemberTO> getStaffList() {
 		List<StaffMemberTO> staffMembers = new ArrayList<>();
@@ -22,11 +22,12 @@ public class StaffDao {
 			
 			while(results.next()){
 				staffMembers.add(new StaffMemberTO(
-					results.getString(1), 
+					results.getInt(1),
 					results.getString(2), 
 					results.getString(3), 
 					results.getString(4), 
-					results.getString(5)));
+					results.getString(5), 
+					results.getString(6)));
 			}
 		} catch (URISyntaxException | SQLException e) {
 			System.out.println("There was an error when querying the database! " + e.getMessage());
