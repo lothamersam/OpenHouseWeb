@@ -11,7 +11,7 @@
 	<tags:header />
 
 	<div class="row container top-row">
-		<c:forEach items="${staffMembers}" var="member">
+		<c:forEach items="${staffMembers}" var="member" varStatus="status">
 			<div class="col s12 m12 l4">
 				<div class="card">
 					<div class="card-image">
@@ -28,6 +28,10 @@
 					</div>
 				</div>
 			</div>
+			<c:if test="${status.index % 3 == 0}">
+				</div>
+				<div class="row container top-row">
+			</c:if>
 		</c:forEach>
 	</div>
 
