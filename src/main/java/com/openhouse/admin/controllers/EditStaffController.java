@@ -1,4 +1,4 @@
-package com.openhouse.controllers;
+package com.openhouse.admin.controllers;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
