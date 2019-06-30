@@ -25,7 +25,7 @@ public class StaffDao {
 					results.getString(0), results.getString(1), results.getString(2), results.getString(3)));
 			}
 		} catch (URISyntaxException | SQLException e) {
-			System.out.println("There was an error when querying the database!");
+			System.out.println("There was an error when querying the database! " + e.getMessage());
 		} 
 
 		return staffMembers;
