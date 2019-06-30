@@ -12,7 +12,7 @@ public class StaffMemberTO {
         this.lastName = lastName;
         this.title = title;
         this.bio = bio;
-        this.imagePath = imagePath;
+        this.imagePath = ("".equals(imagePath)) ?  "/static/img/blank.jpg" : imagePath;        
     }
 
     public String getFirstName() {

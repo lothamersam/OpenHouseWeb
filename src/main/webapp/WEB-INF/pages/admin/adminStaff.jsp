@@ -39,20 +39,16 @@
         </div>
     </div>
 
-    <!-- Element Showed -->
-    <div class="fixed-action-btn">
-        <a id="menu" class="waves-effect waves-light btn btn-floating">
-            <i class="material-icons">menu_edit</i>
-        </a>
-    </div>
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+            <a id="menu" class="btn btn-floating btn-large cyan"><i class="material-icons">menu</i></a>
+          </div>
 
-    <!-- Tap Target Structure -->
-    <div class="tap-target" data-activates="menu">
-        <div class="tap-target-content">
-            <h5>Title</h5>
-            <p>A bunch of text</p>
-        </div>
-    </div>
+          <div class="tap-target cyan" data-activates="menu">
+                <div class="tap-target-content white-text">
+                  <h5>I am here</h5>
+                  <p class="white-text">Provide value and encourage return visits by introducing users to new features and functionality at contextually relevant moments.</p>
+                </div>
+              </div>
 
 
     <c:forEach items="${staffMembers}" var="member">
