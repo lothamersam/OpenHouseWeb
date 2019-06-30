@@ -5,18 +5,27 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
     <servlet>
-        <servlet-name>test</servlet-name>
+        <servlet-name>StaticContent</servlet-name>
         <servlet-class>
           org.apache.catalina.servlets.DefaultServlet
         </servlet-class>
         <init-param>
             <param-name>listings</param-name>
-            <param-value>true</param-value>
+            <param-value>false</param-value>
         </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>REST</servlet-name>
+        <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+		<load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>test</servlet-name>
+        <servlet-name>StaticContent</servlet-name>
         <url-pattern>/static/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>REST</servlet-name>
+        <url-pattern>/rest/*</url-pattern>
     </servlet-mapping>
 </web-app>

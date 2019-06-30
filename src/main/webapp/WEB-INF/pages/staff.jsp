@@ -40,7 +40,7 @@
 			<div class="modal-content">
 				<div class="row">
 					<div class="col s12 m4 l4">
-						<img src="/static/img/director.jpg" class="circle responsive-img">
+						<img src="${member.imagePath}" class="circle responsive-img">
 						<br><br>
 						<span class="flow-text"><strong>${member.firstName} ${member.lastName}</strong></span>
 						<br>
