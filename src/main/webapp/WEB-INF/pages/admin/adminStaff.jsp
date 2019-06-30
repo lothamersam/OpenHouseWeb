@@ -11,7 +11,7 @@
     <tags:header />
 
     <div class="top-row container">
-        <a class="waves-effect waves-teal btn-flat" id="addStaff"">Need help?</a>
+        <a class="waves-effect waves-teal btn-flat modal-trigger" href="#newMemberModal">Add a staff member</a>
 
         <div class="row ">
             <c:forEach items="${staffMembers}" var="member" varStatus="status">
@@ -57,10 +57,32 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Done</a>
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Apply Edits</a>
             </div>
         </div>
     </c:forEach>
+
+    <div id="newMemberModal" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <div class="row">
+                <div class="col s12 m4 l4">
+                    <img src="${member.imagePath}" class="circle responsive-img">
+                    <br><br>
+                    <span class="flow-text"><strong>${member.firstName} ${member.lastName}</strong></span>
+                    <br>
+                    <span>${member.title}</span>
+                </div>
+                <div class="col s12 m8 l8">
+                    <p>BIO</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <form>    
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Add member</a>
+            </form>
+        </div>
+    </div>
 
     <tags:footer />
 
