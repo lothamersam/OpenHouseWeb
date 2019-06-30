@@ -19,7 +19,7 @@ public class EditStaffController extends HttpServlet {
 
 		request.setAttribute("staffMembers", staffDao.getStaffList());
 
-		request.getRequestDispatcher("/WEB-INF/pages/adminStaff.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/pages/admin/adminStaff.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
