@@ -10,52 +10,24 @@
 	<tags:header />
 
 	<div class="row container top-row">
-		<div class="col s12 m12 l4">
-			<div class="card">
-				<div class="card-image">
-					<img src="/static/img/director.jpg" class="circle responsive-img">
-					<a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal1"><i
-							class="material-icons">add</i></a>
-				</div>
-				<div class="card-content">
-					<span class="card-title"><strong>Nicholas Sienkiewicz</strong></span>
-					<span class="card-title flow-text" style="font-size:100%;">Executive Director/Co-founder</span>
-				</div>
-				<div class="card-action">
-					<a class="modal-trigger" href="#modal1">Read about Nick</a>
-				</div>
-			</div>
-		</div>
-		<div class="col s12 m12 l4">
-			<div class="card">
-				<div class="card-image">
-					<img src="/static/img/test2.jpg" class="circle responsive-img">
-					<span class="card-title">Debby G</span>
-				</div>
-				<div class="card-content">
-					<p>I am a very simple card. I am good at containing small bits of information.
-						I am convenient because I require little markup to use effectively.</p>
-				</div>
-				<div class="card-action">
-					<a href="#">This is a link</a>
+		<c:forEach items="${staffMembers}" var="member">
+			<div class="col s12 m12 l4">
+				<div class="card">
+					<div class="card-image">
+						<img src="/static/img/director.jpg" class="circle responsive-img">
+						<a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal1"><i
+								class="material-icons">add</i></a>
+					</div>
+					<div class="card-content">
+						<span class="card-title"><strong>${member.firstName} ${member.lastName}</strong></span>
+						<span class="card-title flow-text" style="font-size:100%;">${member.title}</span>
+					</div>
+					<div class="card-action">
+						<a class="modal-trigger" href="#modal1">Read about ${member.firstName}</a>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="col s12 m12 l4">
-			<div class="card">
-				<div class="card-image">
-					<img src="/static/img/test.jpg" class="circle responsive-img">
-					<span class="card-title">Card Title</span>
-				</div>
-				<div class="card-content">
-					<p>I am a very simple card. I am good at containing small bits of information.
-						I am convenient because I require little markup to use effectively.</p>
-				</div>
-				<div class="card-action">
-					<a href="#">This is a link</a>
-				</div>
-			</div>
-		</div>
+		</c:forEach>
 	</div>
 
 	<!-- Modal Structure -->
