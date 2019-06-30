@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import com.openhouse.beans.StaffMemberTO;
 
 public class StaffDao {
-	private final String SELECT_ALL_STAFF = "SELECT first_name, last_name, title, bio FROM oh_staff";
+	private final String SELECT_ALL_STAFF = "SELECT first_name, last_name, title, bio, image_path FROM oh_staff";
 
 	public List<StaffMemberTO> getStaffList() {
 		List<StaffMemberTO> staffMembers = new ArrayList<>();
