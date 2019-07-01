@@ -5,44 +5,41 @@
 
 
 <html>
-<tags:meta title="Home" />
+<tags:meta title="Edit Staff" />
 
 <body>
-    <tags:header />
+    <tags:adminHeader />
 
-    <div class="top-row container">
-        <div class="fixed-action-btn">
-            <a class="btn-floating btn-large red modal-trigger tooltipped" href="#newMemberModal"
-                data-position="left" data-delay="50" data-tooltip="Add a staff member">                      
-                <i class="large material-icons">mode_edit</i>
-            </a>
-        </div>
-
-        <div class="row ">
-            <c:forEach items="${staffMembers}" var="member" varStatus="status">
-                <c:if test="${status.index != 0 && status.index % 3 == 0}">
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red modal-trigger tooltipped" href="#newMemberModal"
+            data-position="left" data-delay="50" data-tooltip="Add a staff member">                      
+            <i class="large material-icons">mode_edit</i>
+        </a>
+    </div>
+    <div class="row top-row container">
+        <c:forEach items="${staffMembers}" var="member" varStatus="status">
+            <c:if test="${status.index != 0 && status.index % 3 == 0}">
+                </div>
+                <div class="row container top-row">
+            </c:if>
+            <div class="col s12 m12 l4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="${member.imagePath}" class="circle responsive-img">
+                        <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger"
+                            id="deleteStaff"
+                            href="#${member.firstName}"><i class="material-icons">delete</i></a>
                     </div>
-                    <div class="row container top-row">
-                </c:if>
-                <div class="col s12 m12 l4">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="${member.imagePath}" class="circle responsive-img">
-                            <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger"
-                                id="deleteStaff"
-                                href="#${member.firstName}"><i class="material-icons">delete</i></a>
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title"><strong>${member.firstName} ${member.lastName}</strong></span>
-                            <span class="card-title flow-text" style="font-size:100%;">${member.title}</span>
-                        </div>
-                        <div class="card-action">
-                            <a class="modal-trigger" href="#${member.firstName}">Edit ${member.firstName}'s info</a>
-                        </div>
+                    <div class="card-content">
+                        <span class="card-title"><strong>${member.firstName} ${member.lastName}</strong></span>
+                        <span class="card-title flow-text" style="font-size:100%;">${member.title}</span>
+                    </div>
+                    <div class="card-action">
+                        <a class="modal-trigger" href="#${member.firstName}">Edit ${member.firstName}'s info</a>
                     </div>
                 </div>
-            </c:forEach>
-        </div>
+            </div>
+        </c:forEach>
     </div>
 
     <c:forEach items="${staffMembers}" var="member">
