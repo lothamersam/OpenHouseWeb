@@ -25,7 +25,7 @@ import org.apache.tomcat.util.http.fileupload.IOUtils;
 
 import com.openhouse.beans.StaffMemberTO;
 
-@WebServlet("/actions/staffChange")
+@WebServlet("/action/staffChange")
 @MultipartConfig
 public class DoStaffChangeController extends HttpServlet {
     private static final long serialVersionUID = 1L;
