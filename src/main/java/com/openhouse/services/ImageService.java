@@ -12,21 +12,34 @@ import com.openhouse.beans.StaffMemberTO;
 public class ImageService {
 
     public StaffMemberTO uploadImage(File image, StaffMemberTO staffMember) throws IOException {
-        Cloudinary cloudinary = new Cloudinary(System.getenv("CLOUDINARY_URL"));
+        if (staffMember != null) {
+            if (image != null) {
+                Cloudinary cloudinary = new Cloudinary(System.getenv("CLOUDINARY_URL"));
 
-        Map result = cloudinary.uploader().upload(image, ObjectUtils.asMap(
-            "transformation", new Transformation().width(400).gravity("face").crop("fill").aspectRatio("1:1")
-        ));
+                Map result = cloudinary.uploader().upload(image, ObjectUtils.asMap(
+                    "transformation", new Transformation().width(400).gravity("face").crop("fill").aspectRatio("1:1")
+                ));
 
-        staffMember.setImagePath((String) result.get("url"));
-        staffMember.setImagePublicId((String) result.get("public_id"));
+                staffMember.setImagePath((String) result.get("url"));
+                staffMember.setImagePublicId((String) result.get("public_id"));
+            } else {
+                if (staffMember.getImagePath() == null) {
+                    staffMember.setImagePath("/static/img/blank.png");
+                    staffMember.setImagePublicId("blank");
+                }
+            }
+        } else {
+            staffMember = new StaffMemberTO();
+        }
 
         return staffMember;
     }
 
     public void deleteImage(String publicId) throws IOException {
-        Cloudinary cloudinary = new Cloudinary(System.getenv("CLOUDINARY_URL"));
-
-        cloudinary.uploader().destroy(publicId, ObjectUtils.emptyMap());
+        if (publicId != null && !"blank".equals(publicId)){
+            Cloudinary cloudinary = new Cloudinary(System.getenv("CLOUDINARY_URL"));
+            
+            cloudinary.uploader().destroy(publicId, ObjectUtils.emptyMap());
+        }
     }
 }

@@ -1,6 +1,7 @@
 package com.openhouse.services;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -84,15 +85,19 @@ public final class ParameterService {
     }
 
     public File getImageFromRequest(HttpServletRequest request) throws IOException, ServletException {
-        Part filePart = request.getPart("picture");
-        InputStream fileContent = filePart.getInputStream();
-        File image = new File(Paths.get(filePart.getSubmittedFileName()).getFileName().toString());
+        try {
+            Part filePart = request.getPart("picture");
+            InputStream fileContent = filePart.getInputStream();
+            File image = new File(Paths.get(filePart.getSubmittedFileName()).getFileName().toString());
         
-        try (OutputStream outputStream = new FileOutputStream(image)) {
-            IOUtils.copy(fileContent, outputStream);
-        }
+            try (OutputStream outputStream = new FileOutputStream(image)) {
+                IOUtils.copy(fileContent, outputStream);
+            }
 
-        return image;
+            return image;
+        } catch (FileNotFoundException e) {
+            return null;
+        }
     }
 
     public Integer getIntFromRequest(HttpServletRequest request, String paramName) {
