@@ -10,7 +10,7 @@ import com.openhouse.beans.StaffMemberTO;
 
 public class ImageService {
 
-    public String uploadImage(File image, StaffMemberTO staffMember) throws IOException {
+    public StaffMemberTO uploadImage(File image, StaffMemberTO staffMember) throws IOException {
         Cloudinary cloudinary = new Cloudinary(System.getenv("CLOUDINARY_URL"));
 
         Map result = cloudinary.uploader().upload(image, ObjectUtils.emptyMap());
