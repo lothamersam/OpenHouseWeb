@@ -3,7 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib tagdir="/WEB-INF/tags"  prefix="tags" %>
 
-
 <html>
 <tags:meta title="Edit Staff" />
 
@@ -65,25 +64,24 @@
     </c:forEach>
 
     <div id="newMemberModal" class="modal modal-fixed-footer">
-        <div class="modal-content">
-            <div class="row">
-                <div class="col s12 m4 l4">
-                    <img src="${member.imagePath}" class="circle responsive-img">
-                    <br><br>
-                    <span class="flow-text"><strong>${member.firstName} ${member.lastName}</strong></span>
-                    <br>
-                    <span>${member.title}</span>
-                </div>
-                <div class="col s12 m8 l8">
-                    <p>BIO</p>
+        <form action="#">
+            <div class="modal-content">
+                <div class="row">
+                    <div class="file-field input-field">
+                        <div class="btn">
+                            <span>Profile Picture</span>
+                            <input type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="modal-footer">
-            <form>    
+            <div class="modal-footer">
                 <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Add member</a>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 
     <tags:footer />
