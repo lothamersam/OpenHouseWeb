@@ -43,49 +43,50 @@
 
     <c:forEach items="${staffMembers}" var="member">
         <div id="${member.firstName}" class="modal modal-fixed-footer">
-                <form action="/action/staffChange?action=edit" method="POST">
-                    <div class="modal-content">
-                        <div class="row">
-                            <div class="file-field input-field">
-                                <div class="btn">
-                                    <span>Profile Picture</span>
-                                    <input type="file">
-                                </div>
-                                <div class="file-path-wrapper">
-                                    <input class="file-path validate" type="text">
-                                </div>
+            <form action="/action/staffChange?action=edit" method="POST">
+                <div class="modal-content">
+                    <div class="row">
+                        <div class="file-field input-field">
+                            <div class="btn">
+                                <span>Profile Picture</span>
+                                <input type="file">
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input name="firstName" id="first_name" type="text" class="validate" required>
-                                <label for="first_name">First Name</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input name="lastName" id="last_name" type="text" class="validate" required>
-                                <label for="last_name">Last Name</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input name="title" id="title" type="text" class="validate" required>
-                                <label for="title">Last Name</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <textarea name="bio" id="bioTextArea" class="materialize-textarea"
-                                    required></textarea>
-                                <label for="bioTextArea">Staff Member Bio</label>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text">
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Add Staff Member
-                            <i class="material-icons right">menu_edit</i>
-                        </button>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input value="${member.firstName}" name="firstName" id="first_name" type="text" class="validate" required>
+                            <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input value="${member.lastName}" name="lastName" id="last_name" type="text" class="validate" required>
+                            <label for="last_name">Last Name</label>
+                        </div>
                     </div>
-                </form>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input value="${member.title}" name="title" id="title" type="text" class="validate" required>
+                            <label for="title">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea name="bio" id="bioTextArea" class="materialize-textarea"
+                                required>${member.bio}</textarea>
+                            <label for="bioTextArea">Staff Member Bio</label>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" value="${member.id}" />
+                <div class="modal-footer">
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Add Staff Member
+                        <i class="material-icons right">menu_edit</i>
+                    </button>
+                </div>
+            </form>
         </div>
     </c:forEach>
 
@@ -129,7 +130,7 @@
             </div>
             <div class="modal-footer">
                 <button class="btn waves-effect waves-light" type="submit" name="action">Add Staff Member
-                    <i class="material-icons right">menu_edit</i>
+                    <i class="material-icons right">add_box</i>
                 </button>
             </div>
         </form>
