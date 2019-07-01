@@ -1,12 +1,23 @@
 package com.openhouse.services;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.nio.file.Paths;
 import java.util.IllegalFormatException;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.Part;
 
 import com.sendgrid.Mail;
 import com.sendgrid.Email;
 import com.sendgrid.Personalization;
+
+import org.apache.tomcat.util.http.fileupload.IOUtils;
+
 import com.openhouse.beans.StaffMemberTO;
 import com.sendgrid.Content;
 
@@ -69,5 +80,17 @@ public final class ParameterService {
             }
 
         return staffMember;
+    }
+
+    public File getImageFromRequest(HttpServletRequest request) throws IOException, ServletException {
+        Part filePart = request.getPart("picture");
+        InputStream fileContent = filePart.getInputStream();
+        File image = new File(Paths.get(filePart.getSubmittedFileName()).getFileName().toString());
+        
+        try (OutputStream outputStream = new FileOutputStream(image)) {
+            IOUtils.copy(fileContent, outputStream);
+        }
+
+        return image;
     }
 }
