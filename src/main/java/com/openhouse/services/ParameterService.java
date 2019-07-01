@@ -72,7 +72,7 @@ public final class ParameterService {
         if(StringUtils.isNotBlank(request.getParameter("first_name"))
             && StringUtils.isNotBlank(request.getParameter("last_name"))
             && StringUtils.isNotBlank(request.getParameter("title"))
-            && StringUtils.isNotBlank(request.getParameter("bio")) {
+            && StringUtils.isNotBlank(request.getParameter("bio"))) {
                 staffMember.setFirstName(StringEscapeUtils.escapeHtml4(request.getParameter("first_name")));
                 staffMember.setLastName(StringEscapeUtils.escapeHtml4(request.getParameter("last_name")));
                 staffMember.setTitle(StringEscapeUtils.escapeHtml4(request.getParameter("title")));
