@@ -32,10 +32,17 @@ public class DoStaffChangeController extends HttpServlet {
 
         staffMember.setImagePath(this.imageService.uploadImage(image));
 
+        boolean status = false;
         if ("add".equals(request.getParameter("action"))) {
-            this.staffDao.addStaffMember(staffMember);
+            status = this.staffDao.addStaffMember(staffMember);
         } else if ("edit".equals(request.getParameter("action"))) {
             this.staffDao.editStaffMember(staffMember);
+        }
+
+        if(status) {
+            response.sendRedirect("/admin/staff?success=Successfully performed update!");
+        } else {
+            response.sendRedirect("/admin/staff?error=Your update was not successful!");
         }
     }
 }
