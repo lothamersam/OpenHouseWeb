@@ -27,7 +27,7 @@
                         <img src="${member.imagePath}" class="circle responsive-img">
                         <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger tooltipped"
                             id="deleteStaff" data-position="bottom" data-delay="50" data-tooltip="Delete this staff member"
-                            href="/action/staffChange?action=edit&id=${member.id}"><i class="material-icons">delete</i></a>
+                            href="/action/staffChange?action=edit&id=${member.id}&public=${member.imagePublicId}"><i class="material-icons">delete</i></a>
                     </div>
                     <div class="card-content">
                         <span class="card-title"><strong>${member.firstName} ${member.lastName}</strong></span>

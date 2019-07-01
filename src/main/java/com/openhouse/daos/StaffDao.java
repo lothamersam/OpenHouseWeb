@@ -14,7 +14,7 @@ import com.openhouse.beans.StaffMemberTO;
 public class StaffDao {
 	private static final String SELECT_ALL_STAFF = 
 		"SELECT " 
-	+ 		"id, first_name, last_name, title, bio, image_path " 
+	+ 		"id, first_name, last_name, title, bio, image_path, image_public_id " 
 	+ 	"FROM " 
 	+ 		"oh_staff";
 
@@ -41,7 +41,9 @@ public class StaffDao {
 					results.getString(3), 
 					results.getString(4), 
 					results.getString(5), 
-					results.getString(6)));
+					results.getString(6),
+					results.getString(7)));
+				
 			}
 		} catch (URISyntaxException | SQLException e) {
 			System.out.println("There was an error when querying the database! " + e.getMessage());

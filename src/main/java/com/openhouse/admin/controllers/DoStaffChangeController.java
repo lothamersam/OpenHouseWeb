@@ -31,6 +31,8 @@ public class DoStaffChangeController extends HttpServlet {
 
         StaffMemberTO staffMember = new StaffMemberTO();
         staffMember.setId(id);
+        
+        this.imageService.deleteImage(request.getParameter("public"));
 
         if (id > 0 && this.staffDao.removeStaffMember(staffMember)) {
             response.sendRedirect("/admin/staff?success=Successfully performed update!");
