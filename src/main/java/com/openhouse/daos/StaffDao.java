@@ -21,8 +21,8 @@ public class StaffDao {
 	private static final String INSERT_NEW_STAFF = 
 		"INSERT INTO " 
 	+ 		"oh_staff " 
-	+		"(first_name, last_name, title, bio, image_path) " 
-	+ 	"VALUES (?, ?, ?, ?, ?)";
+	+		"(first_name, last_name, title, bio, image_path, image_public_id) " 
+	+ 	"VALUES (?, ?, ?, ?, ?, ?)";
 
 	private static final String REMOVE_STAFF_MEMBER = "DELETE FROM oh_staff WHERE id = ?";
 	
@@ -61,6 +61,7 @@ public class StaffDao {
 			statement.setString(3, staffMember.getTitle());
 			statement.setString(4, staffMember.getBio());
 			statement.setString(5, staffMember.getImagePath());
+			statement.setString(6, staffMember.getImagePublicId());
 
 			if (statement.executeUpdate() > 0) {
 				return true;
