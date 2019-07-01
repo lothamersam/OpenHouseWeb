@@ -77,6 +77,29 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input name="firstName" id="first_name" type="text" class="validate" required>
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input name="lastName" id="last_name" type="text" class="validate" required>
+                        <label for="last_name">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input name="title" id="title" type="text" class="validate" required>
+                        <label for="title">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea name="bio" id="bioTextArea" class="materialize-textarea"
+                            required></textarea>
+                        <label for="bioTextArea">Message Body</label>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
                 <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Add member</a>
