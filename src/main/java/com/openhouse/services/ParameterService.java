@@ -69,12 +69,12 @@ public final class ParameterService {
     public StaffMemberTO getStaffMemberTOFromRequest(HttpServletRequest request) {
         StaffMemberTO staffMember = new StaffMemberTO();
     
-        if(StringUtils.isNotBlank(request.getParameter("first_name"))
-            && StringUtils.isNotBlank(request.getParameter("last_name"))
+        if(StringUtils.isNotBlank(request.getParameter("firstName"))
+            && StringUtils.isNotBlank(request.getParameter("lastName"))
             && StringUtils.isNotBlank(request.getParameter("title"))
             && StringUtils.isNotBlank(request.getParameter("bio"))) {
-                staffMember.setFirstName(StringEscapeUtils.escapeHtml4(request.getParameter("first_name")));
-                staffMember.setLastName(StringEscapeUtils.escapeHtml4(request.getParameter("last_name")));
+                staffMember.setFirstName(StringEscapeUtils.escapeHtml4(request.getParameter("firstName")));
+                staffMember.setLastName(StringEscapeUtils.escapeHtml4(request.getParameter("lastName")));
                 staffMember.setTitle(StringEscapeUtils.escapeHtml4(request.getParameter("title")));
                 staffMember.setBio(StringEscapeUtils.escapeHtml4(request.getParameter("bio")));
             }
