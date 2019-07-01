@@ -85,8 +85,8 @@ public final class ParameterService {
     }
 
     public String getStringFromRequest(HttpServletRequest request, String paramName) {
-        if(StringUtils.isNotBlank(request.getParameter(paramName) {
-            return StringEscapeUtils.escapeHtml4(request.getParameter(paramName);
+        if (StringUtils.isNotBlank(request.getParameter(paramName))) {
+            return StringEscapeUtils.escapeHtml4(request.getParameter(paramName));
         }
 
         return "";
