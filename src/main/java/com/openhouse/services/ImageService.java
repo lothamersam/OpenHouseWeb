@@ -15,7 +15,7 @@ public class ImageService {
         Cloudinary cloudinary = new Cloudinary(System.getenv("CLOUDINARY_URL"));
 
         Map result = cloudinary.uploader().upload(image, ObjectUtils.asMap(
-            "transformation", new Transformation().width(400).gravity("face").crop("square")
+            "transformation", new Transformation().width(400).gravity("face").crop("fill").aspectRatio("1:1")
         ));
 
         staffMember.setImagePath((String) result.get("url"));
