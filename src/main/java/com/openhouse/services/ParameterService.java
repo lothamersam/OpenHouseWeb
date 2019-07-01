@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import com.sendgrid.Mail;
 import com.sendgrid.Email;
 import com.sendgrid.Personalization;
-
+import com.openhouse.beans.StaffMemberTO;
 import com.sendgrid.Content;
 
 public final class ParameterService {
@@ -51,5 +51,23 @@ public final class ParameterService {
             request.getParameter("lastName")));     
 
         return mail;
+    }
+
+    public StaffMemberTO getStaffMemberTOFromRequest(HttpServletRequest request) {
+        StaffMemberTO staffMember = new StaffMemberTO();
+    
+        if(request.getParameter("first_name") != null 
+            && request.getParameter("last_name") != null
+            && request.getParameter("title") != null
+            && request.getParameter("bio") != null
+            && request.getParameter("id") != null) {
+                staffMember.setFirstName(request.getParameter("first_name"));
+                staffMember.setLastName(request.getParameter("last_name"));
+                staffMember.setTitle(request.getParameter("title"));
+                staffMember.setId(Integer.parseInt(request.getParameter("id")));
+                staffMember.setBio(request.getParameter("bio"));
+            }
+
+        return staffMember;
     }
 }

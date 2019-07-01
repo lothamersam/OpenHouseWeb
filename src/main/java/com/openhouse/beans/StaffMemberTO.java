@@ -1,12 +1,14 @@
 package com.openhouse.beans;
 
 public class StaffMemberTO {
-    private final int id;
-    private final String firstName;
-    private final String lastName;
-    private final String title;
-    private final String bio;
-    private final String imagePath;
+    private int id;
+    private String firstName;
+    private String lastName;
+    private String title;
+    private String bio;
+    private String imagePath;
+
+    public StaffMemberTO(){};
 
     public StaffMemberTO(int id, String firstName, String lastName, String title, String bio, String imagePath) {
         this.id = id;
@@ -39,5 +41,29 @@ public class StaffMemberTO {
 
     public String getImagePath() {
         return this.imagePath;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 }

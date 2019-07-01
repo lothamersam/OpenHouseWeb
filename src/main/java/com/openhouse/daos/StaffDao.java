@@ -40,7 +40,7 @@ public class StaffDao {
 		return staffMembers;
 	}
 
-	public boolean addStaffMemeber(StaffMemberTO staffMember) {
+	public boolean addStaffMember(StaffMemberTO staffMember) {
 		return false;
 	}
 
@@ -48,7 +48,7 @@ public class StaffDao {
 		return false;
 	}
 
-	public boolean editStafffMember(StaffMemberTO staffMemeber) { 
+	public boolean editStaffMember(StaffMemberTO staffMemeber) { 
 		return false;
 	}
 }

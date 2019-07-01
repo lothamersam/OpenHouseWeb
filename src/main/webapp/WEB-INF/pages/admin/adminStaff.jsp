@@ -27,7 +27,7 @@
                         <img src="${member.imagePath}" class="circle responsive-img">
                         <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger tooltipped"
                             id="deleteStaff" data-position="bottom" data-delay="50" data-tooltip="Delete this staff member"
-                            href="#${member.firstName}"><i class="material-icons">delete</i></a>
+                            href="/action/staffChange?action=edit&id=${member.id}"><i class="material-icons">delete</i></a>
                     </div>
                     <div class="card-content">
                         <span class="card-title"><strong>${member.firstName} ${member.lastName}</strong></span>
@@ -43,13 +43,13 @@
 
     <c:forEach items="${staffMembers}" var="member">
         <div id="${member.firstName}" class="modal modal-fixed-footer">
-            <form action="/action/staffChange?action=edit" method="POST">
+            <form action="/action/staffChange?action=edit" method="POST" enctype="multipart/form-data">
                 <div class="modal-content">
                     <div class="row">
                         <div class="file-field input-field">
                             <div class="btn">
                                 <span>Profile Picture</span>
-                                <input type="file">
+                                <input type="file" name="picture">
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text">
@@ -91,13 +91,13 @@
     </c:forEach>
 
     <div id="newMemberModal" class="modal modal-fixed-footer">
-        <form action="/action/staffChange?action=add" method="POST">
+        <form action="/action/staffChange?action=add" method="POST" enctype="multipart/form-data">
             <div class="modal-content">
                 <div class="row">
                     <div class="file-field input-field">
                         <div class="btn">
                             <span>Profile Picture</span>
-                            <input type="file">
+                            <input type="file" name="picture">
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text">
