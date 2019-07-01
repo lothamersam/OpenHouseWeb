@@ -26,7 +26,20 @@ public class DoStaffChangeController extends HttpServlet {
     private final ImageService imageService = ServiceFactory.getImageService();
     private final StaffDao staffDao = DaoFactory.getStaffDao();
     
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id = this.parameterService.getIntFromRequest(request, "id");
+
+        StaffMemberTO staffMember = new StaffMemberTO();
+        staffMember.setId(id);
+
+        if (id > 0 && this.staffDao.removeStaffMember(staffMember)) {
+            response.sendRedirect("/admin/staff?success=Successfully performed update!");
+        } else {
+            response.sendRedirect("/admin/staff?error=Your update was not successful!");
+        }
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         StaffMemberTO staffMember = this.parameterService.getStaffMemberTOFromRequest(request);
         File image = this.parameterService.getImageFromRequest(request);
 

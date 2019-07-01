@@ -73,11 +73,12 @@ public final class ParameterService {
             && StringUtils.isNotBlank(request.getParameter("lastName"))
             && StringUtils.isNotBlank(request.getParameter("title"))
             && StringUtils.isNotBlank(request.getParameter("bio"))) {
-                staffMember.setFirstName(StringEscapeUtils.escapeHtml4(request.getParameter("firstName")));
-                staffMember.setLastName(StringEscapeUtils.escapeHtml4(request.getParameter("lastName")));
-                staffMember.setTitle(StringEscapeUtils.escapeHtml4(request.getParameter("title")));
-                staffMember.setBio(StringEscapeUtils.escapeHtml4(request.getParameter("bio")));
-            }
+            
+            staffMember.setFirstName(StringEscapeUtils.escapeHtml4(request.getParameter("firstName")));
+            staffMember.setLastName(StringEscapeUtils.escapeHtml4(request.getParameter("lastName")));
+            staffMember.setTitle(StringEscapeUtils.escapeHtml4(request.getParameter("title")));
+            staffMember.setBio(StringEscapeUtils.escapeHtml4(request.getParameter("bio")));
+        }
 
         return staffMember;
     }
@@ -92,5 +93,13 @@ public final class ParameterService {
         }
 
         return image;
+    }
+
+    public Integer getIntFromRequest(HttpServletRequest request, String paramName) {
+        try {
+            return Integer.parseInt(request.getParameter(paramName));
+        } catch (NumberFormatException e) {
+            return 0;
+        }
     }
 }
