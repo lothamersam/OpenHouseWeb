@@ -76,7 +76,6 @@ public final class ParameterService {
                 staffMember.setFirstName(StringEscapeUtils.escapeHtml4(request.getParameter("first_name")));
                 staffMember.setLastName(StringEscapeUtils.escapeHtml4(request.getParameter("last_name")));
                 staffMember.setTitle(StringEscapeUtils.escapeHtml4(request.getParameter("title")));
-                staffMember.setId(Integer.parseInt(request.getParameter("id")));
                 staffMember.setBio(StringEscapeUtils.escapeHtml4(request.getParameter("bio")));
             }
 
