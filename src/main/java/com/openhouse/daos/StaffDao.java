@@ -2,6 +2,7 @@ package com.openhouse.daos;
 
 import java.net.URISyntaxException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.SQLException;
@@ -16,6 +17,13 @@ public class StaffDao {
 	+ 		"id, first_name, last_name, title, bio, image_path " 
 	+ 	"FROM " 
 	+ 		"oh_staff";
+
+	private static final String INSERT_NEW_STAFF = 
+		"INSERT INTO " 
+	+ 		"oh_staff " 
+	+		"(first_name, last_name, title, bio, image_path) " 
+	+ 	"VALUES (?, ?, ?, ?, ?)";
+	
 
 	public List<StaffMemberTO> getStaffList() {
 		List<StaffMemberTO> staffMembers = new ArrayList<>();
@@ -41,6 +49,22 @@ public class StaffDao {
 	}
 
 	public boolean addStaffMember(StaffMemberTO staffMember) {
+		try (Connection connection = DatabaseConnection.getConnection()) {
+			PreparedStatement statement = connection.prepareStatement(INSERT_NEW_STAFF);
+
+			statement.setString(1, staffMember.getFirstName());
+			statement.setString(2, staffMember.getLastName());
+			statement.setString(3, staffMember.getTitle());
+			statement.setString(4, staffMember.getBio());
+			statement.setString(5, staffMember.getImagePath());
+
+			if (statement.executeUpdate() != 0) {
+				return true;
+			}
+		} catch (URISyntaxException | SQLException e) {
+			System.out.println("There was an error when querying the database! " + e.getMessage());
+		} 
+		
 		return false;
 	}
 

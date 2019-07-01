@@ -16,6 +16,8 @@ import com.sendgrid.Mail;
 import com.sendgrid.Email;
 import com.sendgrid.Personalization;
 
+import org.apache.commons.lang3.StringEscapeUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 
 import com.openhouse.beans.StaffMemberTO;
@@ -67,16 +69,16 @@ public final class ParameterService {
     public StaffMemberTO getStaffMemberTOFromRequest(HttpServletRequest request) {
         StaffMemberTO staffMember = new StaffMemberTO();
     
-        if(request.getParameter("first_name") != null 
-            && request.getParameter("last_name") != null
-            && request.getParameter("title") != null
-            && request.getParameter("bio") != null
-            && request.getParameter("id") != null) {
-                staffMember.setFirstName(request.getParameter("first_name"));
-                staffMember.setLastName(request.getParameter("last_name"));
-                staffMember.setTitle(request.getParameter("title"));
+        if(StringUtils.isNotBlank(request.getParameter("first_name"))
+            && StringUtils.isNotBlank(request.getParameter("last_name"))
+            && StringUtils.isNotBlank(request.getParameter("title"))
+            && StringUtils.isNotBlank(request.getParameter("bio"))
+            && StringUtils.isNotBlank(request.getParameter("id"))) {
+                staffMember.setFirstName(StringEscapeUtils.escapeHtml4(request.getParameter("first_name")));
+                staffMember.setLastName(StringEscapeUtils.escapeHtml4(request.getParameter("last_name")));
+                staffMember.setTitle(StringEscapeUtils.escapeHtml4(request.getParameter("title")));
                 staffMember.setId(Integer.parseInt(request.getParameter("id")));
-                staffMember.setBio(request.getParameter("bio"));
+                staffMember.setBio(StringEscapeUtils.escapeHtml4(request.getParameter("bio")));
             }
 
         return staffMember;

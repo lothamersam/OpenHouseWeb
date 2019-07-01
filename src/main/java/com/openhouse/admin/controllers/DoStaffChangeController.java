@@ -30,7 +30,7 @@ public class DoStaffChangeController extends HttpServlet {
         StaffMemberTO staffMember = this.parameterService.getStaffMemberTOFromRequest(request);
         File image = this.parameterService.getImageFromRequest(request);
 
-        response.getWriter().write(this.imageService.uploadImage(image));
+        staffMember.setImagePath(this.imageService.uploadImage(image));
 
         if ("add".equals(request.getParameter("action"))) {
             this.staffDao.addStaffMember(staffMember);
