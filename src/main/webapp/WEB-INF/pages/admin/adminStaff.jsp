@@ -43,28 +43,54 @@
 
     <c:forEach items="${staffMembers}" var="member">
         <div id="${member.firstName}" class="modal modal-fixed-footer">
-            <div class="modal-content">
-                <div class="row">
-                    <div class="col s12 m4 l4">
-                        <img src="${member.imagePath}" class="circle responsive-img">
-                        <br><br>
-                        <span class="flow-text"><strong>${member.firstName} ${member.lastName}</strong></span>
-                        <br>
-                        <span>${member.title}</span>
+                <form action="/action/staffChange?action=edit" method="POST">
+                    <div class="modal-content">
+                        <div class="row">
+                            <div class="file-field input-field">
+                                <div class="btn">
+                                    <span>Profile Picture</span>
+                                    <input type="file">
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input name="firstName" id="first_name" type="text" class="validate" required>
+                                <label for="first_name">First Name</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input name="lastName" id="last_name" type="text" class="validate" required>
+                                <label for="last_name">Last Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input name="title" id="title" type="text" class="validate" required>
+                                <label for="title">Last Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea name="bio" id="bioTextArea" class="materialize-textarea"
+                                    required></textarea>
+                                <label for="bioTextArea">Staff Member Bio</label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col s12 m8 l8">
-                        <p>${member.bio}</p>
+                    <div class="modal-footer">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Add Staff Member
+                            <i class="material-icons right">menu_edit</i>
+                        </button>
                     </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Apply Edits</a>
-            </div>
+                </form>
         </div>
     </c:forEach>
 
     <div id="newMemberModal" class="modal modal-fixed-footer">
-        <form action="#">
+        <form action="/action/staffChange?action=add" method="POST">
             <div class="modal-content">
                 <div class="row">
                     <div class="file-field input-field">
@@ -97,12 +123,14 @@
                     <div class="input-field col s12">
                         <textarea name="bio" id="bioTextArea" class="materialize-textarea"
                             required></textarea>
-                        <label for="bioTextArea">Message Body</label>
+                        <label for="bioTextArea">Staff Member Bio</label>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Add member</a>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Add Staff Member
+                    <i class="material-icons right">menu_edit</i>
+                </button>
             </div>
         </form>
     </div>
