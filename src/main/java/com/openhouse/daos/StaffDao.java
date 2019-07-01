@@ -25,6 +25,15 @@ public class StaffDao {
 	+ 	"VALUES (?, ?, ?, ?, ?, ?)";
 
 	private static final String REMOVE_STAFF_MEMBER = "DELETE FROM oh_staff WHERE id = ?";
+
+	private static final String UPDATE_STAFF_MEMBER = 
+		"UPDATE oh_staff " 
+	+ 		"SET " 
+	+ 			"first_name = ?, last_name = ?, " 
+	+ 			"title = ?, bio = ?, image_path = ?, " 
+	+ 			"image_public_id = ? " 
+	+ 		"WHERE " 
+	+ 			"id = ?";
 	
 
 	public List<StaffMemberTO> getStaffList() {
@@ -89,7 +98,25 @@ public class StaffDao {
 		return false;
 	}
 
-	public boolean editStaffMember(StaffMemberTO staffMemeber) { 
+	public boolean editStaffMember(StaffMemberTO staffMember) { 
+		try (Connection connection = DatabaseConnection.getConnection()) {
+			PreparedStatement statement = connection.prepareStatement(UPDATE_STAFF_MEMBER);
+
+			statement.setString(1, staffMember.getFirstName());
+			statement.setString(2, staffMember.getLastName());
+			statement.setString(3, staffMember.getTitle());
+			statement.setString(4, staffMember.getBio());
+			statement.setString(5, staffMember.getImagePath());
+			statement.setString(6, staffMember.getImagePublicId());
+			statement.setInt(7, staffMember.getId());
+
+			if (statement.executeUpdate() > 0) {
+				return true;
+			}
+		} catch (URISyntaxException | SQLException e) {
+			System.out.println("There was an error when querying the database! " + e.getMessage());
+		} 
+
 		return false;
 	}
 }

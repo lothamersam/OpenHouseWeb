@@ -52,7 +52,7 @@ public class DoStaffChangeController extends HttpServlet {
             status = this.staffDao.addStaffMember(staffMember);
         } else if ("edit".equals(request.getParameter("action"))) {
             this.imageService.deleteImage(request.getParameter("public"));
-            this.staffDao.editStaffMember(staffMember);
+            status = this.staffDao.editStaffMember(staffMember);
         }
 
         if(status) {
