@@ -35,16 +35,16 @@ public class DoStaffChangeController extends HttpServlet {
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         StaffMemberTO staffMember = this.parameterService.getStaffMemberTOFromRequest(request);
-        
+
         
         Part filePart = request.getPart("picture");
         InputStream fileContent = filePart.getInputStream();
         File profilePicture = new File(Paths.get(filePart.getSubmittedFileName()).getFileName().toString());
         
+        response.getWriter().write(Paths.get(filePart.getSubmittedFileName()).getFileName().toString());
         try (OutputStream outputStream = new FileOutputStream(profilePicture)) {
             IOUtils.copy(fileContent, outputStream);
         }
-
         if ("add".equals(request.getParameter("action"))) {
             this.staffDao.addStaffMember(staffMember);
         } else if ("edit".equals(request.getParameter("action"))) {
