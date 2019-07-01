@@ -50,10 +50,13 @@ public class DoStaffChangeController extends HttpServlet {
         boolean status = false;
         if ("add".equals(request.getParameter("action"))) {
             status = this.staffDao.addStaffMember(staffMember);
+
         } else if ("edit".equals(request.getParameter("action"))) {
             this.imageService.deleteImage(request.getParameter("public"));
             
             staffMember.setId(this.parameterService.getIntFromRequest(request, "id"));
+            staffMember.setImagePath(this.parameterService.getStringFromRequest(request, "image_path"));
+            staffMember.setImagePublicId(this.parameterService.getStringFromRequest(request, "public"));
             status = this.staffDao.editStaffMember(staffMember);
         }
 

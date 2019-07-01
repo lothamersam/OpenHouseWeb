@@ -82,6 +82,7 @@
                 </div>
                 <input type="hidden" name="id" value="${member.id}" />
                 <input type="hidden" name="public" value="${member.imagePublicId}" />
+                <input type="hidden" name="image_path" value="${member.imagePath}" />
                 <input type="hidden" name="action" value="edit" />
                 <div class="modal-footer">
                     <button class="btn waves-effect waves-light" type="submit" name="action">Apply Edits

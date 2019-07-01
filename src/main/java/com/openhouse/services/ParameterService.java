@@ -84,6 +84,14 @@ public final class ParameterService {
         return staffMember;
     }
 
+    public String getStringFromRequest(HttpServletRequest request, String paramName) {
+        if(StringUtils.isNotBlank(request.getParameter(paramName) {
+            return StringEscapeUtils.escapeHtml4(request.getParameter(paramName);
+        }
+
+        return "";
+    }
+
     public File getImageFromRequest(HttpServletRequest request) throws IOException, ServletException {
         try {
             Part filePart = request.getPart("picture");
