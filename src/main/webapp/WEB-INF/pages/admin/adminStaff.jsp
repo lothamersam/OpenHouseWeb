@@ -82,8 +82,8 @@
                 </div>
                 <input type="hidden" value="${member.id}" />
                 <div class="modal-footer">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Add Staff Member
-                        <i class="material-icons right">menu_edit</i>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Apply Edits
+                        <i class="material-icons right">add_box</i>
                     </button>
                 </div>
             </form>
