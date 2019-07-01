@@ -43,7 +43,7 @@
 
     <c:forEach items="${staffMembers}" var="member">
         <div id="${member.firstName}" class="modal modal-fixed-footer">
-            <form action="/action/staffChange?action=edit" method="POST" enctype="multipart/form-data">
+            <form action="/action/staffChange" method="POST" enctype="multipart/form-data">
                 <div class="modal-content">
                     <div class="row">
                         <div class="file-field input-field">
@@ -80,7 +80,8 @@
                         </div>
                     </div>
                 </div>
-                <input type="hidden" value="${member.id}" />
+                <input type="hidden" name="id" value="${member.id}" />
+                <input type="hidden" name="action" value="edit" />
                 <div class="modal-footer">
                     <button class="btn waves-effect waves-light" type="submit" name="action">Apply Edits
                         <i class="material-icons right">add_box</i>
@@ -91,7 +92,7 @@
     </c:forEach>
 
     <div id="newMemberModal" class="modal modal-fixed-footer">
-        <form action="/action/staffChange?action=add" method="POST" enctype="multipart/form-data">
+        <form action="/action/staffChange" method="POST" enctype="multipart/form-data">
             <div class="modal-content">
                 <div class="row">
                     <div class="file-field input-field">
@@ -128,6 +129,7 @@
                     </div>
                 </div>
             </div>
+            <input type="hidden" name="action" value="add" />
             <div class="modal-footer">
                 <button class="btn waves-effect waves-light" type="submit" name="action">Add Staff Member
                     <i class="material-icons right">add_box</i>
