@@ -55,8 +55,11 @@ public class DoStaffChangeController extends HttpServlet {
             this.imageService.deleteImage(request.getParameter("public"));
             
             staffMember.setId(this.parameterService.getIntFromRequest(request, "id"));
-            staffMember.setImagePath(this.parameterService.getStringFromRequest(request, "image_path"));
-            staffMember.setImagePublicId(this.parameterService.getStringFromRequest(request, "public"));
+            if (image == null) {    // only set to old path if image is null
+                staffMember.setImagePath(this.parameterService.getStringFromRequest(request, "image_path"));
+                staffMember.setImagePublicId(this.parameterService.getStringFromRequest(request, "public"));
+            }
+
             status = this.staffDao.editStaffMember(staffMember);
         }
 
