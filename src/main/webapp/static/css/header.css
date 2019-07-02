@@ -1,0 +1,99 @@
+.brand-logo-fit {
+    height: -webkit-fill-available;
+    border: 0; 
+    float: left;
+    margin-right: 15px;
+}
+.brand-title-text {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 24px;
+}
+.nav-wrapper ul {
+    font-family: 'Arvo', serif;
+}
+.header-img-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+}
+.header-img-container .header-img-header {
+    color: white;
+    clear: both;
+    display: block;
+    font-size: 2.5rem;
+    text-shadow: 3px 5px 3px black;
+    font-family: 'Oswald', sans-serif;
+}
+.header-img-container .header-img-text {
+    font-size: 1.2rem;
+    text-shadow: 3px 5px 3px black;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+nav.home-navbar{
+    background-color: rgba(0, 0, 0, 0) !important;
+    box-shadow: none !important;
+    -webkit-box-shade: none !important;
+}
+.table-of-contents a.active {
+    font-weight: 500;
+    padding-left: 18px;
+    border-left: 3px solid #00acc1;
+}
+.table-of-contents a:hover {
+    color: #a8a8a8;
+    padding-left: 15px;
+    border-left: 2px solid #00acc1;
+}
+body {
+    margin: 0;
+    padding: 0;
+}  
+.collapsible-header {
+    position: relative;
+}  
+.test {
+    position: absolute;
+    right: 0;
+}
+.promo i {
+    margin: 40px 0;
+    color: #006064;
+    font-size: 7rem;
+    display: block;
+}
+.promo-caption {
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+.parallax-container {
+    height: 300px;
+}
+.parallax-container-small {
+    height: 64px !important;
+}
+.top-row {
+    margin-top: 3em;
+}
+.parallax-container-small>.dropdown-content {
+    z-index: 1000;
+}
+.standard-navbar-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 64px;
+}
+.standard-navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+nav ul.dropdown-content.active {
+    position: fixed !important;
+}
