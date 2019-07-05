@@ -1,5 +1,7 @@
 target/*
 tomcat.8080/*
 
-
-/target/
+.settings/
+target/
+.classpath
+.project
