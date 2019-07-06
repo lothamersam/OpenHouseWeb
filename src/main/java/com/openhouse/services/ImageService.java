@@ -11,7 +11,8 @@ import com.openhouse.beans.StaffMemberTO;
 
 public class ImageService {
 
-    public StaffMemberTO uploadImage(File image, StaffMemberTO staffMember) throws IOException {
+    @SuppressWarnings("rawtypes")
+	public StaffMemberTO uploadImage(File image, StaffMemberTO staffMember) throws IOException {
         if (staffMember != null) {
             if (image != null) {
                 Cloudinary cloudinary = new Cloudinary(System.getenv("CLOUDINARY_URL"));
