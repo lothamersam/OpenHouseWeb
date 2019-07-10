@@ -13,6 +13,7 @@ public class AboutController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("aboutUsSnippet", "<p>This is temorary placeholder text</p>");
+		request.setAttribute("organizationAddress", "<p>This is temorary placeholder text</p>");
 		
 		request.getRequestDispatcher("/WEB-INF/pages/about.jsp").forward(request, response);
 	}

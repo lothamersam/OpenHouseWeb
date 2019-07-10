@@ -102,3 +102,11 @@ nav ul.dropdown-content.active {
 	margin: 0 auto;
 	width: 50% !important;	
 }
+.right-float {
+	display: inline;
+	float: right;
+}
+.left-float {
+	display: inline;
+	float: left;
+}
