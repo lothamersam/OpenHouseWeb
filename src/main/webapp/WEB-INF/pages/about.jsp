@@ -11,7 +11,6 @@
 
 	<div class="container row top-row">
 		<div class="col s12 m9 l10">
-			<h2 class="center-align">About Us</h2>
 			<img class="center-content img responsive-img"
 				src="/static/img/logo.png" alt="Open House Logo"
 				title="Open House Theatre Company" />
