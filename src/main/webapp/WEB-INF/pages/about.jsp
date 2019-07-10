@@ -11,8 +11,8 @@
 		<tags:header />
 
 		<div class="container">
-			<h1>About Us</h1>
-			<img class="img responsive-img" src="/static/img/logo.png" alt="Open House Logo" title="Open House Theatre Company" />
+			<h2 class="center-align">About Us</h2>
+			<img class="center-content img responsive-img" src="/static/img/logo.png" alt="Open House Logo" title="Open House Theatre Company" />
 		
 			<div class="card">
 			 	
