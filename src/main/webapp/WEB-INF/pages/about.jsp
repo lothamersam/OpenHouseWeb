@@ -23,12 +23,14 @@
 				</div>
 			</div>
 
-			<div>
-				<div id="location" class="section scrollspy left-float">${organizationAddress}</div>
-				<iframe class="right-float" width="600" height="450" frameborder="0"
+			<div class="row">
+				<div id="location" class="section scrollspy col s8">${organizationAddress}</div>
+				<div class="col s4">
+				<iframe frameborder="0"
 					style="border: 0"
 					src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJoWECiUZ1F4gRTAgu-YkgCCQ&key=AIzaSyA_rZXfAdHNDmsCnSKfkdJlNhTvVY09zps"
 					allowfullscreen></iframe>
+				</div>
 			</div>
 
 			<div id="involvement" class="section scrollspy top-row"
