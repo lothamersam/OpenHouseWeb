@@ -33,7 +33,33 @@
 			
 			<div id="involvement" class="section scrollspy top-row" style="clear:both;">
 				<h4 class="center-align">Get Involved</h4>
-			
+				
+				<div id="involvement" class="section scrollspy">
+					<h3>Involvement</h3>
+					<div class="row">
+						<div class="col s4">
+							<div class="center promo">
+								<i class="material-icons cyan-text">flash_on</i>
+								<p class="promo-caption">Get invloved fast</p>
+								<p class="light center">Lorem ipsum dolor sit amet consectetur, adipiscing elit duis nascetur.</p>
+							</div>
+						</div>
+						<div class="col s4">
+							<div class="center promo">
+								<i class="material-icons cyan-text">group</i>
+								<p class="promo-caption">Experience Focused</p>
+								<p class="light center">Lorem ipsum dolor sit amet consectetur, adipiscing elit duis nascetur.</p>
+							</div>
+						</div>
+						<div class="col s4">
+							<div class="center promo">
+								<i class="material-icons cyan-text">settings</i>
+								<p class="promo-caption">Easy to work with</p>
+								<p class="light center">Lorem ipsum dolor sit amet consectetur, adipiscing elit duis nascetur.</p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="col hide-on-small-only m3 l2">
