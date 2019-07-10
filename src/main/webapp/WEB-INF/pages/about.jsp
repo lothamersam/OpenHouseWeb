@@ -31,7 +31,7 @@
 					allowfullscreen></iframe>
 			</div>
 			
-			<div id="involvement" class="section scrollspy">
+			<div id="involvement" class="section scrollspy top-row" style="clear:both;">
 				<h4 class="center-align">Get Involved</h4>
 			
 			</div>
