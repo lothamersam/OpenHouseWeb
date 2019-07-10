@@ -9,7 +9,7 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="/mission">Our Mission</a></li>
                 <li><a href="/about">About Us</a></li>
-                <li><a href="/auditions">Audtions</a></li>
+                <li><a href="/auditions">Auditions</a></li>
                 <li><a href="/contact">Contact Us</a></li>
                 <li><a href="/upcoming">Productions</a></li>
                 <li><a href="/staff">Our Staff</a></li>
@@ -35,6 +35,7 @@
     <ul class="side-nav" id="mobile-nav">
         <li><a href="/mission">Our Mission</a></li>
         <li><a href="/about">About Us</a></li>
+        <li><a href="/auditions">Auditions</a></li>
         <li><a href="/contact">Contact Us</a></li>
         <li><a href="/upcoming">Upcoming Productions</a></li>
         <li><a href="/staff">Our Staff</a></li>
