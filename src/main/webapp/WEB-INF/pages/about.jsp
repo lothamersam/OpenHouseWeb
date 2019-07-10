@@ -24,12 +24,12 @@
 			</div>
 
 			<div class="row">
-				<div id="location" class="section scrollspy col s8">${organizationAddress}</div>
-				<div class="col s4">
-				<iframe frameborder="0"
-					style="border: 0"
-					src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJoWECiUZ1F4gRTAgu-YkgCCQ&key=AIzaSyA_rZXfAdHNDmsCnSKfkdJlNhTvVY09zps"
-					allowfullscreen></iframe>
+				<div id="location" class="section scrollspy col s4">${organizationAddress}</div>
+				<div class="col s8">
+					<iframe width="100%" height="50%" frameborder="0"
+						style="border: 0"
+						src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJoWECiUZ1F4gRTAgu-YkgCCQ&key=AIzaSyA_rZXfAdHNDmsCnSKfkdJlNhTvVY09zps"
+						allowfullscreen></iframe>
 				</div>
 			</div>
 
