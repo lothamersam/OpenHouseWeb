@@ -16,7 +16,13 @@
 				src="/static/img/logo.png" alt="Open House Logo"
 				title="Open House Theatre Company" />
 
-			<div id="introduction" class="card"></div>
+			<div id="introduction" class="card">
+				<div class="card-content">
+					<span class="card-title">About Our Organization</span>
+				
+					${aboutUsSnippet}
+				</div>
+			</div>
 		</div>
 		<div class="col hide-on-small-only m3 l2">
 			<ul class="section table-of-contents">
