@@ -33,6 +33,7 @@
 			</div>
 			
 			<div id="involvement" class="section scrollspy">
+				<h4 class="center-align">Get Involved</h4>
 			
 			</div>
 		</div>
@@ -47,6 +48,7 @@
 	</main>
 
 	<script src="/static/js/standardPage.js"></script>
+	
 	<tags:footer />
 </body>
 
