@@ -17,10 +17,6 @@
     </div>
     <div class="row top-row container">
         <c:forEach items="${staffMembers}" var="member" varStatus="status">
-            <c:if test="${status.index != 0 && status.index % 3 == 0}">
-                <!-- </div>
-                <div class="row"> -->
-            </c:if>
             <div class="col s12 m12 l4">
                 <div class="card">
                     <div class="card-image">

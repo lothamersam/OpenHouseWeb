@@ -28,10 +28,6 @@
 					</div>
 				</div>
 			</div>
-			<c:if test="${status.index != 0 && status.index % 3 == 0}">
-				</div>
-				<div class="row container top-row">
-			</c:if>
 		</c:forEach>
 	</div>
 
