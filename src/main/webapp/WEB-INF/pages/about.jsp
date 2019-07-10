@@ -19,12 +19,15 @@
 			<div id="introduction" class="card">
 				<div class="card-content">
 					<span class="card-title">About Our Organization</span>
-				
+
 					${aboutUsSnippet}
 				</div>
 			</div>
-			
-			<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJoWECiUZ1F4gRTAgu-YkgCCQ&key=AIzaSyA_rZXfAdHNDmsCnSKfkdJlNhTvVY09zps" allowfullscreen></iframe>
+
+
+			<iframe width="600" height="450" frameborder="0" style="border: 0"
+				src="https://www.google.com/maps/embed/v1/search?q=Unitarian+Universalist+Community+Church+of+Southwest+Michigan&key=AIzaSyA_rZXfAdHNDmsCnSKfkdJlNhTvVY09zps"
+				allowfullscreen></iframe>
 		</div>
 		<div class="col hide-on-small-only m3 l2">
 			<ul class="section table-of-contents">
