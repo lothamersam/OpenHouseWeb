@@ -10,7 +10,14 @@
 	<main>
 		<tags:header />
 
-
+		<div class="container">
+			<h1>About Us</h1>
+			<img src="/static/img/logo.png" alt="Open House Logo" title="Open House Theatre Company" />
+		
+			<div class="card">
+			 	
+			</div>
+		</div>
 	</main>
 
 	<tags:footer />
