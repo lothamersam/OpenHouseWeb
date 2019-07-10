@@ -23,8 +23,8 @@
 				</div>
 			</div>
 
-			<div id="location" class="section scrollspy">
-				<div class="left-float">${organizationAddress}</div>
+			<div>
+				<div id="location" class="section scrollspy left-float">${organizationAddress}</div>
 				<iframe class="right-float" width="600" height="450" frameborder="0"
 					style="border: 0"
 					src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJoWECiUZ1F4gRTAgu-YkgCCQ&key=AIzaSyA_rZXfAdHNDmsCnSKfkdJlNhTvVY09zps"
