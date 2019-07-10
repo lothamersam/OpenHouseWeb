@@ -15,7 +15,7 @@ $(document).ready(function () {
     });
 
     $('.table-of-contents').pushpin({
-        top: 300,
+        top: 70,
         offset: 0
     });
 });
