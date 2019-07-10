@@ -16,7 +16,7 @@
 				src="/static/img/logo.png" alt="Open House Logo"
 				title="Open House Theatre Company" />
 
-			<div id="introduction" class="card" class="section scrollspy">
+			<div id="introduction" class="card section scrollspy">
 				<div class="card-content">
 					<span class="card-title">About Our Organization</span>
 
