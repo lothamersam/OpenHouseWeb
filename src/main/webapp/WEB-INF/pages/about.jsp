@@ -30,35 +30,6 @@
 					src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJoWECiUZ1F4gRTAgu-YkgCCQ&key=${googleApiKey}"
 					allowfullscreen></iframe>
 			</div>
-
-			<div id="involvement" class="section scrollspy top-row"
-				style="clear: both;">
-				<h4 class="center-align">Get Involved</h4>
-
-				<div class="row">
-					<div class="col s4">
-						<div class="center promo">
-							<i class="material-icons cyan-text">recent_actors</i>
-							<p class="promo-caption">Audtion</p>
-							<p class="light center">${auditionSnippet}</p>
-						</div>
-					</div>
-					<div class="col s4">
-						<div class="center promo">
-							<i class="material-icons cyan-text">camera_roll</i>
-							<p class="promo-caption">Productions</p>
-							<p class="light center">${productionSnippet}</p>
-						</div>
-					</div>
-					<div class="col s4">
-						<div class="center promo">
-							<i class="material-icons cyan-text">flash_on</i>
-							<p class="promo-caption">Donate</p>
-							<p class="light center">${donateSnippet}</p>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 		<div class="col hide-on-small-only m3 l2">
 			<ul class="section table-of-contents">
@@ -66,6 +37,35 @@
 				<li><a href="#location">Our Location</a></li>
 				<li><a href="#involvement">Get Involved</a></li>
 			</ul>
+		</div>
+
+		<div id="involvement" class="section scrollspy top-row"
+			style="clear: both;">
+			<h4 class="center-align">Get Involved</h4>
+
+			<div class="row">
+				<div class="col s4">
+					<div class="center promo">
+						<i class="material-icons cyan-text">recent_actors</i>
+						<p class="promo-caption">Audtion</p>
+						<p class="light center">${auditionSnippet}</p>
+					</div>
+				</div>
+				<div class="col s4">
+					<div class="center promo">
+						<i class="material-icons cyan-text">camera_roll</i>
+						<p class="promo-caption">Productions</p>
+						<p class="light center">${productionSnippet}</p>
+					</div>
+				</div>
+				<div class="col s4">
+					<div class="center promo">
+						<i class="material-icons cyan-text">flash_on</i>
+						<p class="promo-caption">Donate</p>
+						<p class="light center">${donateSnippet}</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	</main>
