@@ -38,26 +38,23 @@
 				<div class="row">
 					<div class="col s4">
 						<div class="center promo">
+							<i class="material-icons cyan-text">recent_actors</i>
+							<p class="promo-caption">Audtion</p>
+							<p class="light center">${auditionSnippet}</p>
+						</div>
+					</div>
+					<div class="col s4">
+						<div class="center promo">
+							<i class="material-icons cyan-text">camera_roll</i>
+							<p class="promo-caption">Productions</p>
+							<p class="light center">${productionSnippet}</p>
+						</div>
+					</div>
+					<div class="col s4">
+						<div class="center promo">
 							<i class="material-icons cyan-text">flash_on</i>
-							<p class="promo-caption">Get invloved fast</p>
-							<p class="light center">Lorem ipsum dolor sit amet
-								consectetur, adipiscing elit duis nascetur.</p>
-						</div>
-					</div>
-					<div class="col s4">
-						<div class="center promo">
-							<i class="material-icons cyan-text">group</i>
-							<p class="promo-caption">Experience Focused</p>
-							<p class="light center">Lorem ipsum dolor sit amet
-								consectetur, adipiscing elit duis nascetur.</p>
-						</div>
-					</div>
-					<div class="col s4">
-						<div class="center promo">
-							<i class="material-icons cyan-text">settings</i>
-							<p class="promo-caption">Easy to work with</p>
-							<p class="light center">Lorem ipsum dolor sit amet
-								consectetur, adipiscing elit duis nascetur.</p>
+							<p class="promo-caption">Donate</p>
+							<p class="light center">${donateSnippet}</p>
 						</div>
 					</div>
 				</div>

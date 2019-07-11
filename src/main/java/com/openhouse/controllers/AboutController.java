@@ -14,6 +14,9 @@ public class AboutController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("googleApiKey", System.getenv("GOOGLE_API_KEY"));
 		request.setAttribute("aboutUsSnippet", "<p>This is temorary placeholder text</p>");
+		request.setAttribute("auditionSnippet", "<p>This is temorary placeholder text</p>");
+		request.setAttribute("produtionSnippet", "<p>This is temorary placeholder text</p>");
+		request.setAttribute("donateSnippet", "<p>This is temorary placeholder text</p>");
 		request.setAttribute("organizationAddress", "<p>This is temorary placeholder text</p>");
 		
 		request.getRequestDispatcher("/WEB-INF/pages/about.jsp").forward(request, response);
