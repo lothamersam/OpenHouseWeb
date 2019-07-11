@@ -26,8 +26,7 @@
 			<div class="row">
 				<div id="location" class="section scrollspy col s4">${organizationAddress}</div>
 				<div class="col s8">
-					<iframe width="100%" height="50%" frameborder="0"
-						style="border: 0"
+					<iframe width="100%" height="50%" frameborder="0" style="border: 0"
 						src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJoWECiUZ1F4gRTAgu-YkgCCQ&key=AIzaSyA_rZXfAdHNDmsCnSKfkdJlNhTvVY09zps"
 						allowfullscreen></iframe>
 				</div>
@@ -40,31 +39,29 @@
 				<div class="row">
 					<div class="col s4">
 						<div class="center promo">
+							<i class="material-icons cyan-text">recent_actors</i>
+							<p class="promo-caption">Audtion</p>
+							<p class="light center">${auditionSnippet}</p>
+						</div>
+					</div>
+					<div class="col s4">
+						<div class="center promo">
+							<i class="material-icons cyan-text">camera_roll</i>
+							<p class="promo-caption">Productions</p>
+							<p class="light center">${productionSnippet}</p>
+						</div>
+					</div>
+					<div class="col s4">
+						<div class="center promo">
 							<i class="material-icons cyan-text">flash_on</i>
-							<p class="promo-caption">Get invloved fast</p>
-							<p class="light center">Lorem ipsum dolor sit amet
-								consectetur, adipiscing elit duis nascetur.</p>
-						</div>
-					</div>
-					<div class="col s4">
-						<div class="center promo">
-							<i class="material-icons cyan-text">group</i>
-							<p class="promo-caption">Experience Focused</p>
-							<p class="light center">Lorem ipsum dolor sit amet
-								consectetur, adipiscing elit duis nascetur.</p>
-						</div>
-					</div>
-					<div class="col s4">
-						<div class="center promo">
-							<i class="material-icons cyan-text">settings</i>
-							<p class="promo-caption">Easy to work with</p>
-							<p class="light center">Lorem ipsum dolor sit amet
-								consectetur, adipiscing elit duis nascetur.</p>
+							<p class="promo-caption">Donate</p>
+							<p class="light center">${donateSnippet}</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		
 		<div class="col hide-on-small-only m3 l2">
 			<ul class="section table-of-contents">
 				<li><a href="#introduction">About Us</a></li>
