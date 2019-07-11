@@ -25,7 +25,7 @@
 
 			<div class="row">
 				<div id="location" class="section scrollspy col s4">
-					<h6><i class="material-icons cyan-text">location_on</i>Our Location</h6>
+					<h5 class="center-align"><i class="material-icons cyan-text">location_on</i>Our Location</h5>
 					${organizationAddress}
 				</div>
 				<div class="col s8">
