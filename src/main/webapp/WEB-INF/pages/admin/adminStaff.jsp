@@ -72,7 +72,6 @@
                         <div class="input-field col s12">
                             <textarea name="bio" id="bioTextArea" class="materialize-textarea"
                                 required>${member.bio}</textarea>
-                            <label for="bioTextArea">Staff Member Bio</label>
                         </div>
                     </div>
                 </div>
@@ -123,7 +122,6 @@
                     <div class="input-field col s12">
                         <textarea name="bio" id="bioTextArea" class="materialize-textarea"
                             required></textarea>
-                        <label for="bioTextArea">Staff Member Bio</label>
                     </div>
                 </div>
             </div>
