@@ -70,7 +70,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea name="bio" id="bioTextArea" class="materialize-textarea"
+                            <textarea name="bio" id="bioTextArea" class="materialize-textarea" placeholder="Enter staff bio..."
                                 required>${member.bio}</textarea>
                         </div>
                     </div>
@@ -120,7 +120,7 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <textarea name="bio" id="bioTextArea" class="materialize-textarea"
+                        <textarea name="bio" id="bioTextArea" class="materialize-textarea" placeholder="Enter staff bio..."
                             required></textarea>
                     </div>
                 </div>

@@ -59,7 +59,7 @@
 							</div>
 							<div class="row">
 								<div class="input-field col s12">
-									<textarea name="message" class="materialize-textarea"
+									<textarea name="message" class="materialize-textarea" placeholder="Enter enter your message..."
 										required></textarea>
 								</div>
 							</div>
