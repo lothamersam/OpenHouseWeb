@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="/static/vendor/materialize/css/materialize.min.css" />
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css?family=Oswald:500|Montserrat|Arvo|Permanent+Marker&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="/static/vendor/trumbowyg.min.css">
+	<link rel="stylesheet" href="/static/vendor/ui/trumbowyg.min.css">
 
 	<link href="/static/css/header.css" rel="stylesheet" />
 
