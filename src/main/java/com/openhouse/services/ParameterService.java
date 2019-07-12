@@ -17,7 +17,6 @@ import com.sendgrid.Mail;
 import com.sendgrid.Email;
 import com.sendgrid.Personalization;
 
-import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 
