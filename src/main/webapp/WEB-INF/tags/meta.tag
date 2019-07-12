@@ -13,7 +13,12 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="/static/vendor/materialize/js/materialize.min.js"></script>
 	<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-
+	<script>
+		var quill = new Quill('textarea', {
+			modules: { toolbar: true },
+		  	theme: 'snow'
+		});
+	</script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
