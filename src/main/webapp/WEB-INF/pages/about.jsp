@@ -44,21 +44,30 @@
 						<div class="center promo">
 							<i class="material-icons cyan-text">recent_actors</i>
 							<p class="promo-caption">Audtion</p>
-							<p class="light center">${auditionSnippet}</p>
+							<p class="light center">
+								${auditionSnippet}
+							  	<a href="/audtions" class="waves-effect waves-teal btn-flat">See Auditions</a>
+							</p>
 						</div>
 					</div>
 					<div class="col s4">
 						<div class="center promo">
 							<i class="material-icons cyan-text">camera_roll</i>
 							<p class="promo-caption">Productions</p>
-							<p class="light center">${productionSnippet}</p>
+							<p class="light center">
+								${productionSnippet}
+							  	<a href="/productions" class="waves-effect waves-teal btn-flat">See Productions</a>
+							</p>
 						</div>
 					</div>
 					<div class="col s4">
 						<div class="center promo">
 							<i class="material-icons cyan-text">flash_on</i>
 							<p class="promo-caption">Donate</p>
-							<p class="light center">${donateSnippet}</p>
+							<p class="light center">
+								${donateSnippet}
+								<a href="/donate" class="waves-effect waves-teal btn-flat">Make Donations</a>
+							</p>
 						</div>
 					</div>
 				</div>
