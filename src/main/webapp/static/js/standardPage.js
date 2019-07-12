@@ -19,5 +19,5 @@ $(document).ready(function () {
         offset: 0
     });
     
-    $('#summernote').trumbowyg();
+    $('textarea').trumbowyg();
 });
