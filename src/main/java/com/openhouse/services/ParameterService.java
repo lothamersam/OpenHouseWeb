@@ -75,10 +75,11 @@ public final class ParameterService {
             && StringUtils.isNotBlank(request.getParameter("title"))
             && StringUtils.isNotBlank(request.getParameter("bio"))) {
             
-            staffMember.setFirstName(StringEscapeUtils.escapeHtml4(request.getParameter("firstName")));
-            staffMember.setLastName(StringEscapeUtils.escapeHtml4(request.getParameter("lastName")));
-            staffMember.setTitle(StringEscapeUtils.escapeHtml4(request.getParameter("title")));
-            staffMember.setBio(StringEscapeUtils.escapeHtml4(request.getParameter("bio")));
+			staffMember.setFirstName(request.getParameter("firstName"));
+			
+            staffMember.setLastName(request.getParameter("lastName"));
+            staffMember.setTitle(request.getParameter("title"));
+            staffMember.setBio(request.getParameter("bio"));
         }
 
         return staffMember;
@@ -86,7 +87,7 @@ public final class ParameterService {
 
     public String getStringFromRequest(HttpServletRequest request, String paramName) {
         if (StringUtils.isNotBlank(request.getParameter(paramName))) {
-            return StringEscapeUtils.escapeHtml4(request.getParameter(paramName));
+            return request.getParameter(paramName);
         }
 
         return "";
