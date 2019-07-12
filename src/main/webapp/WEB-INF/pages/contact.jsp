@@ -59,9 +59,9 @@
 							</div>
 							<div class="row">
 								<div class="input-field col s12">
-									<textarea name="message" id="textarea1" class="materialize-textarea"
+									<textarea name="message" id="summernote" class="materialize-textarea"
 										required></textarea>
-									<label for="textarea1">Message Body</label>
+									<label for="summernote">Message Body</label>
 								</div>
 							</div>
 
