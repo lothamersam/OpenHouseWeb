@@ -19,14 +19,14 @@
 				<div class="card-content">
 					<span class="card-title">About Our Organization</span>
 
-					${aboutSection.content}
+					${aboutSection.sectionContent}
 				</div>
 			</div>
 
 			<div class="row">
 				<div id="location" class="section scrollspy col s4">
 					<h5 class="center-align"><i class="material-icons cyan-text">location_on</i>Our Location</h5>
-					${addressSection.content}
+					${addressSection.sectionContent}
 				</div>
 				<div class="col s8">
 					<iframe width="100%" height="50%" frameborder="0" style="border: 0"
@@ -45,7 +45,7 @@
 							<i class="material-icons cyan-text">recent_actors</i>
 							<p class="promo-caption">Audtion</p>
 							<p class="light center">
-								${auditionSection.content}
+								${auditionSection.sectionContent}
 							  	<a href="/audtions" class="waves-effect waves-teal btn-flat">See Auditions</a>
 							</p>
 						</div>
@@ -55,7 +55,7 @@
 							<i class="material-icons cyan-text">camera_roll</i>
 							<p class="promo-caption">Productions</p>
 							<p class="light center">
-								${productionSection.content}
+								${productionSection.sectionContent}
 							  	<a href="/upcoming" class="waves-effect waves-teal btn-flat">See Productions</a>
 							</p>
 						</div>
@@ -65,7 +65,7 @@
 							<i class="material-icons cyan-text">flash_on</i>
 							<p class="promo-caption">Donate</p>
 							<p class="light center">
-								${donateSection.content}
+								${donateSection.sectionContent}
 								<a href="/donate" class="waves-effect waves-teal btn-flat">Make Donations</a>
 							</p>
 						</div>
