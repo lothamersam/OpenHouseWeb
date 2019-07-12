@@ -55,7 +55,7 @@
 							<i class="material-icons cyan-text">camera_roll</i>
 							<p class="promo-caption">Productions</p>
 							<p class="light center">
-								${produtionSnippet.content}
+								${productionSection.content}
 							  	<a href="/upcoming" class="waves-effect waves-teal btn-flat">See Productions</a>
 							</p>
 						</div>
