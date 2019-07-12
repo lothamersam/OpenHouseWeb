@@ -18,4 +18,6 @@ $(document).ready(function () {
         top: 70,
         offset: 0
     });
+    
+    $('#summernote').trumbowyg();
 });
