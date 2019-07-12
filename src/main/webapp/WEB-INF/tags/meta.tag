@@ -16,7 +16,7 @@
     <script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
 	<script type="text/javascript">
     	jQuery(function ($) {
-        	$("#editor").shieldEditor({
+        	$("textarea").shieldEditor({
             	height: 260
         	});
     	});
