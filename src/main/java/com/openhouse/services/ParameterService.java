@@ -27,7 +27,7 @@ import com.sendgrid.Content;
 public final class ParameterService {
     private static final String CONTACT_DIRECTOR = "Contact Director";
 
-    public Mail getMailFromRequest(HttpServletRequest request) throws IllegalFormatException {
+    public Mail getMailFromRequest(final HttpServletRequest request) throws IllegalFormatException {
         final Mail mail = new Mail();
         
         final Personalization personalization = new Personalization();
@@ -67,8 +67,8 @@ public final class ParameterService {
         return mail;
     }
 
-    public StaffMemberTO getStaffMemberTOFromRequest(HttpServletRequest request) {
-        StaffMemberTO staffMember = new StaffMemberTO();
+    public StaffMemberTO getStaffMemberTOFromRequest(final HttpServletRequest request) {
+    	final StaffMemberTO staffMember = new StaffMemberTO();
     
         if(StringUtils.isNotBlank(request.getParameter("firstName"))
             && StringUtils.isNotBlank(request.getParameter("lastName"))
