@@ -7,18 +7,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.openhouse.daos.AboutDao;
+import com.openhouse.factory.DaoFactory;
+import com.openhouse.services.enums.AboutSectionType;
+
 @WebServlet("/about")
 public class AboutController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private final AboutDao aboutDao = DaoFactory.getAboutDao();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("googleApiKey", System.getenv("GOOGLE_API_KEY"));
-		request.setAttribute("aboutUsSnippet", "<p>This is temorary placeholder text</p>");
-		request.setAttribute("auditionSnippet", "<p>This is temorary placeholder text</p>");
-		request.setAttribute("productionSnippet", "<p>This is temorary placeholder text</p>");
-		request.setAttribute("donateSnippet", "<p>This is temorary placeholder text</p>");
-		request.setAttribute("organizationAddress", "<p>This is temorary placeholder text</p>");
+		setRequestAttributes(request);
 		
 		request.getRequestDispatcher("/WEB-INF/pages/about.jsp").forward(request, response);
+	}
+
+	private void setRequestAttributes(HttpServletRequest request) {
+		for(AboutSectionType sectionType : AboutSectionType.values()) {
+			request.setAttribute(sectionType.getSectionType(), aboutDao.getAboutSection(sectionType));
+		}
+		
+		request.setAttribute("googleApiKey", System.getenv("GOOGLE_API_KEY"));
 	}
 }
