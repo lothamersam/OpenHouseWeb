@@ -6,7 +6,6 @@
 	<link rel="stylesheet" href="/static/vendor/materialize/css/materialize.min.css" />
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css?family=Oswald:500|Montserrat|Arvo|Permanent+Marker&display=swap" rel="stylesheet">
-	<link id="themecss" rel="stylesheet" type="text/css" href="//www.shieldui.com/shared/components/latest/css/light/all.min.css" />
 
 	<link href="/static/css/header.css" rel="stylesheet" />
 
