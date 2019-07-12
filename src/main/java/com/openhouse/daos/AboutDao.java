@@ -10,9 +10,9 @@ import com.openhouse.beans.AboutSectionTO;
 import com.openhouse.services.enums.AboutSectionType;
 
 public class AboutDao {
-	private static final String GET_ABOUT_SECTION = "SELECT content, additional_properties FROM oh_staff WHERE attribute_name = ? LIMIT 1";
+	private static final String GET_ABOUT_SECTION = "SELECT content, additional_properties FROM oh_about WHERE attribute_name = ? LIMIT 1";
 	
-	private static final String EDIT_ABOUT_SECTION = "UPDATE oh_staff SET content = ?, additional_properties = ? WHERE attribute_name = ?";
+	private static final String EDIT_ABOUT_SECTION = "UPDATE oh_about SET content = ?, additional_properties = ? WHERE attribute_name = ?";
 	
 	public AboutSectionTO getAboutSection(final AboutSectionType sectionType) {
 		final AboutSectionTO aboutSection = new AboutSectionTO();
