@@ -3,5 +3,5 @@ $("div").click(function() {
 	console.log($(this).attr("id"))
 	$("#sectionContentInput").html($(this).find("#sectionContent:first").html())
 	
-	$("#editModal").open('open')
+	$("#editModal").modal('open')
 });

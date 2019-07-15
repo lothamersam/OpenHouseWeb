@@ -60,7 +60,7 @@
 							</p>
 						</div>
 					</div>
-					<div id="procution" class="col s4 hoverable tooltipped" data-position="top"
+					<div id="production" class="col s4 hoverable tooltipped" data-position="top"
 						data-delay="200" data-tooltip="Click to edit section">
 						<div class="center promo">
 							<i class="material-icons cyan-text">camera_roll</i>
