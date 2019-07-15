@@ -48,7 +48,7 @@
 				<h4 class="center-align">Get Involved</h4>
 
 				<div class="row">
-					<div class="col s4 hoverable tooltipped" data-position="top"
+					<div id="audition" class="col s4 hoverable tooltipped" data-position="top"
 						data-delay="200" data-tooltip="Click to edit section">
 						<div class="center promo">
 							<i class="material-icons cyan-text">recent_actors</i>
@@ -60,7 +60,7 @@
 							</p>
 						</div>
 					</div>
-					<div class="col s4 hoverable tooltipped" data-position="top"
+					<div id="procution" class="col s4 hoverable tooltipped" data-position="top"
 						data-delay="200" data-tooltip="Click to edit section">
 						<div class="center promo">
 							<i class="material-icons cyan-text">camera_roll</i>
@@ -72,7 +72,7 @@
 							</p>
 						</div>
 					</div>
-					<div class="col s4 hoverable tooltipped" data-position="top"
+					<div id="donation" class="col s4 hoverable tooltipped" data-position="top"
 						data-delay="200" data-tooltip="Click to edit section">
 						<div class="center promo">
 							<i class="material-icons cyan-text">flash_on</i>

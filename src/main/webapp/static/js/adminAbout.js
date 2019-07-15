@@ -1,3 +1,6 @@
 $("div").click(function() {
-	$("#sectionContentInput").html($(this).find("#sectionContent:first").val())
+	$("#name").val($(this).attr(id))
+	$("#sectionContentInput").html($(this).find("#sectionContent:first").html())
+	
+	$("#editModal").show()
 });
