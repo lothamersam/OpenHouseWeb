@@ -14,7 +14,7 @@ import com.openhouse.factory.DaoFactory;
 import com.openhouse.factory.ServiceFactory;
 import com.openhouse.services.ParameterService;
 
-@WebServlet("/admin/about")
+@WebServlet("/action/aboutChange")
 public class DoAboutChangeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
