@@ -24,11 +24,11 @@
 			</div>
 
 			<div class="row">
-				<div id="location" class="section scrollspy col s4">
+				<div id="location" class="section scrollspy col l4 m12">
 					<h5 class="center-align"><i class="material-icons cyan-text">location_on</i>Our Location</h5>
 					${addressSection.sectionContent}
 				</div>
-				<div class="col s8">
+				<div class="col  l8 m12">
 					<iframe width="100%" height="50%" frameborder="0" style="border: 0"
 						src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJoWECiUZ1F4gRTAgu-YkgCCQ&key=${googleApiKey}"
 						allowfullscreen></iframe>
@@ -40,7 +40,7 @@
 				<h4 class="center-align">Get Involved</h4>
 
 				<div class="row">
-					<div class="col s4">
+					<div class="col l4 m12">
 						<div class="center promo">
 							<i class="material-icons cyan-text">recent_actors</i>
 							<p class="promo-caption">Audtion</p>
@@ -52,7 +52,7 @@
 							</p>
 						</div>
 					</div>
-					<div class="col s4">
+					<div class="col l4 m12">
 						<div class="center promo">
 							<i class="material-icons cyan-text">camera_roll</i>
 							<p class="promo-caption">Productions</p>
@@ -64,7 +64,7 @@
 							</p>
 						</div>
 					</div>
-					<div class="col s4">
+					<div class="col l4 m12">
 						<div class="center promo">
 							<i class="material-icons cyan-text">flash_on</i>
 							<p class="promo-caption">Donate</p>
