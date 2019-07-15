@@ -40,7 +40,8 @@
 				<h4 class="center-align">Get Involved</h4>
 
 				<div class="row">
-					<div class="col s4 hoverable">
+					<div class="col s4 hoverable tooltipped" 
+						data-position="bottom" data-delay="50" data-tooltip="Click to edit section">
 						<div class="center promo">
 							<i class="material-icons cyan-text">recent_actors</i>
 							<p class="promo-caption">Audtion</p>
