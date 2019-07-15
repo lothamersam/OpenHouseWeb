@@ -12,6 +12,7 @@ public enum AboutSectionType {
 	
 	AboutSectionType(String sectionType, String divKey) {
 		this.sectionType = sectionType;
+		this.divKey = divKey;
 	}
 	
 	public String getSectionType() {
