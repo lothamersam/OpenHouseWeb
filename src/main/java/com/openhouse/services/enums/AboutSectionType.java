@@ -21,4 +21,14 @@ public enum AboutSectionType {
 	public String getDivKey() {
 		return this.divKey;
 	}
+	
+	public static String getTypeFromKey(String key) {	
+		for(AboutSectionType type : AboutSectionType.values()) {
+			if(key.equals(type.getDivKey())) {
+				return type.getSectionType();
+			}
+		}
+		
+		return null;
+	}
 }

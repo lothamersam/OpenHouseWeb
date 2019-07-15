@@ -20,7 +20,9 @@ import com.sendgrid.Personalization;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 
+import com.openhouse.beans.AboutSectionTO;
 import com.openhouse.beans.StaffMemberTO;
+import com.openhouse.services.enums.AboutSectionType;
 import com.sendgrid.Content;
 
 public final class ParameterService {
@@ -115,4 +117,18 @@ public final class ParameterService {
             return 0;
         }
     }
+
+	public AboutSectionTO getAboutSectionFromRequest(HttpServletRequest request) {
+		final AboutSectionTO aboutSection = new AboutSectionTO();
+		
+		if(StringUtils.isNotBlank(request.getParameter("content"))
+				&& StringUtils.isNotBlank(request.getParameter("sectionType"))){
+			aboutSection.setSectionContent(request.getParameter("content"));
+			aboutSection.setSectionType(AboutSectionType
+					.getTypeFromKey(request.getParameter("sectionType")));
+		}
+
+		
+		return aboutSection;
+	}
 }

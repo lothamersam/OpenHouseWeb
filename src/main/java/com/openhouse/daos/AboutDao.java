@@ -35,7 +35,7 @@ public class AboutDao {
 		return aboutSection;	
 	}
 	
-	public boolean editEboutSection(final AboutSectionTO aboutSection) {
+	public boolean editAboutSection(final AboutSectionTO aboutSection) {
 		try (final Connection connection = DatabaseConnection.getConnection()) {
 			PreparedStatement statement = connection.prepareStatement(EDIT_ABOUT_SECTION);
 			
