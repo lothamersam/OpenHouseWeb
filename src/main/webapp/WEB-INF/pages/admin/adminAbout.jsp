@@ -20,9 +20,8 @@
 				data-position="top" data-delay="200"
 				data-tooltip="Click to edit section">
 				<div class="card-content">
-					<span class="card-title">About Our Organization</span>
-
-					<span id="sectionContent">${aboutSection.sectionContent}</span>
+					<span class="card-title">About Our Organization</span> <span
+						id="sectionContent">${aboutSection.sectionContent}</span>
 				</div>
 			</div>
 
@@ -48,8 +47,9 @@
 				<h4 class="center-align">Get Involved</h4>
 
 				<div class="row">
-					<div id="audition" class="col s4 hoverable tooltipped" data-position="top"
-						data-delay="200" data-tooltip="Click to edit section">
+					<div id="audition" class="col s4 hoverable tooltipped"
+						data-position="top" data-delay="200"
+						data-tooltip="Click to edit section">
 						<div class="center promo">
 							<i class="material-icons cyan-text">recent_actors</i>
 							<p class="promo-caption">Audtion</p>
@@ -60,8 +60,9 @@
 							</p>
 						</div>
 					</div>
-					<div id="production" class="col s4 hoverable tooltipped" data-position="top"
-						data-delay="200" data-tooltip="Click to edit section">
+					<div id="production" class="col s4 hoverable tooltipped"
+						data-position="top" data-delay="200"
+						data-tooltip="Click to edit section">
 						<div class="center promo">
 							<i class="material-icons cyan-text">camera_roll</i>
 							<p class="promo-caption">Productions</p>
@@ -72,8 +73,9 @@
 							</p>
 						</div>
 					</div>
-					<div id="donation" class="col s4 hoverable tooltipped" data-position="top"
-						data-delay="200" data-tooltip="Click to edit section">
+					<div id="donation" class="col s4 hoverable tooltipped"
+						data-position="top" data-delay="200"
+						data-tooltip="Click to edit section">
 						<div class="center promo">
 							<i class="material-icons cyan-text">flash_on</i>
 							<p class="promo-caption">Donate</p>
@@ -100,26 +102,29 @@
 
 	<div id="editModal" class="modal modal-fixed-footer">
 		<form id="sectionEdit" action="/action/aboutChange" method="POST">
-
-			<div class="row">
-				<div class="input-field col s12">
-					<input value="" name="title" id="title" type="text"
-						class="validate" required> <label for="title">Section Header</label>
+			<div class="modal-content">
+				<div class="row">
+					<div class="input-field col s12">
+						<input value="" name="title" id="title" type="text"
+							class="validate" required> <label for="title">Section
+							Header</label>
+					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="input-field col s12">
-					<textarea name="content" id="sectionContentInput" class="materialize-textarea"
-						placeholder="Enter section content..." required>${member.bio}</textarea>
+				<div class="row">
+					<div class="input-field col s12">
+						<textarea name="content" id="sectionContentInput"
+							class="materialize-textarea"
+							placeholder="Enter section content..." required>${member.bio}</textarea>
+					</div>
 				</div>
-			</div>
 
-			<input type="hidden" name="sectionType" value="" />
-			<div class="modal-footer">
-				<button class="btn waves-effect waves-light" type="submit"
-					name="action">
-					Apply Edits <i class="material-icons right">add_box</i>
-				</button>
+				<input type="hidden" name="sectionType" value="" />
+				<div class="modal-footer">
+					<button class="btn waves-effect waves-light" type="submit"
+						name="action">
+						Apply Edits <i class="material-icons right">add_box</i>
+					</button>
+				</div>
 			</div>
 		</form>
 	</div>
