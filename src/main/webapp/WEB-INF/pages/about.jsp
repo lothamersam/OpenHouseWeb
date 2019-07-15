@@ -46,6 +46,8 @@
 							<p class="promo-caption">Audtion</p>
 							<p class="light center">
 								${auditionSection.sectionContent}
+							</p>
+							<p>
 							  	<a href="/audtions" class="waves-effect waves-teal btn-flat">See Auditions</a>
 							</p>
 						</div>
@@ -56,6 +58,8 @@
 							<p class="promo-caption">Productions</p>
 							<p class="light center">
 								${productionSection.sectionContent}
+							</p>
+							<p>
 							  	<a href="/upcoming" class="waves-effect waves-teal btn-flat">See Productions</a>
 							</p>
 						</div>
@@ -66,7 +70,9 @@
 							<p class="promo-caption">Donate</p>
 							<p class="light center">
 								${donateSection.sectionContent}
-								<a href="/donate" class="waves-effect waves-teal btn-flat">Make Donations</a>
+							</p>
+							<p>
+								<a href="/donate" class="waves-effect waves-teal btn-flat">Make a Donation</a>
 							</p>
 						</div>
 					</div>
