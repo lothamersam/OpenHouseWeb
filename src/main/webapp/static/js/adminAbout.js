@@ -1,3 +1,3 @@
-$("div").click(function(){
-	$("#sectionContentInput").val(this.find("#sectionContent:first").val())
+$("div").click(function(event){
+	$("#sectionContentInput").val(event.target.find("#sectionContent:first").val())
 });
