@@ -104,14 +104,13 @@
 			<div class="row">
 				<div class="input-field col s12">
 					<input value="" name="title" id="title" type="text"
-						class="validate" required> <label for="title">Job
-						Title</label>
+						class="validate" required> <label for="title">Section Header</label>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s12">
 					<textarea name="content" id="sectionContentInput" class="materialize-textarea"
-						placeholder="Enter staff bio..." required>${member.bio}</textarea>
+						placeholder="Enter section content..." required>${member.bio}</textarea>
 				</div>
 			</div>
 
