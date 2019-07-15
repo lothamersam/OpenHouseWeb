@@ -52,7 +52,7 @@
 						data-tooltip="Click to edit section">
 						<div class="center promo">
 							<i class="material-icons cyan-text">recent_actors</i>
-							<p class="promo-caption">Audtion</p>
+							<p id="sectionHeader" class="promo-caption">Audtion</p>
 							<p id="sectionContent" class="light center">${auditionSection.sectionContent}</p>
 							<p>
 								<a href="/audtions" class="waves-effect waves-teal btn-flat">See
@@ -65,7 +65,7 @@
 						data-tooltip="Click to edit section">
 						<div class="center promo">
 							<i class="material-icons cyan-text">camera_roll</i>
-							<p class="promo-caption">Productions</p>
+							<p id="sectionHeader" class="promo-caption">Productions</p>
 							<p id="sectionContent" class="light center">${productionSection.sectionContent}</p>
 							<p>
 								<a href="/upcoming" class="waves-effect waves-teal btn-flat">See
@@ -78,7 +78,7 @@
 						data-tooltip="Click to edit section">
 						<div class="center promo">
 							<i class="material-icons cyan-text">flash_on</i>
-							<p class="promo-caption">Donate</p>
+							<p id="sectionHeader" class="promo-caption">Donate</p>
 							<p id="sectionContent" class="light center">${donateSection.sectionContent}</p>
 							<p>
 								<a href="/donate" class="waves-effect waves-teal btn-flat">Make
@@ -105,20 +105,13 @@
 			<div class="modal-content">
 				<div class="row">
 					<div class="input-field col s12">
-						<input value="" name="title" id="title" type="text"
-							class="validate" required> <label for="title">Section
-							Header</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
 						<textarea name="content" id="sectionContentInput"
 							class="materialize-textarea"
 							placeholder="Enter section content..." required>${member.bio}</textarea>
 					</div>
 				</div>
 			</div>
-			<input type="hidden" name="sectionType" value="" />
+			<input id="sectionType" type="hidden" name="sectionType" value="" />
 			<div class="modal-footer">
 				<button class="btn waves-effect waves-light" type="submit"
 					name="action">
