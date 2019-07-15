@@ -1,6 +1,5 @@
 package com.openhouse.admin.controllers.actions;
 
-import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -18,7 +17,7 @@ public class DoAboutChangeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     private final ParameterService parameterService = ServiceFactory.getParameterService();
-    private final AboutDao aboutDao = DaoFactory.getStaffDao();
+    private final AboutDao aboutDao = DaoFactory.getAboutDao();
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	AboutSectionTO aboutSection = this.parameterService.getAboutSectionFromRequest(request);
