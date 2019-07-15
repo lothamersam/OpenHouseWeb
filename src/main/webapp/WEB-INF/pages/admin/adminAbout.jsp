@@ -15,20 +15,26 @@
 				src="/static/img/logo.png" alt="Open House Logo"
 				title="Open House Theatre Company" />
 
-			<div id="introduction" class="card section scrollspy hoverable tooltipped" 
-						data-position="top" data-delay="200" data-tooltip="Click to edit section">
+			<div id="introduction"
+				class="card section scrollspy hoverable tooltipped"
+				data-position="top" data-delay="200"
+				data-tooltip="Click to edit section">
 				<div class="card-content">
 					<span class="card-title">About Our Organization</span>
 
-					${aboutSection.sectionContent}
+					<span id="sectionContent">${aboutSection.sectionContent}</span>
 				</div>
 			</div>
 
 			<div class="row">
-				<div id="location" class="section scrollspy col s4 hoverable tooltipped" 
-						data-position="bottom" data-delay="200" data-tooltip="Click to edit section">
-					<h5 class="center-align"><i class="material-icons cyan-text">location_on</i>Our Location</h5>
-					${addressSection.sectionContent}
+				<div id="location"
+					class="section scrollspy col s4 hoverable tooltipped"
+					data-position="bottom" data-delay="200"
+					data-tooltip="Click to edit section">
+					<h5 class="center-align">
+						<i class="material-icons cyan-text">location_on</i>Our Location
+					</h5>
+					<span id="sectionContent">${addressSection.sectionContent}</span>
 				</div>
 				<div class="col s8">
 					<iframe width="100%" height="50%" frameborder="0" style="border: 0"
@@ -42,49 +48,46 @@
 				<h4 class="center-align">Get Involved</h4>
 
 				<div class="row">
-					<div class="col s4 hoverable tooltipped" 
-						data-position="top" data-delay="200" data-tooltip="Click to edit section">
+					<div class="col s4 hoverable tooltipped" data-position="top"
+						data-delay="200" data-tooltip="Click to edit section">
 						<div class="center promo">
 							<i class="material-icons cyan-text">recent_actors</i>
 							<p class="promo-caption">Audtion</p>
-							<p class="light center">
-								${auditionSection.sectionContent}
-							</p>
+							<p id="sectionContent" class="light center">${auditionSection.sectionContent}</p>
 							<p>
-							  	<a href="/audtions" class="waves-effect waves-teal btn-flat">See Auditions</a>
+								<a href="/audtions" class="waves-effect waves-teal btn-flat">See
+									Auditions</a>
 							</p>
 						</div>
 					</div>
-					<div class="col s4 hoverable tooltipped" 
-						data-position="top" data-delay="200" data-tooltip="Click to edit section">
+					<div class="col s4 hoverable tooltipped" data-position="top"
+						data-delay="200" data-tooltip="Click to edit section">
 						<div class="center promo">
 							<i class="material-icons cyan-text">camera_roll</i>
 							<p class="promo-caption">Productions</p>
-							<p class="light center">
-								${productionSection.sectionContent}
-							</p>
+							<p id="sectionContent" class="light center">${productionSection.sectionContent}</p>
 							<p>
-							  	<a href="/upcoming" class="waves-effect waves-teal btn-flat">See Productions</a>
+								<a href="/upcoming" class="waves-effect waves-teal btn-flat">See
+									Productions</a>
 							</p>
 						</div>
 					</div>
-					<div class="col s4 hoverable tooltipped" 
-						data-position="top" data-delay="200" data-tooltip="Click to edit section">
+					<div class="col s4 hoverable tooltipped" data-position="top"
+						data-delay="200" data-tooltip="Click to edit section">
 						<div class="center promo">
 							<i class="material-icons cyan-text">flash_on</i>
 							<p class="promo-caption">Donate</p>
-							<p class="light center">
-								${donateSection.sectionContent}
-							</p>
+							<p id="sectionContent" class="light center">${donateSection.sectionContent}</p>
 							<p>
-								<a href="/donate" class="waves-effect waves-teal btn-flat">Make a Donation</a>
+								<a href="/donate" class="waves-effect waves-teal btn-flat">Make
+									a Donation</a>
 							</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="col hide-on-small-only m3 l2">
 			<ul class="section table-of-contents">
 				<li><a href="#introduction">About Us</a></li>
@@ -95,7 +98,35 @@
 	</div>
 	</main>
 
+	<div id="editModal" class="modal modal-fixed-footer">
+		<form id="sectionEdit" action="/action/aboutChange" method="POST">
+
+			<div class="row">
+				<div class="input-field col s12">
+					<input value="" name="title" id="title" type="text"
+						class="validate" required> <label for="title">Job
+						Title</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+					<textarea name="content" id="sectionContentInput" class="materialize-textarea"
+						placeholder="Enter staff bio..." required>${member.bio}</textarea>
+				</div>
+			</div>
+
+			<input type="hidden" name="sectionType" value="" />
+			<div class="modal-footer">
+				<button class="btn waves-effect waves-light" type="submit"
+					name="action">
+					Apply Edits <i class="material-icons right">add_box</i>
+				</button>
+			</div>
+		</form>
+	</div>
+
 	<script src="/static/js/standardPage.js"></script>
+	<script src="/static/js/adminAbout.js"></script>
 
 	<tags:footer />
 </body>
