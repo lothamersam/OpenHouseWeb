@@ -27,7 +27,7 @@
 
 			<div class="row">
 				<div id="location"
-					class="section scrollspy col s4 hoverable tooltipped"
+					class="section scrollspy col l4 m12S hoverable tooltipped"
 					data-position="bottom" data-delay="200"
 					data-tooltip="Click to edit section">
 					<h5 class="center-align">
@@ -35,7 +35,7 @@
 					</h5>
 					<span id="sectionContent">${addressSection.sectionContent}</span>
 				</div>
-				<div class="col s8">
+				<div class="col l8 m12">
 					<iframe width="100%" height="50%" frameborder="0" style="border: 0"
 						src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJoWECiUZ1F4gRTAgu-YkgCCQ&key=${googleApiKey}"
 						allowfullscreen></iframe>
@@ -47,7 +47,7 @@
 				<h4 class="center-align">Get Involved</h4>
 
 				<div class="row">
-					<div id="audition" class="col s4 hoverable tooltipped"
+					<div id="audition" class="col l4 m12 s12 hoverable tooltipped"
 						data-position="top" data-delay="200"
 						data-tooltip="Click to edit section">
 						<div class="center promo">
@@ -60,7 +60,7 @@
 							</p>
 						</div>
 					</div>
-					<div id="production" class="col s4 hoverable tooltipped"
+					<div id="production" class="col l4 m12 s12 hoverable tooltipped"
 						data-position="top" data-delay="200"
 						data-tooltip="Click to edit section">
 						<div class="center promo">
@@ -73,7 +73,7 @@
 							</p>
 						</div>
 					</div>
-					<div id="donation" class="col s4 hoverable tooltipped"
+					<div id="donation" class="col l4 m12 s12 hoverable tooltipped"
 						data-position="top" data-delay="200"
 						data-tooltip="Click to edit section">
 						<div class="center promo">
