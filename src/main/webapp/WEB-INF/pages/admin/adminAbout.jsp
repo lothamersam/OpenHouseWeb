@@ -100,34 +100,51 @@
 	</div>
 	</main>
 
-	<div id="editModal" class="modal modal-fixed-footer">
-		<form id="sectionEdit" action="/action/aboutChange" method="POST">
-			<div class="modal-content">
-				<div class="row">
-					<div class="input-field col s12">
-						<input value="" name="title" id="title" type="text"
-							class="validate" required> <label for="title">Section
-							Header</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
-						<textarea name="content" id="sectionContentInput"
-							class="materialize-textarea"
-							placeholder="Enter section content..." required>${member.bio}</textarea>
-					</div>
-				</div>
-
-				<input type="hidden" name="sectionType" value="" />
-				<div class="modal-footer">
-					<button class="btn waves-effect waves-light" type="submit"
-						name="action">
-						Apply Edits <i class="material-icons right">add_box</i>
-					</button>
-				</div>
-			</div>
-		</form>
-	</div>
+	<div id="newMemberModal" class="modal modal-fixed-footer">
+        <form action="/action/staffChange" method="POST" enctype="multipart/form-data">
+            <div class="modal-content">
+                <div class="row">
+                    <div class="file-field input-field">
+                        <div class="btn">
+                            <span>Profile Picture</span>
+                            <input type="file" name="picture">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input name="firstName" id="first_name" type="text" class="validate" required>
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input name="lastName" id="last_name" type="text" class="validate" required>
+                        <label for="last_name">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input name="title" id="title" type="text" class="validate" required>
+                        <label for="title">Job Title</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea name="bio" id="bioTextArea" class="materialize-textarea" placeholder="Enter staff bio..."
+                            required></textarea>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" name="action" value="add" />
+            <div class="modal-footer">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Add Staff Member
+                    <i class="material-icons right">add_box</i>
+                </button>
+            </div>
+        </form>
+    </div>
 
 	<script src="/static/js/standardPage.js"></script>
 	<script src="/static/js/adminAbout.js"></script>
