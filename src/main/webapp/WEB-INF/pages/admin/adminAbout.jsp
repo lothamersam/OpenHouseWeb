@@ -15,7 +15,8 @@
 				src="/static/img/logo.png" alt="Open House Logo"
 				title="Open House Theatre Company" />
 
-			<div id="introduction" class="card section scrollspy">
+			<div id="introduction" class="card section scrollspy hoverable tooltipped" 
+						data-position="top" data-delay="50" data-tooltip="Click to edit section">
 				<div class="card-content">
 					<span class="card-title">About Our Organization</span>
 
@@ -24,7 +25,8 @@
 			</div>
 
 			<div class="row">
-				<div id="location" class="section scrollspy col s4">
+				<div id="location" class="section scrollspy col s4 hoverable tooltipped" 
+						data-position="top" data-delay="50" data-tooltip="Click to edit section">
 					<h5 class="center-align"><i class="material-icons cyan-text">location_on</i>Our Location</h5>
 					${addressSection.sectionContent}
 				</div>
@@ -41,7 +43,7 @@
 
 				<div class="row">
 					<div class="col s4 hoverable tooltipped" 
-						data-position="bottom" data-delay="50" data-tooltip="Click to edit section">
+						data-position="top" data-delay="50" data-tooltip="Click to edit section">
 						<div class="center promo">
 							<i class="material-icons cyan-text">recent_actors</i>
 							<p class="promo-caption">Audtion</p>
@@ -53,7 +55,8 @@
 							</p>
 						</div>
 					</div>
-					<div class="col s4">
+					<div class="col s4 hoverable tooltipped" 
+						data-position="top" data-delay="50" data-tooltip="Click to edit section">
 						<div class="center promo">
 							<i class="material-icons cyan-text">camera_roll</i>
 							<p class="promo-caption">Productions</p>
@@ -65,7 +68,8 @@
 							</p>
 						</div>
 					</div>
-					<div class="col s4">
+					<div class="col s4 hoverable tooltipped" 
+						data-position="top" data-delay="50" data-tooltip="Click to edit section">
 						<div class="center promo">
 							<i class="material-icons cyan-text">flash_on</i>
 							<p class="promo-caption">Donate</p>
