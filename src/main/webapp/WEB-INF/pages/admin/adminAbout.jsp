@@ -7,7 +7,7 @@
 <tags:meta title="Home" />
 
 <body>
-	<main> <tags:header />
+	<main> <tags:adminHeader />
 
 	<div class="container row top-row">
 		<div class="col s12 m9 l10">
