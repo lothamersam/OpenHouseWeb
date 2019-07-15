@@ -43,6 +43,11 @@ public class AboutDao {
 			statement.setString(2, aboutSection.getAdditionalProperties());
 			statement.setString(3, aboutSection.getSectionType());
 			
+			System.out.println(aboutSection.getSectionContent());
+			System.out.println(aboutSection.getAdditionalProperties());
+			System.out.println(aboutSection.getSectionType());
+
+			
 			return statement.executeUpdate() > 0;
 		} catch (SQLException | URISyntaxException e) {
 			System.out.println("There was an error when querying the database! " + e.getMessage());
