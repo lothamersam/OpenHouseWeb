@@ -126,6 +126,7 @@ public final class ParameterService {
 			aboutSection.setSectionContent(request.getParameter("content"));
 			aboutSection.setSectionType(AboutSectionType
 					.getTypeFromKey(request.getParameter("sectionType")));
+			aboutSection.setAdditionalProperties("");
 		}
 
 		

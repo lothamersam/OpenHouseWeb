@@ -115,7 +115,7 @@
 			<div class="modal-footer">
 				<button class="btn waves-effect waves-light" type="submit"
 					name="action">
-					Add Staff Member <i class="material-icons right">add_box</i>
+					Apply Edits<i class="material-icons right">add_box</i>
 				</button>
 			</div>
 		</form>
