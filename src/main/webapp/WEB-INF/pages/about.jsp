@@ -43,7 +43,7 @@
 					<div class="col l4 m12">
 						<div class="center promo">
 							<i class="material-icons cyan-text">recent_actors</i>
-							<p class="promo-caption">Audtion</p>
+							<p class="promo-caption">Audition</p>
 							<p class="light center">
 								${auditionSection.sectionContent}
 							</p>

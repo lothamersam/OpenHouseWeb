@@ -52,7 +52,7 @@
 						data-tooltip="Click to edit section">
 						<div class="center promo">
 							<i class="material-icons cyan-text">recent_actors</i>
-							<p id="sectionHeader" class="promo-caption">Audtion</p>
+							<p id="sectionHeader" class="promo-caption">Audition</p>
 							<p id="sectionContent" class="light center">${auditionSection.sectionContent}</p>
 							<p>
 								<a href="/audtions" class="waves-effect waves-teal btn-flat">See
