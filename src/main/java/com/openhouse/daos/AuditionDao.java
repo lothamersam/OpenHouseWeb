@@ -8,6 +8,7 @@ import java.util.List;
 
 import com.openhouse.beans.AuditionDateTO;
 import com.openhouse.beans.PageSectionTO;
+import com.openhouse.beans.SignupInformationTO;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -37,6 +38,19 @@ public class AuditionDao {
 		} 
 		
 		return aboutSection;	
+	}
+	
+	
+	public List<SignupInformationTO> getAuditionSignups() {
+		final List<SignupInformationTO> signupList = new ArrayList<>(); 
+		
+		return signupList;
+	}
+	
+	public boolean addAuditionSignup(final SignupInformationTO signupInformation) {
+		
+		
+		return false;
 	}
 	
 	public boolean editAuditionSection(final PageSectionTO pageSection) {
