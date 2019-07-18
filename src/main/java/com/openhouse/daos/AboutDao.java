@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import com.openhouse.beans.AboutSectionTO;
+import com.openhouse.beans.PageSectionTO;
 import com.openhouse.services.enums.AboutSectionType;
 
 public class AboutDao {
@@ -14,8 +14,8 @@ public class AboutDao {
 	
 	private static final String EDIT_ABOUT_SECTION = "UPDATE oh_about SET content = ?, additional_properties = ? WHERE attribute_name = ?";
 	
-	public AboutSectionTO getAboutSection(final AboutSectionType sectionType) {
-		final AboutSectionTO aboutSection = new AboutSectionTO();
+	public PageSectionTO getAboutSection(final AboutSectionType sectionType) {
+		final PageSectionTO aboutSection = new PageSectionTO();
 		
 		try (final Connection connection = DatabaseConnection.getConnection()) {
 			final PreparedStatement statement = connection.prepareStatement(GET_ABOUT_SECTION);
@@ -35,7 +35,7 @@ public class AboutDao {
 		return aboutSection;	
 	}
 	
-	public boolean editAboutSection(final AboutSectionTO aboutSection) {
+	public boolean editAboutSection(final PageSectionTO aboutSection) {
 		try (final Connection connection = DatabaseConnection.getConnection()) {
 			PreparedStatement statement = connection.prepareStatement(EDIT_ABOUT_SECTION);
 			

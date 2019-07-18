@@ -2,6 +2,7 @@
 package com.openhouse.factory;
 
 import com.openhouse.daos.AboutDao;
+import com.openhouse.daos.AuditionDao;
 import com.openhouse.daos.StaffDao;
 
 public final class DaoFactory {
@@ -14,6 +15,14 @@ public final class DaoFactory {
         return ABOUT_DAO_WRAPPER.aboutDao;
     } 
 
+    public static final AuditionDao getAuditionDao() {
+        return AUDITION_DAO_WRAPPER.auditionDao;
+    } 
+
+    private static final class AUDITION_DAO_WRAPPER {
+        private static AuditionDao auditionDao = new AuditionDao();
+    }
+    
     private static final class ABOUT_DAO_WRAPPER {
         private static AboutDao aboutDao = new AboutDao();
     }

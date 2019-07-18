@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.openhouse.beans.AboutSectionTO;
+import com.openhouse.beans.PageSectionTO;
 import com.openhouse.daos.AboutDao;
 import com.openhouse.factory.DaoFactory;
 import com.openhouse.factory.ServiceFactory;
@@ -22,7 +22,7 @@ public class DoAboutChangeController extends HttpServlet {
     private final AboutDao aboutDao = DaoFactory.getAboutDao();
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	AboutSectionTO aboutSection = this.parameterService.getAboutSectionFromRequest(request);
+    	PageSectionTO aboutSection = this.parameterService.getAboutSectionFromRequest(request);
 
         boolean status = this.aboutDao.editAboutSection(aboutSection);
 

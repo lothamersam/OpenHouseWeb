@@ -1,6 +1,6 @@
 package com.openhouse.beans;
 
-public class AboutSectionTO {
+public class PageSectionTO {
 	private String sectionType;
 	private String sectionContent;
 	private String additionalProperties;
