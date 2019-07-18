@@ -15,7 +15,7 @@
 			<div id="date" class="row section scrollspy">
 				<h5>Available Audition Dates:</h5>
 				<c:forEach items="${auditionDates}" var="date">
-					<p>${date}</p>
+					<h6>${date}</h6>
 				</c:forEach>
 			</div>
 
