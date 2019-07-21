@@ -51,7 +51,6 @@
 				<h4>Sign up to audition:</h4>
 
 				<form action="/action/audition" method="POST">
-
 					<div class="row">
 						<div class="row">
 							<div class="input-field col s6">
@@ -60,8 +59,9 @@
 									Name</label>
 							</div>
 							<div class="input-field col s6">
-								<input name="last_name" id="last_name" type="text" class="validate"> <label
-									for="last_name">Last Name</label>
+								<input name="last_name" id="last_name" type="text"
+									class="validate"> <label for="last_name">Last
+									Name</label>
 							</div>
 						</div>
 						<div class="row">
@@ -77,18 +77,27 @@
 								<select name="date" required>
 									<option value="" disabled selected>Choose a date</option>
 									<c:forEach items="${auditionDates}" var="date">
-										<option value="${date.id}">${date.date}, ${date.time}</option>
+										<option value="${date.id}">${date.date},${date.time}</option>
 									</c:forEach>
 								</select> <label>Preferred Audition Date</label>
 							</div>
 						</div>
 						<div class="row">
 							<div class="input-field col s12">
-								<input name="email" id="email" type="email" class="validate"> <label
-									for="email">Email</label>
+								<input name="email" id="email" type="email" class="validate">
+								<label for="email">Email</label>
 							</div>
 						</div>
 					</div>
+					
+					<button class="btn waves-effect waves-light cyan" type="submit"
+						name="action">
+						Submit <i class="material-icons right">send</i>
+					</button>
+					<button class="btn-flat waves-effect waves-cyan" type="reset"
+						name="reset">
+						Reset <i class="material-icons right">refresh</i>
+					</button>
 				</form>
 			</div>
 		</div>
