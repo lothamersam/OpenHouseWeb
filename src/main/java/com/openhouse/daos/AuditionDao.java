@@ -34,6 +34,7 @@ public class AuditionDao {
 			final ResultSet results = statement.executeQuery();
 			if (results.next()) {
 				auditionSection.setSectionType(pageSectionName);
+				auditionSection.setSectionContent(results.getString(1));
 			}
 		} catch (SQLException | URISyntaxException e) {
 			System.out.println("There was an error when querying the database! " + e.getMessage());
