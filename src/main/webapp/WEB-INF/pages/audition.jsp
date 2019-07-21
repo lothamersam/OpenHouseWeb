@@ -41,7 +41,7 @@
 					<div class="card-content">
 						<span class="card-title">Audition Information:</span>
 
-						${auditionInformation.content}
+						${auditionInformation.sectionContent}
 					</div>
 				</div>
 			</div>
