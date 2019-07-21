@@ -67,16 +67,15 @@
 						<div class="row">
 							<div class="input-field col s6">
 								<select name="pronoun" required>
-									<option value="" disabled selected>Choose category</option>
+									<option value="" disabled selected>Choose pronoun</option>
 									<option value="he">He/Him/His</option>
 									<option value="she">She/Her/Hers</option>
 									<option value="they">They/them/Theirs</option>
 								</select> <label>Preferred Pronouns</label>
 							</div>
-						</div>
-						<div class="row">
 							<div class="input-field col s6">
 								<select name="date" required>
+									<option value="" disabled selected>Choose a date</option>
 									<c:forEach items="${auditionDates}" var="date">
 										<option value="${date.id}">${date.date}, ${date.time}</option>
 									</c:forEach>
