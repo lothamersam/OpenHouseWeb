@@ -14,9 +14,26 @@
 		<div class="col s12 m9 l10">
 			<div id="date" class="row section scrollspy">
 				<h5>Available Audition Dates:</h5>
-				<c:forEach items="${auditionDates}" var="date">
-					<h6>${date}</h6>
-				</c:forEach>
+				<table>
+					<thead>
+						<tr>
+							<th>Date</th>
+							<th>Time</th>
+							<th>Location</th>
+							<th>Additional Information</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${auditionDates}" var="date">
+							<tr>
+								<td>${date.date}</td>
+								<td>${date.time}</td>
+								<td>${date.location}</td>
+								<td>${date.information}</td>
+							</tr>			
+						</c:forEach>
+					</tbody>
+				</table>
 			</div>
 
 			<div class="row">

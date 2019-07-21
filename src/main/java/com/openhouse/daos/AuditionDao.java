@@ -17,27 +17,29 @@ import java.sql.ResultSet;
 public class AuditionDao {
 	private static final String GET_AUDITION_SECTION = "SELECT content, additional_properties FROM oh_audition WHERE attribute_name = ? LIMIT 1";
 	private static final String EDIT_AUDITION_SECTION = "UPDATE oh_audition SET content = ?, additional_properties = ? WHERE attribute_name = ?";
-	private static final String GET_AUDITION_DATES = "SELECT id, date, location, time, information FROM oh_dates";
+	private static final String GET_AUDITION_DATES = "SELECT id, date, time, location, information FROM oh_dates";
 	private static final String ADD_AUDITION_DATE = "INSERT INTO oh_dates (date, location, time, information) VALUES (?, ?, ?, ?)";
 	private static final String EDIT_AUDITION_DATE = "UPDATE oh_dates SET date = ?, location = ?, time = ?, information = ? WHERE id = ?";
 	
 	
 	public PageSectionTO getAuditionSection() {
-		final PageSectionTO aboutSection = new PageSectionTO();
+		final String pageSectionName = "auditionInformation";
+		final PageSectionTO auditionSection = new PageSectionTO();
 		
 		try (final Connection connection = DatabaseConnection.getConnection()) {
 			final PreparedStatement statement = connection.prepareStatement(GET_AUDITION_SECTION);
 			
+			statement.setString(1, pageSectionName);
 			
 			final ResultSet results = statement.executeQuery();
 			if (results.next()) {
-								
+				auditionSection.setSectionType(pageSectionName);
 			}
 		} catch (SQLException | URISyntaxException e) {
 			System.out.println("There was an error when querying the database! " + e.getMessage());
 		} 
 		
-		return aboutSection;	
+		return auditionSection;	
 	}
 	
 	
@@ -75,8 +77,13 @@ public class AuditionDao {
 			
 			
 			final ResultSet results = statement.executeQuery();
-			if (results.next()) {
-								
+			while (results.next()) {
+				datesList.add(new AuditionDateTO(
+						results.getInt(1),
+						results.getString(2),
+						results.getString(3),
+						results.getString(4),
+						results.getString(5)));			
 			}
 		} catch (SQLException | URISyntaxException e) {
 			System.out.println("There was an error when querying the database! " + e.getMessage());
