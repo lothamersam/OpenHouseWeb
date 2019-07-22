@@ -17,7 +17,7 @@ import com.openhouse.services.ImageService;
 import com.openhouse.services.ParameterService;
 import com.openhouse.beans.StaffMemberTO;
 
-@WebServlet("/action/staffChange")
+@WebServlet("/action/admin/staffChange")
 @MultipartConfig
 public class DoStaffChangeController extends HttpServlet {
     private static final long serialVersionUID = 1L;

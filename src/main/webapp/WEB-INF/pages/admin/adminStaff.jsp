@@ -23,7 +23,7 @@
                         <img src="${member.imagePath}" class="circle responsive-img">
                         <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger tooltipped"
                             id="deleteStaff" data-position="bottom" data-delay="50" data-tooltip="Delete this staff member"
-                            href="/action/staffChange?action=edit&id=${member.id}&public=${member.imagePublicId}"><i class="material-icons">delete</i></a>
+                            href="/action/admin/staffChange?action=edit&id=${member.id}&public=${member.imagePublicId}"><i class="material-icons">delete</i></a>
                     </div>
                     <div class="card-content">
                         <span class="card-title"><strong>${member.firstName} ${member.lastName}</strong></span>
@@ -39,7 +39,7 @@
 
     <c:forEach items="${staffMembers}" var="member">
         <div id="${member.firstName}" class="modal modal-fixed-footer">
-            <form action="/action/staffChange" method="POST" enctype="multipart/form-data">
+            <form action="/action/admin/staffChange" method="POST" enctype="multipart/form-data">
                 <div class="modal-content">
                     <div class="row">
                         <div class="file-field input-field">
@@ -89,7 +89,7 @@
     </c:forEach>
 
     <div id="newMemberModal" class="modal modal-fixed-footer">
-        <form action="/action/staffChange" method="POST" enctype="multipart/form-data">
+        <form action="/action/admin/staffChange" method="POST" enctype="multipart/form-data">
             <div class="modal-content">
                 <div class="row">
                     <div class="file-field input-field">

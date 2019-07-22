@@ -17,9 +17,11 @@ import java.sql.ResultSet;
 public class AuditionDao extends BasicPageDao {
 	private static final String GET_SIGNUPS = "SELECT first_name, last_name, pronouns, date, email, id FROM oh_audition";
 	private static final String ADD_SIGNUP = "INSERT INTO oh_audition (first_name, last_name, email, pronouns, date) VALUES (?, ?, ?, ?, ?)";
+	private static final String DELETE_SIGNUP = "DELETE FROM oh_audition WHERE id = ?";
 	private static final String GET_AUDITION_DATES = "SELECT id, date, time, location, information FROM oh_dates";
 	private static final String ADD_AUDITION_DATE = "INSERT INTO oh_dates (date, location, time, information) VALUES (?, ?, ?, ?)";
 	private static final String EDIT_AUDITION_DATE = "UPDATE oh_dates SET date = ?, time = ?, location = ?, information = ? WHERE id = ?";	
+	private static final String DELETE_AUDITION_DATE = "DELETE FROM oh_dates WHERE id = ?";	
 	
 	public List<SignupInformationTO> getAuditionSignups() {
 		final List<SignupInformationTO> signupList = new ArrayList<>(); 
@@ -53,6 +55,22 @@ public class AuditionDao extends BasicPageDao {
 			statement.setString(3, signupInformation.getEmail());
 			statement.setString(4, signupInformation.getPronouns());
 			statement.setString(5, signupInformation.getDate());
+
+			if (statement.executeUpdate() > 0) {
+				return true;
+			}
+		} catch (URISyntaxException | SQLException e) {
+			System.out.println("There was an error when querying the database! " + e.getMessage());
+		} 
+		
+		return false;
+	}
+	
+	public boolean deleteAuditionSignup(int id) {
+		try (final Connection connection = DatabaseConnection.getConnection()) {
+			final PreparedStatement statement = connection.prepareStatement(DELETE_SIGNUP);
+
+			statement.setInt(1, id);
 
 			if (statement.executeUpdate() > 0) {
 				return true;
@@ -117,6 +135,22 @@ public class AuditionDao extends BasicPageDao {
 			
 			return statement.executeUpdate() > 0;
 		} catch (SQLException | URISyntaxException e) {
+			System.out.println("There was an error when querying the database! " + e.getMessage());
+		} 
+		
+		return false;
+	}
+	
+	public boolean deleteAuditionDate(int id) {
+		try (final Connection connection = DatabaseConnection.getConnection()) {
+			final PreparedStatement statement = connection.prepareStatement(DELETE_AUDITION_DATE);
+
+			statement.setInt(1, id);
+
+			if (statement.executeUpdate() > 0) {
+				return true;
+			}
+		} catch (URISyntaxException | SQLException e) {
 			System.out.println("There was an error when querying the database! " + e.getMessage());
 		} 
 		
