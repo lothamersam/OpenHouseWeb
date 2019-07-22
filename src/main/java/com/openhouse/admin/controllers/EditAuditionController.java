@@ -19,7 +19,8 @@ public class EditAuditionController extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		request.setAttribute("auditionDates", this.auditionDao.getAuditionDate());
-		request.setAttribute("auditionInformation", this.auditionDao.getPageSection(PageSectionType.AUDITION_SECTION));	
+		request.setAttribute("auditionInformation", 
+				this.auditionDao.getPageSection(PageSectionType.AUDITION_INFORMATION_SECTION));	
 		request.setAttribute("signupInformation", this.auditionDao.getAuditionSignups());
 		
 		request.getRequestDispatcher("/WEB-INF/pages/admin/adminAudition.jsp").forward(request, response);
