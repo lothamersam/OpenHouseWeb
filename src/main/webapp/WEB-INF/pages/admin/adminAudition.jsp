@@ -65,7 +65,7 @@
 								<td>${signup.lastName}, ${signup.firstName}</td>
 								<td>${signup.pronouns}</td>
 								<td>${signup.date}</td>
-								<td>${signup.information}</td>
+								<td>${signup.email}</td>
 								<td></td>
 							</tr>
 						</c:forEach>
