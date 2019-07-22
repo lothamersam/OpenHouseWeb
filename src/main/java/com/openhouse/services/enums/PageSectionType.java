@@ -1,16 +1,18 @@
 package com.openhouse.services.enums;
 
-public enum AboutSectionType {
+public enum PageSectionType {
 	ABOUT_SECTION("aboutSection", "introduction"),
 	ADDRESS_SECTION("addressSection", "location"),
 	AUDITION_SECTION("auditionSection", "audition"),
 	PRODUCTION_SECTION("productionSection", "production"),
-	DONATE_SECTION("donateSection", "donation");
+	DONATE_SECTION("donateSection", "donation"),
+	AUDITION_INFORMATION_SECTION("auditionInformation", ""),
+	CONTACT_SECTION("contactSection", "");
 
 	private String sectionType;
 	private String divKey;
 	
-	AboutSectionType(String sectionType, String divKey) {
+	PageSectionType(String sectionType, String divKey) {
 		this.sectionType = sectionType;
 		this.divKey = divKey;
 	}
@@ -24,7 +26,7 @@ public enum AboutSectionType {
 	}
 	
 	public static String getTypeFromKey(String key) {	
-		for(AboutSectionType type : AboutSectionType.values()) {
+		for(PageSectionType type : PageSectionType.values()) {
 			if(key.equals(type.getDivKey())) {
 				return type.getSectionType();
 			}

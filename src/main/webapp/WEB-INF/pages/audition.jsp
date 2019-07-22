@@ -50,7 +50,7 @@
 			<div id="signUp" class="row section scrollspy">
 				<h4>Sign up to audition:</h4>
 
-				<form action="/action/audition" method="POST">
+				<form id="auditionForm" action="/action/audition" method="POST">
 					<div class="row">
 						<div class="row">
 							<div class="input-field col s6">
@@ -113,6 +113,7 @@
 	</main>
 
 	<script src="/static/js/standardPage.js"></script>
+	<script src="/static/js/audition.js"></script>
 
 	<tags:footer />
 </body>

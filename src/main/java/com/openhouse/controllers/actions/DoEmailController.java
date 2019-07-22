@@ -24,6 +24,6 @@ public class DoEmailController extends HttpServlet {
             throws ServletException, IOException {
 
             response.getWriter().write(emailService.sendMail(
-                parameterService.getMailFromRequest(request)) ? "true" : "false");
+                parameterService.getContactMailFromRequest(request)) ? "true" : "false");
     }
 }

@@ -15,12 +15,7 @@
 					<div class="card">
 						<div class="card-content">
 							<span class="card-title">Contact Our Team</span>
-							<%-- Place for data base support --%>
-							Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum, non auctor magnis mollis
-							viverra cubilia pharetra donec, euismod parturient velit diam ultrices mi senectus. Metus
-							lacinia at potenti per est sagittis habitasse scelerisque et, mauris etiam cursus fermentum
-							suspendisse vivamus habitant pulvinar, sed sapien placerat aliquet sollicitudin lectus
-							dapibus elementum.
+							${contactSection.sectionContent}
 						</div>
 						<div class="card-content">
 							<div class="row">

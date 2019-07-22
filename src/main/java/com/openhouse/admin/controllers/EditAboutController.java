@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.openhouse.daos.AboutDao;
 import com.openhouse.factory.DaoFactory;
-import com.openhouse.services.enums.AboutSectionType;
+import com.openhouse.services.enums.PageSectionType;
 
 @WebServlet("/admin/about")
 public class EditAboutController extends HttpServlet {
@@ -25,7 +25,7 @@ public class EditAboutController extends HttpServlet {
 	}
 	
 	private void setRequestAttributes(HttpServletRequest request) {
-		for(AboutSectionType sectionType : AboutSectionType.values()) {
+		for(PageSectionType sectionType : PageSectionType.values()) {
 			request.setAttribute(sectionType.getSectionType(), aboutDao.getAboutSection(sectionType));
 		}
 		

@@ -7,14 +7,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import com.openhouse.beans.PageSectionTO;
-import com.openhouse.services.enums.AboutSectionType;
+import com.openhouse.services.enums.PageSectionType;
 
 public class AboutDao {
 	private static final String GET_ABOUT_SECTION = "SELECT content, additional_properties FROM oh_about WHERE attribute_name = ? LIMIT 1";
 	
 	private static final String EDIT_ABOUT_SECTION = "UPDATE oh_about SET content = ?, additional_properties = ? WHERE attribute_name = ?";
 	
-	public PageSectionTO getAboutSection(final AboutSectionType sectionType) {
+	public PageSectionTO getAboutSection(final PageSectionType sectionType) {
 		final PageSectionTO aboutSection = new PageSectionTO();
 		
 		try (final Connection connection = DatabaseConnection.getConnection()) {

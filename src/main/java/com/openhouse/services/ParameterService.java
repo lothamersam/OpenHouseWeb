@@ -21,14 +21,15 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 
 import com.openhouse.beans.PageSectionTO;
+import com.openhouse.beans.SignupInformationTO;
 import com.openhouse.beans.StaffMemberTO;
-import com.openhouse.services.enums.AboutSectionType;
+import com.openhouse.services.enums.PageSectionType;
 import com.sendgrid.Content;
 
 public final class ParameterService {
     private static final String CONTACT_DIRECTOR = "Contact Director";
 
-    public Mail getMailFromRequest(final HttpServletRequest request) throws IllegalFormatException {
+    public Mail getContactMailFromRequest(final HttpServletRequest request) throws IllegalFormatException {
         final Mail mail = new Mail();
         
         final Personalization personalization = new Personalization();
@@ -64,6 +65,37 @@ public final class ParameterService {
             request.getParameter("category"), 
             request.getParameter("firstName"), 
             request.getParameter("lastName")));     
+
+        return mail;
+    }
+    
+    public Mail getSignupMailFromRequest(final HttpServletRequest request) throws IllegalFormatException {
+        final Mail mail = new Mail();
+        mail.setFrom(new Email("no-reply@openhousetheatre.com"));
+        
+        final Personalization personalization = new Personalization();
+        personalization.addTo(new Email(request.getParameter("email")));
+        
+        final Content content = new Content();
+        content.setType("text/html");
+
+        final StringBuilder messageBody = new StringBuilder();
+        messageBody.append(String.format("<h3>Audition Confirmation - %s %s</h3>", 
+                request.getParameter("first_name"), 
+                request.getParameter("last_name")));
+        
+        messageBody.append("<p> Dear %s, <br><br> This email is to confirm"
+        		+ "that you have scheduled an audition with the Open House Theatre Company on:"
+        		+ "<br><br> %s %s <br><br> We Look forward to seeing you then!</p>");
+
+        content.setValue(messageBody.toString());
+        mail.addContent(content);
+        
+        mail.addPersonalization(personalization);
+        mail.setFrom(new Email(request.getParameter("email")));
+        mail.setSubject(String.format("Audition Confirmation - %s %s",         
+            request.getParameter("first_name"), 
+            request.getParameter("last_name")));     
 
         return mail;
     }
@@ -124,12 +156,20 @@ public final class ParameterService {
 		if(StringUtils.isNotBlank(request.getParameter("content"))
 				&& StringUtils.isNotBlank(request.getParameter("sectionType"))){
 			aboutSection.setSectionContent(request.getParameter("content"));
-			aboutSection.setSectionType(AboutSectionType
+			aboutSection.setSectionType(PageSectionType
 					.getTypeFromKey(request.getParameter("sectionType")));
 			aboutSection.setAdditionalProperties("");
 		}
 
 		
 		return aboutSection;
+	}
+	
+	public SignupInformationTO getSignupInformationFromRequest(HttpServletRequest request) {
+		final SignupInformationTO signup = new SignupInformationTO();
+		
+		
+		
+		return signup;
 	}
 }
