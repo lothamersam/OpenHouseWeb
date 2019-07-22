@@ -7,6 +7,8 @@ public class SignupInformationTO {
 	private String date;
 	private String email;
 	
+	public SignupInformationTO() {}
+	
 	public SignupInformationTO(String firstName, String lastName, String pronouns, String date, String email) {
 		this.firstName = firstName;
 		this.lastName = lastName;

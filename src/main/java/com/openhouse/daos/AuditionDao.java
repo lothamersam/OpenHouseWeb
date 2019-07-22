@@ -15,7 +15,7 @@ import java.sql.ResultSet;
 
 
 public class AuditionDao extends BasicPageDao {
-	private static final String GET_SIGNUPS = "SELECT first_name, last_name, date, email, pronouns FROM oh_audition";
+	private static final String GET_SIGNUPS = "SELECT first_name, last_name, pronouns, date, email FROM oh_audition";
 	private static final String ADD_SIGNUP = "INSERT INTO oh_audition (first_name, last_name, email, pronouns, date) VALUES (?, ?, ?, ?, ?)";
 	private static final String GET_AUDITION_DATES = "SELECT id, date, time, location, information FROM oh_dates";
 	private static final String ADD_AUDITION_DATE = "INSERT INTO oh_dates (date, location, time, information) VALUES (?, ?, ?, ?)";
@@ -33,7 +33,7 @@ public class AuditionDao extends BasicPageDao {
 					results.getString(1),
 					results.getString(2), 
 					results.getString(3),
-					results.getString(5), 
+					results.getString(4), 
 					results.getString(5)));
 			}
 		} catch (URISyntaxException | SQLException e) {
