@@ -12,7 +12,7 @@
 
 	<div class="container row top-row">
 		<div class="col s12 m9 l10">
-			<div id="date" class="row section scrollspy">
+			<div id="dates" class="row section scrollspy">
 				<h5>Available Audition Dates:</h5>
 				<table>
 					<thead>
@@ -55,12 +55,12 @@
 						<div class="row">
 							<div class="input-field col s6">
 								<input name="first_name" id="first_name" type="text"
-									class="validate"> <label for="first_name">First
+									class="validate"> <label for="first_name" required>First
 									Name</label>
 							</div>
 							<div class="input-field col s6">
 								<input name="last_name" id="last_name" type="text"
-									class="validate"> <label for="last_name">Last
+									class="validate"> <label for="last_name" required>Last
 									Name</label>
 							</div>
 						</div>
@@ -84,7 +84,7 @@
 						</div>
 						<div class="row">
 							<div class="input-field col s12">
-								<input name="email" id="email" type="email" class="validate">
+								<input name="email" id="email" type="email" class="validate" required>
 								<label for="email">Email</label>
 							</div>
 						</div>
