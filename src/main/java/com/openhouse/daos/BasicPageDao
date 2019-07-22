@@ -2,7 +2,7 @@ private static final String GET_ABOUT_SECTION = "SELECT content, additional_prop
 	
 	private static final String EDIT_ABOUT_SECTION = "UPDATE oh_about SET content = ?, additional_properties = ? WHERE attribute_name = ?";
 	
-	public PageSectionTO getAboutSection(final AboutSectionType sectionType) {
+	public PageSectionTO getPageSection(final AboutSectionType sectionType) {
 		final PageSectionTO aboutSection = new PageSectionTO();
 		
 		try (final Connection connection = DatabaseConnection.getConnection()) {
@@ -23,7 +23,7 @@ private static final String GET_ABOUT_SECTION = "SELECT content, additional_prop
 		return aboutSection;	
 	}
 	
-	public boolean editAboutSection(final PageSectionTO aboutSection) {
+	public boolean editPageSection(final PageSectionTO aboutSection) {
 		try (final Connection connection = DatabaseConnection.getConnection()) {
 			PreparedStatement statement = connection.prepareStatement(EDIT_ABOUT_SECTION);
 			
