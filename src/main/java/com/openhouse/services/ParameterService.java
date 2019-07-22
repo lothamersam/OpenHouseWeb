@@ -153,7 +153,7 @@ public final class ParameterService {
         }
     }
 
-	public PageSectionTO getAboutSectionFromRequest(HttpServletRequest request) {
+	public PageSectionTO getPageSectionFromRequest(HttpServletRequest request) {
 		final PageSectionTO aboutSection = new PageSectionTO();
 		
 		if(StringUtils.isNotBlank(request.getParameter("content"))

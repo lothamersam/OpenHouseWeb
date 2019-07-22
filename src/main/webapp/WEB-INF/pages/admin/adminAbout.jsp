@@ -107,7 +107,7 @@
 					<div class="input-field col s12">
 						<textarea name="content" id="sectionContentInput"
 							class="materialize-textarea"
-							placeholder="Enter section content..." required>${member.bio}</textarea>
+							placeholder="Enter section content..." required></textarea>
 					</div>
 				</div>
 			</div>

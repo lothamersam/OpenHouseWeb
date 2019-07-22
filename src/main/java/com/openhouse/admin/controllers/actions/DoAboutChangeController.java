@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.openhouse.beans.PageSectionTO;
-import com.openhouse.daos.AboutDao;
+import com.openhouse.daos.BasicPageDao;
 import com.openhouse.factory.DaoFactory;
 import com.openhouse.factory.ServiceFactory;
 import com.openhouse.services.ParameterService;
@@ -19,12 +19,12 @@ public class DoAboutChangeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     private final ParameterService parameterService = ServiceFactory.getParameterService();
-    private final AboutDao aboutDao = DaoFactory.getAboutDao();
+    private final BasicPageDao aboutDao = DaoFactory.getPageDao();
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	PageSectionTO aboutSection = this.parameterService.getAboutSectionFromRequest(request);
+    	PageSectionTO aboutSection = this.parameterService.getPageSectionFromRequest(request);
 
-        boolean status = this.aboutDao.editAboutSection(aboutSection);
+        boolean status = this.aboutDao.editPageSection(aboutSection);
 
         if(status) {
             response.sendRedirect("/admin/about?success=Successfully performed update!");
