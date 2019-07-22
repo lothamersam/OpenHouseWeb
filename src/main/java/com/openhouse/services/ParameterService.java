@@ -88,7 +88,7 @@ public final class ParameterService {
         		+ "<br><br><strong>%s</strong><br><br> We Look forward to seeing you then!<br><br>"
         		+ "<em>This email has been sent from a no-reply address, "
         		+ "if you respond it will not be seen.</p>",
-        		request.getParameterValues("firstName"),
+        		request.getParameterValues("first_name"),
         		request.getParameter("date")));
 
         content.setValue(messageBody.toString());

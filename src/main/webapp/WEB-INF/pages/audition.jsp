@@ -77,7 +77,7 @@
 								<select name="date" required>
 									<option value="" disabled selected>Choose a date</option>
 									<c:forEach items="${auditionDates}" var="date">
-										<option value="${date.id}">${date.date},${date.time}</option>
+										<option value="${date.date},${date.time}">${date.date},${date.time}</option>
 									</c:forEach>
 								</select> <label>Preferred Audition Date</label>
 							</div>
