@@ -17,7 +17,7 @@ public class ContactController extends HttpServlet {
 	private final BasicPageDao pageDao = DaoFactory.getPageDao();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("auditionSection", this.pageDao.getPageSection(PageSectionType.CONTACT_SECTION));
+		request.setAttribute("contactSection", this.pageDao.getPageSection(PageSectionType.CONTACT_SECTION));
 		
 		request.getRequestDispatcher("/WEB-INF/pages/contact.jsp").forward(request, response);
 	}
