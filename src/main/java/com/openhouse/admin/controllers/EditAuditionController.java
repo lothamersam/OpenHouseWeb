@@ -12,7 +12,7 @@ import com.openhouse.daos.AuditionDao;
 import com.openhouse.factory.DaoFactory;
 import com.openhouse.services.enums.PageSectionType;
 
-@WebServlet("/actions/audition")
+@WebServlet("/admin/audition")
 public class EditAuditionController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final AuditionDao auditionDao = DaoFactory.getAuditionDao();

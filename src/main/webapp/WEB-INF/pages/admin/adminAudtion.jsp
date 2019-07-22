@@ -66,6 +66,7 @@
 								<td>${signup.pronouns}</td>
 								<td>${signup.date}</td>
 								<td>${signup.information}</td>
+								<td></td>
 							</tr>
 						</c:forEach>
 					</tbody>
