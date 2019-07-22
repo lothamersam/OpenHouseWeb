@@ -20,7 +20,7 @@
 							<th>Date</th>
 							<th>Time</th>
 							<th>Location</th>
-							<th>Additional Information</th>
+							<th>Information</th>
 						</tr>
 					</thead>
 					<tbody>
