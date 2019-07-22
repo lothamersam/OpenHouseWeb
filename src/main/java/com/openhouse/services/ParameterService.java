@@ -71,7 +71,6 @@ public final class ParameterService {
     
     public Mail getSignupMailFromRequest(final HttpServletRequest request) throws IllegalFormatException {
         final Mail mail = new Mail();
-        mail.setFrom(new Email("no-reply@openhousetheatre.com"));
         
         final Personalization personalization = new Personalization();
         personalization.addTo(new Email(request.getParameter("email")));
@@ -84,15 +83,19 @@ public final class ParameterService {
                 request.getParameter("first_name"), 
                 request.getParameter("last_name")));
         
-        messageBody.append("<p> Dear %s, <br><br> This email is to confirm"
+        messageBody.append(String.format("<p> Dear %s, <br><br> This email is to confirm <br>"
         		+ "that you have scheduled an audition with the Open House Theatre Company on:"
-        		+ "<br><br> %s %s <br><br> We Look forward to seeing you then!</p>");
+        		+ "<br><br><strong>%s</strong><br><br> We Look forward to seeing you then!<br><br>"
+        		+ "<em>This email has been sent from a no-reply address, "
+        		+ "if you respond it will not be seen.</p>",
+        		request.getParameterValues("firstName"),
+        		request.getParameter("date")));
 
         content.setValue(messageBody.toString());
         mail.addContent(content);
         
         mail.addPersonalization(personalization);
-        mail.setFrom(new Email(request.getParameter("email")));
+        mail.setFrom(new Email("no-reply@openhousetheatre.com"));
         mail.setSubject(String.format("Audition Confirmation - %s %s",         
             request.getParameter("first_name"), 
             request.getParameter("last_name")));     
@@ -168,7 +171,17 @@ public final class ParameterService {
 	public SignupInformationTO getSignupInformationFromRequest(HttpServletRequest request) {
 		final SignupInformationTO signup = new SignupInformationTO();
 		
-		
+		if(StringUtils.isNotBlank(request.getParameter("first_name"))
+				&& StringUtils.isNotBlank(request.getParameter("last_name"))
+				&& StringUtils.isNotBlank(request.getParameter("pronoun"))
+				&& StringUtils.isNotBlank(request.getParameter("date"))
+				&& StringUtils.isNotBlank(request.getParameter("email"))) {
+			signup.setFirstName(request.getParameter("first_name"));
+			signup.setLastName(request.getParameter("last_name"));
+			signup.setPronouns(request.getParameter("pronoun"));
+			signup.setDate(request.getParameter("date"));
+			signup.setEmail(request.getParameter("email"));
+		}
 		
 		return signup;
 	}
