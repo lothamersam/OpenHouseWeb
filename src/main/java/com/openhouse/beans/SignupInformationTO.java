@@ -1,6 +1,7 @@
 package com.openhouse.beans;
 
 public class SignupInformationTO {
+	private int id;
 	private String firstName;
 	private String lastName;
 	private String pronouns;
@@ -9,12 +10,27 @@ public class SignupInformationTO {
 	
 	public SignupInformationTO() {}
 	
-	public SignupInformationTO(String firstName, String lastName, String pronouns, String date, String email) {
+	public SignupInformationTO(int id, 
+			String firstName, 
+			String lastName, 
+			String pronouns, 
+			String date, 
+			String email) {
+		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.pronouns = pronouns;
 		this.date = date;
 		this.email = email;
+	}
+	
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getFirstName() {

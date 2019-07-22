@@ -30,6 +30,11 @@
 								<td>${date.time}</td>
 								<td>${date.location}</td>
 								<td>${date.information}</td>
+								<td>
+									<a href="/action/auditionChange?id=${date.id}&type=date" class="waves-effect waves-teal btn-flat">
+										<i class="material-icons">delete_forever</i>
+									</a>
+								</td>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -66,7 +71,11 @@
 								<td>${signup.pronouns}</td>
 								<td>${signup.date}</td>
 								<td>${signup.email}</td>
-								<td></td>
+								<td>
+									<a href="/action/auditionChange?id=${signup.id}&type=signup" class="waves-effect waves-teal btn-flat">
+										<i class="material-icons">delete_forever</i>
+									</a>
+								</td>
 							</tr>
 						</c:forEach>
 					</tbody>

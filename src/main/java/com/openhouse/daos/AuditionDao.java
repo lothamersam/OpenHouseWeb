@@ -15,7 +15,7 @@ import java.sql.ResultSet;
 
 
 public class AuditionDao extends BasicPageDao {
-	private static final String GET_SIGNUPS = "SELECT first_name, last_name, pronouns, date, email FROM oh_audition";
+	private static final String GET_SIGNUPS = "SELECT first_name, last_name, pronouns, date, email, id FROM oh_audition";
 	private static final String ADD_SIGNUP = "INSERT INTO oh_audition (first_name, last_name, email, pronouns, date) VALUES (?, ?, ?, ?, ?)";
 	private static final String GET_AUDITION_DATES = "SELECT id, date, time, location, information FROM oh_dates";
 	private static final String ADD_AUDITION_DATE = "INSERT INTO oh_dates (date, location, time, information) VALUES (?, ?, ?, ?)";
@@ -30,6 +30,7 @@ public class AuditionDao extends BasicPageDao {
 			
 			while(results.next()){
 				signupList.add(new SignupInformationTO(
+					results.getInt(6),
 					results.getString(1),
 					results.getString(2), 
 					results.getString(3),
