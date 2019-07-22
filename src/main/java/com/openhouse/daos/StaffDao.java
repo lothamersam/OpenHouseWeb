@@ -16,7 +16,7 @@ public class StaffDao {
 		"SELECT " 
 	+ 		"id, first_name, last_name, title, bio, image_path, image_public_id " 
 	+ 	"FROM " 
-	+ 		"oh_staff";
+	+ 		"oh_staff ORDER BY order_num ASC";
 
 	private static final String INSERT_NEW_STAFF = 
 		"INSERT INTO " 
