@@ -19,7 +19,7 @@ public class SignupInformationTO {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.pronouns = pronouns;
+		this.pronouns = pronouns.toUpperCase();
 		this.date = date;
 		this.email = email;
 	}
@@ -50,11 +50,11 @@ public class SignupInformationTO {
 	}
 	
 	public String getPronouns() {
-		return pronouns;
+		return pronouns.toUpperCase();
 	}
 	
 	public void setPronouns(String pronouns) {
-		this.pronouns = pronouns;
+		this.pronouns = pronouns.toUpperCase();
 	}
 	
 	public String getDate() {
