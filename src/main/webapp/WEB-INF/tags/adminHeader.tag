@@ -8,7 +8,6 @@
                     Admin Dashboard
                 </a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="/admin/mission">Our Mission</a></li>
                     <li><a href="/admin/about">About Us</a></li>
                     <li><a href="/admin/auditions">Auditions</a></li>
                     <li><a href="/admin/contact">Contact Us</a></li>
@@ -24,7 +23,6 @@
             </div>
     
             <ul class="side-nav" id="mobile-nav">
-                <li><a href="/admin/mission">Our Mission</a></li>
                 <li><a href="/admin/auditions">Auditions</a></li>
                 <li><a href="/admin/about">About Us</a></li>
                 <li><a href="/admin/contact">Contact Us</a></li>
