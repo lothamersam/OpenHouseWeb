@@ -13,7 +13,7 @@ import org.apache.commons.lang3.StringUtils;
 import com.openhouse.daos.AuditionDao;
 import com.openhouse.factory.DaoFactory;
 
-@WebServlet("/action/admin/audtionChange")
+@WebServlet("/action/admin/auditionChange")
 public class DoAuditionChangeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final AuditionDao auditionDao = DaoFactory.getAuditionDao();
