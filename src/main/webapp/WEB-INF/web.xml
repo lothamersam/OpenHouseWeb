@@ -14,10 +14,23 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
             <param-value>false</param-value>
         </init-param>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>StaticContent</servlet-name>
         <url-pattern>/static/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>REST</servlet-name>
+        <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>com.sun.jersey.config.property.packages</param-name>
+            <param-value>com.openhouse.rest</param-value>
+        </init-param>
+		<load-on-startup>1</load-on-startup>
+    </servlet>
+	<servlet-mapping>
+        <servlet-name>REST</servlet-name>
+        <url-pattern>/rest/*</url-pattern>
     </servlet-mapping>
 
 </web-app>
