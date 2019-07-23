@@ -66,7 +66,7 @@
 					<thead>
 						<tr>
 							<th>Last, First</th>
-							<th>Preferred Pronoun</th>
+							<th>Pronoun</th>
 							<th>Date</th>
 							<th>Email</th>
 						</tr>
