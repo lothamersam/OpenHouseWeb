@@ -48,8 +48,7 @@
 					data-tooltip="Click to edit section">
 					<div class="card-content">
 						<span class="card-title">Audition Information:</span>
-
-						${auditionInformation.sectionContent}
+						<span id="sectionContent">${auditionInformation.sectionContent}</span>
 					</div>
 				</div>
 			</div>
