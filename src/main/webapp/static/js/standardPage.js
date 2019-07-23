@@ -28,8 +28,7 @@ $(document).ready(function () {
     	        ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
     	        ['unorderedList', 'orderedList'],
     	        ['horizontalRule'],
-    	        ['fontfamily'],
-    	        ['fontsize']
+    	        ['fontfamily', 'fontSize']
     	 ],
     	 tagsToRemove: ['script']
     });
