@@ -131,14 +131,18 @@
 							placeholder="Date" required>
 					</div>
 					<div class="input-field col s6">
-						<input name="time" type="text" class="timepicker"
-							placeholder="Time" required>
+						<input name="location" type="text" required> <label
+							for="location">Location</label>
 					</div>
 				</div>
 				<div class="row">
-					<div class="input-field col s12">
-						<input name="location" type="text" required> <label
-							for="location">Location</label>
+					<div class="input-field col s6">
+						<input name="time" type="text" class="timepicker"
+							placeholder="Start Time" required>
+					</div>
+					<div class="input-field col s6">
+						<input name="endTime" type="text" class="timepicker"
+							placeholder="End Time" required>
 					</div>
 				</div>
 				<div class="row">
