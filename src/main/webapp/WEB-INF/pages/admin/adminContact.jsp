@@ -6,7 +6,7 @@
 <tags:meta title="Contact" />
 
 <body>
-	<main> <tags:header />
+	<main> <tags:adminHeader />
 
 	<div class="container row">
 		<div class="row top-row">
