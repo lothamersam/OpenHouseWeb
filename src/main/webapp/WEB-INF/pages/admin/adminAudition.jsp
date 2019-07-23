@@ -22,7 +22,9 @@
 							<th>Location</th>
 							<th>Information</th>
 							<td><a href="#addDate"
-								class="waves-effect waves-teal btn-flat modal-trigger"> <i
+								class="waves-effect waves-teal btn-flat modal-trigger tooltipped"
+								data-position="top" data-delay="200"
+								data-tooltip="Add an audition date"> <i
 									class="material-icons">add_circle</i>
 							</a></td>
 						</tr>
@@ -125,9 +127,7 @@
 		<form action="/action/admin/auditionChange" method="POST">
 			<div class="modal-content">
 				<div class="row">
-					<div class="input-field col s12">
-					
-					</div>
+					<div class="input-field col s12"></div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
