@@ -17,6 +17,7 @@ import com.openhouse.daos.DateDao;
 import com.openhouse.factory.DaoFactory;
 import com.openhouse.factory.ServiceFactory;
 import com.openhouse.services.ParameterService;
+import com.openhouse.services.enums.DateType;
 
 @WebServlet("/action/admin/auditionChange")
 public class DoAuditionChangeController extends HttpServlet {
@@ -54,6 +55,7 @@ public class DoAuditionChangeController extends HttpServlet {
 		
 		if("true".equals(request.getParameter("isDate"))) {
 			DateTO date = this.parameterService.getDateFromRequest(request);
+			date.setType(DateType.AUDITION);
 			status = this.dateDao.addDate(date);
 		} else {
 			PageSectionTO pageSection = this.parameterService.getPageSectionFromRequest(request);

@@ -69,4 +69,8 @@ public class DateTO {
 	public void setType(String type) {
 		this.type = DateType.getTypeFromKey(type);
 	}
+	
+	public void setType(DateType type) {
+		this.type = type;
+	}
 }
