@@ -21,6 +21,16 @@ $(document).ready(function () {
     
     $('textarea').trumbowyg({
     	 btns: [
+    		 	['undo', 'redo'],
+    	        ['formatting'],
+    	        ['strong', 'em', 'del'],
+    	        ['superscript', 'subscript'],
+    	        ['link'],
+    	        ['insertImage'],
+    	        ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+    	        ['unorderedList', 'orderedList'],
+    	        ['horizontalRule'],
+    	        ['removeformat'],
     	        ['fontfamily'],
     	        ['fontsize']
     	 ]
