@@ -13,7 +13,7 @@
 			<div id="contactSection" class="card section scrollspy hoverable tooltipped"
 				data-position="top" data-delay="200"
 				data-tooltip="Click to edit section">
-				<div class="card-content hoverable">
+				<div class="card-content">
 					<span class="card-title">Contact Our Team</span>
 					<span id="sectionContent">${contactSection.sectionContent}</span>
 				</div>
