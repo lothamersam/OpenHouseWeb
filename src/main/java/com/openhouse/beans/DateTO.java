@@ -36,16 +36,16 @@ public class DateTO {
 		return date;
 	}
 	
-	public void setDate(String startTime) {
-		this.date = startTime;
+	public void setDate(String date) {
+		this.date = date;
 	}
 	
 	public String getStartTime() {
 		return startTime;
 	}
 	
-	public void getEndTime(String time) {
-		this.time = time;
+	public void getEndTime(String startTime) {
+		this.startTime = startTime;
 	}
 	
 	public String getEndTime() {
