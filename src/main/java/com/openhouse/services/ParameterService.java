@@ -195,11 +195,11 @@ public final class ParameterService {
 		if (StringUtils.isNotBlank(request.getParameter("date"))
 				&& StringUtils.isNotBlank(request.getParameter("time"))
 				&& StringUtils.isNotBlank(request.getParameter("location"))
-				&& StringUtils.isNotBlank(request.getParameter("content"))) {
+				&& StringUtils.isNotBlank(request.getParameter("information"))) {
 			date.setDate(request.getParameter("date"));
 			date.setTime(request.getParameter("time"));
 			date.setLocation(request.getParameter("date"));
-			date.setInformation(request.getParameter("content"));
+			date.setInformation(request.getParameter("information"));
 		}
 		
 		return date;
