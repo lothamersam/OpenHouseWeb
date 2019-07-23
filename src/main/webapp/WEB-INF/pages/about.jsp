@@ -48,7 +48,7 @@
 								${auditionSection.sectionContent}
 							</p>
 							<p>
-							  	<a href="/audtion" class="waves-effect waves-teal btn-flat">See Auditions</a>
+							  	<a href="/audtions" class="waves-effect waves-teal btn-flat">See Auditions</a>
 							</p>
 						</div>
 					</div>
