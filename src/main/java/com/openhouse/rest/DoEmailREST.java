@@ -18,7 +18,7 @@ public class DoEmailREST extends HttpServlet {
     private static final ParameterService parameterService = ServiceFactory.getParameterService();
 
     @POST
-    @Path("/send/")
+    @Path("/send")
     protected Response doSendEmail(@FormParam("firstName") String firstName) {
       
       return Response.status(200)  
