@@ -95,8 +95,7 @@
 						Submit <i class="material-icons right">send</i>
 					</button>
 					<button class="btn-flat waves-effect waves-cyan" type="reset"
-						name="reset">
-						Reset <i class="material-icons right">refresh</i>
+						name="reset">Reset<i class="material-icons right">refresh</i>
 					</button>
 				</form>
 			</div>
