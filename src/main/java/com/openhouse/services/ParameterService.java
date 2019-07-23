@@ -41,7 +41,7 @@ public final class ParameterService {
         final Personalization personalization = new Personalization();
         personalization.addTo(new Email(System.getenv("OPENHOUSE_EMAIL")));
         
-        if(CONTACT_DIRECTOR.equals(request.getParameter("category"))) {
+        if(CONTACT_DIRECTOR.equals(category)) {
             personalization.addCc(new Email(System.getenv("DIRECTOR_EMAIL")));
         }
 
