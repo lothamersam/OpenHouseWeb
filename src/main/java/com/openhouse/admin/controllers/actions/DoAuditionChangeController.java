@@ -10,12 +10,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
 
+import com.openhouse.beans.PageSectionTO;
 import com.openhouse.daos.AuditionDao;
 import com.openhouse.factory.DaoFactory;
+import com.openhouse.factory.ServiceFactory;
+import com.openhouse.services.ParameterService;
 
 @WebServlet("/action/admin/auditionChange")
 public class DoAuditionChangeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	private final ParameterService parameterService = ServiceFactory.getParameterService();
 	private final AuditionDao auditionDao = DaoFactory.getAuditionDao();
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -39,6 +44,16 @@ public class DoAuditionChangeController extends HttpServlet {
 		}
 	}
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    }
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		PageSectionTO pageSection = this.parameterService.getPageSectionFromRequest(request);
+
+		boolean status = this.auditionDao.editPageSection(pageSection);
+
+		if (status) {
+			response.sendRedirect("/admin/audition?success=Successfully performed update!");
+		} else {
+			response.sendRedirect("/admin/audition?error=Your update was not successful!");
+		}
+	}
 }

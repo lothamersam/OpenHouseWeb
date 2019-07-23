@@ -47,7 +47,7 @@
 	<tags:footer />
 
 	<script src="/static/js/standardPage.js"></script>
-	<script lang="javascript" src="/static/js/adminContact.js"></script>
+	<script lang="javascript" src="/static/js/adminPageSection.js"></script>
 </body>
 
 </html>

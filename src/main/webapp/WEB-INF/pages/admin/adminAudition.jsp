@@ -30,11 +30,11 @@
 								<td>${date.time}</td>
 								<td>${date.location}</td>
 								<td>${date.information}</td>
-								<td>
-									<a href="/action/admin/auditionChange?id=${date.id}&type=date" class="waves-effect waves-teal btn-flat">
-										<i class="material-icons">delete_forever</i>
-									</a>
-								</td>
+								<td><a
+									href="/action/admin/auditionChange?id=${date.id}&type=date"
+									class="waves-effect waves-teal btn-flat"> <i
+										class="material-icons">delete_forever</i>
+								</a></td>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -42,7 +42,10 @@
 			</div>
 
 			<div class="row">
-				<div id="information" class="card section scrollspy">
+				<div id="auditionInformation" id="introduction"
+					class="card section scrollspy hoverable tooltipped"
+					data-position="top" data-delay="200"
+					data-tooltip="Click to edit section">
 					<div class="card-content">
 						<span class="card-title">Audition Information:</span>
 
@@ -67,15 +70,15 @@
 					<tbody>
 						<c:forEach items="${signupInformation}" var="signup">
 							<tr>
-								<td>${signup.lastName}, ${signup.firstName}</td>
+								<td>${signup.lastName},${signup.firstName}</td>
 								<td>${signup.pronouns}</td>
 								<td>${signup.date}</td>
 								<td>${signup.email}</td>
-								<td>
-									<a href="/action/admin/auditionChange?id=${signup.id}&type=signup" class="waves-effect waves-teal btn-flat">
-										<i class="material-icons">delete_forever</i>
-									</a>
-								</td>
+								<td><a
+									href="/action/admin/auditionChange?id=${signup.id}&type=signup"
+									class="waves-effect waves-teal btn-flat"> <i
+										class="material-icons">delete_forever</i>
+								</a></td>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -86,15 +89,36 @@
 		<div class="col hide-on-small-only m3 l2">
 			<ul class="section table-of-contents">
 				<li><a href="#dates">Audition Dates</a></li>
-				<li><a href="#information">Audition Information</a></li>
+				<li><a href="#auditionInformation">Audition Information</a></li>
 				<li><a href="#signUp">Sign Up</a></li>
 			</ul>
 		</div>
 	</div>
 	</main>
 
+	<div id="editModal" class="modal modal-fixed-footer">
+		<form action="/action/admin/auditionChange" method="POST">
+			<div class="modal-content">
+				<div class="row">
+					<div class="input-field col s12">
+						<textarea name="content" id="sectionContentInput"
+							class="materialize-textarea"
+							placeholder="Enter section content..." required></textarea>
+					</div>
+				</div>
+			</div>
+			<input id="sectionType" type="hidden" name="sectionType" value="" />
+			<div class="modal-footer">
+				<button class="btn waves-effect waves-light" type="submit"
+					name="action">
+					Apply Edits<i class="material-icons right">add_box</i>
+				</button>
+			</div>
+		</form>
+	</div>
+
 	<script src="/static/js/standardPage.js"></script>
-	<script src="/static/js/audition.js"></script>
+	<script src="/static/js/adminPageSection.js"></script>
 
 	<tags:footer />
 </body>

@@ -122,7 +122,7 @@
 	</div>
 
 	<script src="/static/js/standardPage.js"></script>
-	<script src="/static/js/adminAbout.js"></script>
+	<script src="/static/js/adminPageSection.js"></script>
 
 	<tags:footer />
 </body>
