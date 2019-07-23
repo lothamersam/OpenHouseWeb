@@ -88,7 +88,7 @@
 								</select> <label>Preferred Audition Date</label>
 							</div>
 							<div class="input-field col s6">
-								<select name="date" required>
+								<select name="time" required>
 									<option value="" disabled selected>Please choose a date</option>
 								</select> <label>Timeslot</label>
 							</div>
