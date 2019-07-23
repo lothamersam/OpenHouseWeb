@@ -44,7 +44,7 @@ public class DateTO {
 		return startTime;
 	}
 	
-	public void getEndTime(String startTime) {
+	public void setStartTime(String startTime) {
 		this.startTime = startTime;
 	}
 	
