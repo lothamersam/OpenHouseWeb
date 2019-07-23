@@ -14,7 +14,7 @@ import com.openhouse.factory.DaoFactory;
 import com.openhouse.services.enums.DateType;
 import com.openhouse.services.enums.PageSectionType;
 
-@WebServlet("/admin/audition")
+@WebServlet("/admin/auditions")
 public class EditAuditionController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final AuditionDao auditionDao = DaoFactory.getAuditionDao();
