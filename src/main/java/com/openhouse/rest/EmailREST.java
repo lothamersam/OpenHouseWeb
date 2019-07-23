@@ -10,7 +10,7 @@ import javax.ws.rs.FormParam;
 import javax.ws.rs.core.Response; 
 
 @Path("/email")
-public class DoEmailREST {  
+public class EmailREST {  
     private static final EmailService emailService = ServiceFactory.getEmailService();
     private static final ParameterService parameterService = ServiceFactory.getParameterService();
 
