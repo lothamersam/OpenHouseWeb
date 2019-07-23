@@ -28,8 +28,8 @@ $(document).ready(function () {
       today: 'Today',
       clear: 'Clear',
       close: 'Ok',
-      closeOnSelect: false // Close upon selecting a date,
-    container: undefined, // ex. 'body' will append picker to body
+      closeOnSelect: false, // Close upon selecting a date,
+      container: undefined // ex. 'body' will append picker to body
     });
     
     $('.timepicker').pickatime({
