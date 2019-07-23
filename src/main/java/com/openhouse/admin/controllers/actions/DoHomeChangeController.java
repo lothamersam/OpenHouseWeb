@@ -13,6 +13,7 @@ import com.openhouse.factory.DaoFactory;
 import com.openhouse.factory.ServiceFactory;
 import com.openhouse.services.ParameterService;
 
+@WebServlet("/action/admin/homeChange")
 public class DoHomeChangeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
