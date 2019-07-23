@@ -14,7 +14,7 @@
 			<div class="col s12 m9 l10">
 				<div id="introduction" class="section scrollspy">
 					<h3>Introduction</h3>
-					<span>${homeTop}</span>
+					<span>${homeTop.sectionContent}</span>
 				</div>
 
 				<div id="community" class="section scrollspy">
@@ -22,15 +22,15 @@
 					<ul class="collapsible popout" data-collapsible="expandable">
 						<li>
 							<div class="collapsible-header active"><i class="material-icons">filter_drama</i>First</div>
-							<div class="collapsible-body"><span>${homeCollapseOne}</span></div>
+							<div class="collapsible-body"><span>${homeCollapseOne.sectionContent.sectionContent}</span></div>
 						</li>
 						<li>
 							<div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-							<div class="collapsible-body"><span>${homeCollapseTwo}</span></div>
+							<div class="collapsible-body"><span>${homeCollapseTwo.sectionContent}</span></div>
 						</li>
 						<li>
 							<div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-							<div class="collapsible-body"><span>${homeCollapseThree}</span></div>
+							<div class="collapsible-body"><span>${homeCollapseThree.sectionContent}</span></div>
 						</li>
 					</ul>
 				</div>
@@ -42,21 +42,21 @@
 							<div class="center promo">
 								<i class="material-icons cyan-text">flash_on</i>
 								<p class="promo-caption">Get invloved fast</p>
-								<p class="light center">${homeColOne}</p>
+								<p class="light center">${homeColOne.sectionContent}</p>
 							</div>
 						</div>
 						<div class="col s4">
 							<div class="center promo">
 								<i class="material-icons cyan-text">group</i>
 								<p class="promo-caption">Experience Focused</p>
-								<p class="light center">${homeColTwo}</p>
+								<p class="light center">${homeColTwo.sectionContent}</p>
 							</div>
 						</div>
 						<div class="col s4">
 							<div class="center promo">
 								<i class="material-icons cyan-text">settings</i>
 								<p class="promo-caption">Easy to work with</p>
-								<p class="light center">${homeColThree}</p>
+								<p class="light center">${homeColThree.sectionContent}</p>
 							</div>
 						</div>
 					</div>
