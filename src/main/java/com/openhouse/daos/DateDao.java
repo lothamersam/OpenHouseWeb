@@ -22,7 +22,7 @@ public class DateDao {
 		try (final Connection connection = DatabaseConnection.getConnection()) {
 			final PreparedStatement statement = connection.prepareStatement(GET_AUDITION_DATES);
 			
-			
+			statement.setString(1, dateType.getType());
 			
 			final ResultSet results = statement.executeQuery();
 			while (results.next()) {
