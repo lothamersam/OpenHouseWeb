@@ -6,8 +6,8 @@ public enum PageSectionType {
 	AUDITION_SECTION("auditionSection", "audition"),
 	PRODUCTION_SECTION("productionSection", "production"),
 	DONATE_SECTION("donateSection", "donation"),
-	AUDITION_INFORMATION_SECTION("auditionInformation", ""),
-	CONTACT_SECTION("contactSection", "");
+	AUDITION_INFORMATION_SECTION("auditionInformation", "auditionInformation"),
+	CONTACT_SECTION("contactSection", "contactSection");
 
 	private String sectionType;
 	private String divKey;

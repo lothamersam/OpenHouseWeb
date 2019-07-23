@@ -27,9 +27,9 @@ public class DoContactChangeController extends HttpServlet {
 		boolean status = this.pageDao.editPageSection(pageSection);
 
 		if (status) {
-			response.sendRedirect("/admin/about?success=Successfully performed update!");
+			response.sendRedirect("/admin/contact?success=Successfully performed update!");
 		} else {
-			response.sendRedirect("/admin/about?error=Your update was not successful!");
+			response.sendRedirect("/admin/contact?error=Your update was not successful!");
 		}
 	}
 }
