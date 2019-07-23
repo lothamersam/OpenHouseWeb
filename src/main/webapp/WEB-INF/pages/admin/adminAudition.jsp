@@ -133,7 +133,7 @@
 					</div>
 					<div class="input-field col s6">
   						<input name="time" type="text" class="timepicker">
-  						<label for="last_name">Time</label>
+  						<label for="time">Time</label>
 					</div>
 				</div>
 				<div class="row">
