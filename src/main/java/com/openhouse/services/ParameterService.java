@@ -20,6 +20,7 @@ import com.sendgrid.Personalization;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 
+import com.openhouse.beans.DateTO;
 import com.openhouse.beans.PageSectionTO;
 import com.openhouse.beans.SignupInformationTO;
 import com.openhouse.beans.StaffMemberTO;
@@ -156,8 +157,8 @@ public final class ParameterService {
 	public PageSectionTO getPageSectionFromRequest(HttpServletRequest request) {
 		final PageSectionTO aboutSection = new PageSectionTO();
 		
-		if(StringUtils.isNotBlank(request.getParameter("content"))
-				&& StringUtils.isNotBlank(request.getParameter("sectionType"))){
+		if (StringUtils.isNotBlank(request.getParameter("content"))
+				&& StringUtils.isNotBlank(request.getParameter("sectionType"))) {
 			aboutSection.setSectionContent(request.getParameter("content"));
 			aboutSection.setSectionType(PageSectionType
 					.getTypeFromKey(request.getParameter("sectionType")));
@@ -184,5 +185,23 @@ public final class ParameterService {
 		}
 		
 		return signup;
+	}
+
+	
+	
+	public DateTO getDateFromRequest(HttpServletRequest request) {
+		final DateTO date = new DateTO();
+		
+		if (StringUtils.isNotBlank(request.getParameter("date"))
+				&& StringUtils.isNotBlank(request.getParameter("time"))
+				&& StringUtils.isNotBlank(request.getParameter("location"))
+				&& StringUtils.isNotBlank(request.getParameter("content"))) {
+			date.setDate(request.getParameter("date"));
+			date.setTime(request.getParameter("time"));
+			date.setLocation(request.getParameter("date"));
+			date.setInformation(request.getParameter("content"));
+		}
+		
+		return date;
 	}
 }

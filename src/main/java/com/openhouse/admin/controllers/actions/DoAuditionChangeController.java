@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
 
+import com.openhouse.beans.DateTO;
 import com.openhouse.beans.PageSectionTO;
 import com.openhouse.daos.AuditionDao;
 import com.openhouse.daos.DateDao;
@@ -49,10 +50,16 @@ public class DoAuditionChangeController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		PageSectionTO pageSection = this.parameterService.getPageSectionFromRequest(request);
-
-		boolean status = this.auditionDao.editPageSection(pageSection);
-
+		boolean status = false; 
+		
+		if("true".equals(request.getParameter("isDate"))) {
+			DateTO date = this.parameterService.getDateFromRequest(request);
+			status = this.dateDao.addDate(date);
+		} else {
+			PageSectionTO pageSection = this.parameterService.getPageSectionFromRequest(request);
+			status = this.auditionDao.editPageSection(pageSection);
+		}
+		
 		if (status) {
 			response.sendRedirect("/admin/audition?success=Successfully performed update!");
 		} else {
