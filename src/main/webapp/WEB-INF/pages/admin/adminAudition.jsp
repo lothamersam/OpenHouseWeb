@@ -127,13 +127,20 @@
 		<form action="/action/admin/auditionChange" method="POST">
 			<div class="modal-content">
 				<div class="row">
-					<div class="input-field col s12"></div>
+					<div class="input-field col s6">
+						<input type="text" class="datepicker">
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s6">
+  						<input type="text" class="timepicker">
+					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
 						<textarea name="information" id="sectionContentInput"
 							class="materialize-textarea"
-							placeholder="Enter section content..." required></textarea>
+							placeholder="Enter date information..." required></textarea>
 					</div>
 				</div>
 			</div>
