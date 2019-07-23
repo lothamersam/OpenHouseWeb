@@ -22,7 +22,7 @@
 							<th>Location</th>
 							<th>Information</th>
 							<td><a href="#addDate"
-								class="waves-effect waves-teal btn-flat"> <i
+								class="waves-effect waves-teal btn-flat modal-trigger"> <i
 									class="material-icons">add_circle</i>
 							</a></td>
 						</tr>
