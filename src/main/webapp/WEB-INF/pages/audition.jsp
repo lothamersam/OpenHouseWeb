@@ -73,12 +73,24 @@
 								</select> <label>Pronouns</label>
 							</div>
 							<div class="input-field col s6">
+								<input name="phone_number" id="phone_number" type="text"
+									class="validate"> 
+								<label for="phone_number" required>Phone Number</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s6">
 								<select name="date" required>
 									<option value="" disabled selected>Choose a Date</option>
 									<c:forEach items="${auditionDates}" var="date">
-										<option value="${date.date}, ${date.time}">${date.date}, ${date.time}</option>
+										<option value="${date.date}">${date.date}</option>
 									</c:forEach>
 								</select> <label>Preferred Audition Date</label>
+							</div>
+							<div class="input-field col s6">
+								<select name="date" required>
+									<option value="" disabled selected>Please choose a date</option>
+								</select> <label>Timeslot</label>
 							</div>
 						</div>
 						<div class="row">
