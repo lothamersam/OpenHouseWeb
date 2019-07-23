@@ -5,7 +5,7 @@ import com.openhouse.services.enums.DateType;
 public class DateTO {
 	private int id;
 	private String date;
-	private String time;
+	private String startTime;
 	private String endTime;
 	private String location;
 	private String information;
@@ -15,10 +15,11 @@ public class DateTO {
 	
 	}
 	
-	public DateTO(int id, String date, String time, String location, String information) {
+	public DateTO(int id, String date, String startTime, String endTime, String location, String information) {
 		this.id = id;
 		this.date = date;
-		this.time = time;
+		this.startTime = startTime;
+		this.endTime = endTime;
 		this.location = location;
 		this.information = information;
 	}
@@ -35,15 +36,15 @@ public class DateTO {
 		return date;
 	}
 	
-	public void setDate(String date) {
-		this.date = date;
+	public void setDate(String startTime) {
+		this.date = startTime;
 	}
 	
-	public String getTime() {
-		return time;
+	public String getStartTime() {
+		return startTime;
 	}
 	
-	public void setTime(String time) {
+	public void getEndTime(String time) {
 		this.time = time;
 	}
 	
