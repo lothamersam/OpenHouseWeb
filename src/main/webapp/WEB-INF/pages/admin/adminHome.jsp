@@ -11,9 +11,11 @@
 
 	<div class="container row">
 		<div class="col s12 m9 l10">
-			<div id="introduction" class="section scrollspy">
+			<div id="homeTop" class="section scrollspy hoverable tooltipped"
+				data-position="top" data-delay="200"
+				data-tooltip="Click to edit section">
 				<h3>Introduction</h3>
-				<span>${homeTop.sectionContent}</span>
+				<span class="sectionContent">${homeTop.sectionContent}</span>
 			</div>
 
 			<div id="community" class="section scrollspy">
@@ -23,7 +25,9 @@
 						<div class="collapsible-header active">
 							<i class="material-icons">filter_drama</i>First
 						</div>
-						<div class="collapsible-body">
+						<div id="homeCollapseOne" class="collapsible-body hoverable tooltipped"
+							data-position="top" data-delay="200"
+							data-tooltip="Click to edit section">
 							<span>${homeCollapseOne.sectionContent}</span>
 						</div>
 					</li>
@@ -31,7 +35,9 @@
 						<div class="collapsible-header">
 							<i class="material-icons">place</i>Second
 						</div>
-						<div class="collapsible-body">
+						<div id="homeCollapseTwo" class="collapsible-body hoverable tooltipped"
+							data-position="top" data-delay="200"
+							data-tooltip="Click to edit section">
 							<span>${homeCollapseTwo.sectionContent}</span>
 						</div>
 					</li>
@@ -39,7 +45,9 @@
 						<div class="collapsible-header">
 							<i class="material-icons">whatshot</i>Third
 						</div>
-						<div class="collapsible-body">
+						<div id="homeCollapseThree" class="collapsible-body hoverable tooltipped"
+							data-position="top" data-delay="200"
+							data-tooltip="Click to edit section">
 							<span>${homeCollapseThree.sectionContent}</span>
 						</div>
 					</li>
@@ -87,7 +95,7 @@
 		</div>
 		<div class="col hide-on-small-only m3 l2">
 			<ul class="section table-of-contents">
-				<li><a href="#introduction">Introduction</a></li>
+				<li><a href="#homeTop">Introduction</a></li>
 				<li><a href="#community">Community</a></li>
 				<li><a href="#involvement">Involvement</a></li>
 			</ul>
