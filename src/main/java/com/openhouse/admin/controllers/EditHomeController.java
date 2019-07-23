@@ -34,8 +34,8 @@ public class EditHomeController extends HttpServlet {
 		request.setAttribute("homeCollapseOne", this.pageDao.getPageSection(PageSectionType.HOME_COLLAPSE_ONE));
 		request.setAttribute("homeCollapseTwo", this.pageDao.getPageSection(PageSectionType.HOME_COLLAPSE_TWO));
 		request.setAttribute("homeCollapseThree", this.pageDao.getPageSection(PageSectionType.HOME_COLLAPSE_THREE));
-		request.setAttribute("homeCol", this.pageDao.getPageSection(PageSectionType.HOME_COL_ONE));
-		request.setAttribute("homeCol", this.pageDao.getPageSection(PageSectionType.HOME_COL_TWO));
-		request.setAttribute("homeCol", this.pageDao.getPageSection(PageSectionType.HOME_COL_THREE));
+		request.setAttribute("homeColOne", this.pageDao.getPageSection(PageSectionType.HOME_COL_ONE));
+		request.setAttribute("homeColTwo", this.pageDao.getPageSection(PageSectionType.HOME_COL_TWO));
+		request.setAttribute("homeColThree", this.pageDao.getPageSection(PageSectionType.HOME_COL_THREE));
 	}
 }
