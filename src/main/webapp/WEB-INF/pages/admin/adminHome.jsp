@@ -11,11 +11,13 @@
 
 	<div class="container row">
 		<div class="col s12 m9 l10">
-			<div id="homeTop" class="section scrollspy hoverable tooltipped"
-				data-position="top" data-delay="200"
-				data-tooltip="Click to edit section">
+			<div>
 				<h3>Introduction</h3>
-				<span class="sectionContent">${homeTop.sectionContent}</span>
+				<div id="homeTop" class="section scrollspy hoverable tooltipped"
+					data-position="top" data-delay="200"
+					data-tooltip="Click to edit section">
+					<span class="sectionContent">${homeTop.sectionContent}</span>
+				</div>
 			</div>
 
 			<div id="community" class="section scrollspy">
@@ -25,30 +27,30 @@
 						<div class="collapsible-header active">
 							<i class="material-icons">filter_drama</i>First
 						</div>
-						<div id="homeCollapseOne" class="collapsible-body hoverable tooltipped"
-							data-position="top" data-delay="200"
-							data-tooltip="Click to edit section">
-							<span>${homeCollapseOne.sectionContent}</span>
+						<div id="homeCollapseOne"
+							class="collapsible-body hoverable tooltipped" data-position="top"
+							data-delay="200" data-tooltip="Click to edit section">
+							<span id="sectionContent">${homeCollapseOne.sectionContent}</span>
 						</div>
 					</li>
 					<li>
 						<div class="collapsible-header">
 							<i class="material-icons">place</i>Second
 						</div>
-						<div id="homeCollapseTwo" class="collapsible-body hoverable tooltipped"
-							data-position="top" data-delay="200"
-							data-tooltip="Click to edit section">
-							<span>${homeCollapseTwo.sectionContent}</span>
+						<div id="homeCollapseTwo"
+							class="collapsible-body hoverable tooltipped" data-position="top"
+							data-delay="200" data-tooltip="Click to edit section">
+							<span id="sectionContent">${homeCollapseTwo.sectionContent}</span>
 						</div>
 					</li>
 					<li>
 						<div class="collapsible-header">
 							<i class="material-icons">whatshot</i>Third
 						</div>
-						<div id="homeCollapseThree" class="collapsible-body hoverable tooltipped"
-							data-position="top" data-delay="200"
-							data-tooltip="Click to edit section">
-							<span>${homeCollapseThree.sectionContent}</span>
+						<div id="homeCollapseThree"
+							class="collapsible-body hoverable tooltipped" data-position="top"
+							data-delay="200" data-tooltip="Click to edit section">
+							<span id="sectionContent">${homeCollapseThree.sectionContent}</span>
 						</div>
 					</li>
 				</ul>
@@ -64,7 +66,7 @@
 							<i class="material-icons cyan-text">flash_on</i>
 							<p class="promo-caption">Get invloved fast</p>
 							<p class="light center">
-								<span class="sectionContent">${homeColOne.sectionContent}</span>
+								<span id="sectionContent">${homeColOne.sectionContent}</span>
 							</p>
 						</div>
 					</div>
@@ -75,7 +77,7 @@
 							<i class="material-icons cyan-text">group</i>
 							<p class="promo-caption">Experience Focused</p>
 							<p class="light center">
-								<span class="sectionContent">${homeColTwo.sectionContent}</span>
+								<span id="sectionContent">${homeColTwo.sectionContent}</span>
 							</p>
 						</div>
 					</div>
