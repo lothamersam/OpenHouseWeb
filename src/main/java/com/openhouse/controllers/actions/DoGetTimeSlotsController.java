@@ -1,5 +1,6 @@
 package com.openhouse.controllers.actions;
 
+import com.openhouse.daos.AuditionDao;
 import com.openhouse.services.ParameterService;
 import com.openhouse.factory.ServiceFactory;
 import com.openhouse.factory.DaoFactory;
@@ -11,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/action/email")
+@WebServlet("/action/times")
 public class DoGetTimeSlotsController extends HttpServlet {
     private static final long serialVersionUID = 1L;
     
