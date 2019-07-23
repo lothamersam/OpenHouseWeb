@@ -16,6 +16,10 @@ public class DateDao {
 	private static final String GET_AUDITION_DATES = "SELECT id, date, time, location, information FROM oh_dates WHERE type = ?";
 	private static final String ADD_AUDITION_DATE = "INSERT INTO oh_dates (date, location, time, information, type) VALUES (?, ?, ?, ?, ?)";
 	private static final String DELETE_AUDITION_DATE = "DELETE FROM oh_dates WHERE id = ?";	
+	private static final String ADD_TIME_SLOT = "INSERT INTO oh_times (audition_id, time) VALUES (?, ?)";
+	private static final String GET_TIME_SLOTS = "SELECT id, time FROM audition WHERE audition_id = ? AND signup_id IS NULL";
+	private static final String ASSIGN_TIME_SLOT = "UPDATE oh_times SET signup_id = ? WHERE id = ?";
+	private static final String REMOVE_TIME_SLOTS = "DELETE FROM oh_times WHERE audition_id = ?";
 	
 	public List<DateTO> getDates(DateType dateType) {
 		final List<DateTO> datesList = new ArrayList<>();
@@ -31,7 +35,7 @@ public class DateDao {
 						results.getInt(1),
 						results.getString(2),
 						results.getString(3),
-						results.getString(3),
+						results.getString(3), // change to 6 when date end is added
 						results.getString(4),
 						results.getString(5)));			
 			}
@@ -49,6 +53,7 @@ public class DateDao {
 			
 			statement.setString(1, date.getDate());
 			statement.setString(3, date.getStartTime());
+			//statement.setString(6, date.getEndTime());
 			statement.setString(2, date.getLocation());
 			statement.setString(4, date.getInformation());
 			statement.setString(5, date.getType());
