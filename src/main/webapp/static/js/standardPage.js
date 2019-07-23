@@ -33,7 +33,8 @@ $(document).ready(function () {
     	        ['removeformat'],
     	        ['fontfamily'],
     	        ['fontsize']
-    	 ]
+    	 ],
+    	 tagsToRemove: ['script']
     });
     
 
