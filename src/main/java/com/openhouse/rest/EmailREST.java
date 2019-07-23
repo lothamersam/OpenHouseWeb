@@ -19,7 +19,8 @@ public class EmailREST {
     protected Response doSendEmail(@FormParam("firstName") String firstName,
                                    @FormParam("lastName") String lastName,
                                    @FormParam("email") String email,
-                                   @FormParam("category") String phoneNumber
+                                   @FormParam("phoneNumber") String phoneNumber,
+                                   @FormParam("category") String category,
                                    @FormParam("message") String message) {
       
         
