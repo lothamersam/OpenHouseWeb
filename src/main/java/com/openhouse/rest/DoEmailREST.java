@@ -19,7 +19,7 @@ public class DoEmailREST {
     protected Response doSendEmail(@FormParam("firstName") String firstName) {
       
       return Response.status(200)  
-        .entity(name)  
+        .entity(firstName)  
         .build(); 
     }
 }
