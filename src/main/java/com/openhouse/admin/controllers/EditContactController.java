@@ -20,7 +20,7 @@ public class EditContactController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("contactSection", this.pageDao.getPageSection(PageSectionType.CONTACT_SECTION));
 		
-		request.getRequestDispatcher("/WEB-INF/pages/contact.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/pages/admin/adminContact.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
