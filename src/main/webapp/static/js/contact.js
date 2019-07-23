@@ -1,7 +1,7 @@
 $("#contactForm").submit(function (event) {
     let contactFormData = $("#contactForm").serialize();
 
-    $.post("/action/email", contactFormData, function (response) {
+    $.post("/do/email/send", contactFormData, function (response) {
         Materialize.toast("Your email has been sent succesfully!", 4000);
         $("#contactForm").trigger("reset");
     })
