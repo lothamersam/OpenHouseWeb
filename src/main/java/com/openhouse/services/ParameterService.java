@@ -52,7 +52,7 @@ public final class ParameterService {
         messageBody.append(String.format("<h3>%s - %s %s</h3><h5>%s", 
                 category, firstName, lastName, email));
        
-        if(null != phoneNumber)) {
+        if(null != phoneNumber) {
             messageBody.append(String.format(" - %s", phoneNumber));
         }
         
