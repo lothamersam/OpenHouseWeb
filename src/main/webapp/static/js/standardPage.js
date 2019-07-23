@@ -25,12 +25,9 @@ $(document).ready(function () {
     	        ['formatting'],
     	        ['strong', 'em', 'del'],
     	        ['superscript', 'subscript'],
-    	        ['link'],
-    	        ['insertImage'],
     	        ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
     	        ['unorderedList', 'orderedList'],
     	        ['horizontalRule'],
-    	        ['removeformat'],
     	        ['fontfamily'],
     	        ['fontsize']
     	 ],
