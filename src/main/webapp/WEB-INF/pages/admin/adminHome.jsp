@@ -49,31 +49,37 @@
 			<div id="involvement" class="section scrollspy">
 				<h3>Involvement</h3>
 				<div class="row">
-					<div class="col l4 m12 s12 hoverable tooltipped"
+					<div id="homeColOne" class="col l4 m12 s12 hoverable tooltipped"
 						data-position="top" data-delay="200"
 						data-tooltip="Click to edit section">
 						<div class="center promo">
 							<i class="material-icons cyan-text">flash_on</i>
 							<p class="promo-caption">Get invloved fast</p>
-							<p class="light center">${homeColOne.sectionContent}</p>
+							<p class="light center">
+								<span class="sectionContent">${homeColOne.sectionContent}</span>
+							</p>
 						</div>
 					</div>
-					<div class="col l4 m12 s12 hoverable tooltipped"
+					<div id="homeColTwo" class="col l4 m12 s12 hoverable tooltipped"
 						data-position="top" data-delay="200"
 						data-tooltip="Click to edit section">
 						<div class="center promo">
 							<i class="material-icons cyan-text">group</i>
 							<p class="promo-caption">Experience Focused</p>
-							<p class="light center">${homeColTwo.sectionContent}</p>
+							<p class="light center">
+								<span class="sectionContent">${homeColTwo.sectionContent}</span>
+							</p>
 						</div>
 					</div>
-					<div class="col l4 m12 s12 hoverable tooltipped"
+					<div id="homeColThree" class="col l4 m12 s12 hoverable tooltipped"
 						data-position="top" data-delay="200"
 						data-tooltip="Click to edit section">
 						<div class="center promo">
 							<i class="material-icons cyan-text">settings</i>
 							<p class="promo-caption">Easy to work with</p>
-							<p class="light center">${homeColThree.sectionContent}</p>
+							<p class="light center">
+								<span id="sectionContent">${homeColThree.sectionContent}</span>
+							</p>
 						</div>
 					</div>
 				</div>
