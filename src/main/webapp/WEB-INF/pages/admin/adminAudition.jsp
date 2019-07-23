@@ -75,7 +75,7 @@
 					<tbody>
 						<c:forEach items="${signupInformation}" var="signup">
 							<tr>
-								<td>${signup.lastName},${signup.firstName}</td>
+								<td>${signup.lastName}, ${signup.firstName}</td>
 								<td>${signup.pronouns}</td>
 								<td>${signup.date}</td>
 								<td>${signup.email}</td>
@@ -128,16 +128,18 @@
 			<div class="modal-content">
 				<div class="row">
 					<div class="input-field col s6">
-						<input name="date" type="text" class="datepicker" placeholder="Date" required>
+						<input name="date" type="text" class="datepicker"
+							placeholder="Date" required>
 					</div>
 					<div class="input-field col s6">
-  						<input name="time" type="text" class="timepicker" placeholder="Time" required>
+						<input name="time" type="text" class="timepicker"
+							placeholder="Time" required>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
-						<input name="location" type="text" required>
-  						<label for="location">Location</label>
+						<input name="location" type="text" required> <label
+							for="location">Location</label>
 					</div>
 				</div>
 				<div class="row">
