@@ -19,9 +19,8 @@ public class PageSectionChangeREST {
     @POST
     @Path("/change")
     public Response changeHomeSection() {
-    	PageSectionTO aboutSection = this.parameterService.getPageSectionFromRequest(request);
-
-        //boolean status = this.aboutDao.editPageSection(aboutSection);
+    	// PageSectionTO aboutSection = this.parameterService.getPageSectionFromRequest(request);
+        // boolean status = this.aboutDao.editPageSection(aboutSection);
 
         return Response.status(200)  
           .entity("test")  
