@@ -42,7 +42,8 @@ public class DateDao {
 	
 	public boolean addDate(final DateTO date) {
 		try (final Connection connection = DatabaseConnection.getConnection()) {
-			PreparedStatement statement = connection.prepareStatement(ADD_AUDITION_DATE);
+			PreparedStatement statement = connection.prepareStatement(ADD_AUDITION_DATE, 
+										  Statement.RETURN_GENERATED_KEYS);
 			
 			statement.setString(1, date.getDate());
 			statement.setString(3, date.getTime());
@@ -50,7 +51,11 @@ public class DateDao {
 			statement.setString(4, date.getInformation());
 			statement.setString(5, date.getType());
 			
-			return statement.executeUpdate() > 0;
+			final int id = statement.executeUpdate();
+			
+			// insert time range
+			
+			return id > 0;
 		} catch (SQLException | URISyntaxException e) {
 			System.out.println("There was an error when querying the database! " + e.getMessage());
 		} 
@@ -63,6 +68,8 @@ public class DateDao {
 			final PreparedStatement statement = connection.prepareStatement(DELETE_AUDITION_DATE);
 
 			statement.setInt(1, id);
+			
+			// remove time slots
 
 			if (statement.executeUpdate() > 0) {
 				return true;
