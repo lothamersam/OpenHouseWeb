@@ -12,6 +12,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import com.openhouse.beans.PageSectionTO;
 import com.openhouse.daos.AuditionDao;
+import com.openhouse.daos.DateDao;
 import com.openhouse.factory.DaoFactory;
 import com.openhouse.factory.ServiceFactory;
 import com.openhouse.services.ParameterService;
@@ -22,6 +23,8 @@ public class DoAuditionChangeController extends HttpServlet {
 	
 	private final ParameterService parameterService = ServiceFactory.getParameterService();
 	private final AuditionDao auditionDao = DaoFactory.getAuditionDao();
+	private final DateDao dateDao = DaoFactory.getDateDao();
+
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		boolean success = false;
@@ -31,7 +34,7 @@ public class DoAuditionChangeController extends HttpServlet {
 			final int id = Integer.parseInt(request.getParameter("id"));
 			
 			if("date".equals(request.getParameter("type"))) {
-				success = this.auditionDao.deleteAuditionDate(id);
+				success = this.dateDao.removeDate(id);
 			} else if("signup".equals(request.getParameter("type"))) {
 				success = this.auditionDao.deleteAuditionSignup(id);
 			}

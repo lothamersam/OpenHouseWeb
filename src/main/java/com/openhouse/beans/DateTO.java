@@ -1,17 +1,20 @@
 package com.openhouse.beans;
 
-public class AuditionDateTO {
+import com.openhouse.services.enums.DateType;
+
+public class DateTO {
 	private int id;
 	private String date;
 	private String time;
 	private String location;
 	private String information;
+	private DateType type;
 	
-	public AuditionDateTO() {
+	public DateTO() {
 	
 	}
 	
-	public AuditionDateTO(int id, String date, String time, String location, String information) {
+	public DateTO(int id, String date, String time, String location, String information) {
 		this.id = id;
 		this.date = date;
 		this.time = time;
@@ -19,7 +22,6 @@ public class AuditionDateTO {
 		this.information = information;
 	}
 	
-
 	public int getId() {
 		return id;
 	}
@@ -60,4 +62,11 @@ public class AuditionDateTO {
 		this.information = information;
 	}
 
+	public String getType() {
+		return type.getType();
+	}
+
+	public void setType(String type) {
+		this.type = DateType.getTypeFromKey(type);
+	}
 }

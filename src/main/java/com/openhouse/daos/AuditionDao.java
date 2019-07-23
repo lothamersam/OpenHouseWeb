@@ -7,7 +7,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.openhouse.beans.AuditionDateTO;
 import com.openhouse.beans.SignupInformationTO;
 
 import java.sql.PreparedStatement;
@@ -18,10 +17,6 @@ public class AuditionDao extends BasicPageDao {
 	private static final String GET_SIGNUPS = "SELECT first_name, last_name, pronouns, date, email, id FROM oh_audition";
 	private static final String ADD_SIGNUP = "INSERT INTO oh_audition (first_name, last_name, email, pronouns, date) VALUES (?, ?, ?, ?, ?)";
 	private static final String DELETE_SIGNUP = "DELETE FROM oh_audition WHERE id = ?";
-	private static final String GET_AUDITION_DATES = "SELECT id, date, time, location, information FROM oh_dates";
-	private static final String ADD_AUDITION_DATE = "INSERT INTO oh_dates (date, location, time, information) VALUES (?, ?, ?, ?)";
-	private static final String EDIT_AUDITION_DATE = "UPDATE oh_dates SET date = ?, time = ?, location = ?, information = ? WHERE id = ?";	
-	private static final String DELETE_AUDITION_DATE = "DELETE FROM oh_dates WHERE id = ?";	
 	
 	public List<SignupInformationTO> getAuditionSignups() {
 		final List<SignupInformationTO> signupList = new ArrayList<>(); 
@@ -69,81 +64,6 @@ public class AuditionDao extends BasicPageDao {
 	public boolean deleteAuditionSignup(int id) {
 		try (final Connection connection = DatabaseConnection.getConnection()) {
 			final PreparedStatement statement = connection.prepareStatement(DELETE_SIGNUP);
-
-			statement.setInt(1, id);
-
-			if (statement.executeUpdate() > 0) {
-				return true;
-			}
-		} catch (URISyntaxException | SQLException e) {
-			System.out.println("There was an error when querying the database! " + e.getMessage());
-		} 
-		
-		return false;
-	}
-	
-	
-	public List<AuditionDateTO> getAuditionDate() {
-		final List<AuditionDateTO> datesList = new ArrayList<>();
-				
-		try (final Connection connection = DatabaseConnection.getConnection()) {
-			final PreparedStatement statement = connection.prepareStatement(GET_AUDITION_DATES);
-			
-			
-			final ResultSet results = statement.executeQuery();
-			while (results.next()) {
-				datesList.add(new AuditionDateTO(
-						results.getInt(1),
-						results.getString(2),
-						results.getString(3),
-						results.getString(4),
-						results.getString(5)));			
-			}
-		} catch (SQLException | URISyntaxException e) {
-			System.out.println("There was an error when querying the database! " + e.getMessage());
-		} 
-				
-		return datesList;
-	}
-	
-	public boolean addAuditionDate(final AuditionDateTO date) {
-		try (final Connection connection = DatabaseConnection.getConnection()) {
-			PreparedStatement statement = connection.prepareStatement(ADD_AUDITION_DATE);
-			
-			statement.setString(1, date.getDate());
-			statement.setString(3, date.getTime());
-			statement.setString(2, date.getLocation());
-			statement.setString(4, date.getInformation());
-			
-			return statement.executeUpdate() > 0;
-		} catch (SQLException | URISyntaxException e) {
-			System.out.println("There was an error when querying the database! " + e.getMessage());
-		} 
-		
-		return false;
-	}
-	
-	public boolean editAuditionDate(final AuditionDateTO date) {
-		try (final Connection connection = DatabaseConnection.getConnection()) {
-			PreparedStatement statement = connection.prepareStatement(EDIT_AUDITION_DATE);
-			
-			statement.setString(1, date.getDate());
-			statement.setString(3, date.getTime());
-			statement.setString(2, date.getLocation());
-			statement.setString(4, date.getInformation());
-			statement.setInt(5, date.getId());
-			
-			return statement.executeUpdate() > 0;
-		} catch (SQLException | URISyntaxException e) {
-			System.out.println("There was an error when querying the database! " + e.getMessage());
-		} 
-		
-		return false;
-	}
-	
-	public boolean deleteAuditionDate(int id) {
-		try (final Connection connection = DatabaseConnection.getConnection()) {
-			final PreparedStatement statement = connection.prepareStatement(DELETE_AUDITION_DATE);
 
 			statement.setInt(1, id);
 

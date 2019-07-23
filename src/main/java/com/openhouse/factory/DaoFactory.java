@@ -3,6 +3,7 @@ package com.openhouse.factory;
 
 import com.openhouse.daos.AuditionDao;
 import com.openhouse.daos.BasicPageDao;
+import com.openhouse.daos.DateDao;
 import com.openhouse.daos.StaffDao;
 
 public final class DaoFactory {
@@ -18,6 +19,14 @@ public final class DaoFactory {
     public static final BasicPageDao getPageDao() {
         return PAGE_DAO_WRAPPER.pageDao;
     } 
+    
+    public static final DateDao getDateDao() {
+        return DATE_DAO_WRAPPER.dateDao;
+    } 
+
+    private static final class DATE_DAO_WRAPPER {
+        private static DateDao dateDao = new DateDao();
+    }
 
     private static final class PAGE_DAO_WRAPPER {
         private static BasicPageDao pageDao = new BasicPageDao();
