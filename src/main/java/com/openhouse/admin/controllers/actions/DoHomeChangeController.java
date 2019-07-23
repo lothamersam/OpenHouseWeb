@@ -27,9 +27,9 @@ public class DoHomeChangeController extends HttpServlet {
         boolean status = this.aboutDao.editPageSection(aboutSection);
 
         if(status) {
-            response.sendRedirect("/admin/about?success=Successfully performed update!");
+            response.sendRedirect("/admin/home?success=Successfully performed update!");
         } else {
-            response.sendRedirect("/admin/about?error=Your update was not successful!");
+            response.sendRedirect("/admin/home?error=Your update was not successful!");
         }
     }
 }
