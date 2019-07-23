@@ -16,8 +16,13 @@ public class EmailREST {
 
     @POST
     @Path("/send")
-    protected Response doSendEmail(@FormParam("firstName") String firstName) {
+    protected Response doSendEmail(@FormParam("firstName") String firstName,
+                                   @FormParam("lastName") String lastName,
+                                   @FormParam("email") String email,
+                                   @FormParam("category") String phoneNumber
+                                   @FormParam("message") String message) {
       
+        
       return Response.status(200)  
         .entity(firstName)  
         .build(); 
