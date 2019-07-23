@@ -198,7 +198,7 @@ public final class ParameterService {
 				&& StringUtils.isNotBlank(request.getParameter("information"))) {
 			date.setDate(request.getParameter("date"));
 			date.setTime(request.getParameter("time"));
-			date.setLocation(request.getParameter("date"));
+			date.setLocation(request.getParameter("location"));
 			date.setInformation(request.getParameter("information"));
 		}
 		
