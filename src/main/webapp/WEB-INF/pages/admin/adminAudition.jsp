@@ -21,6 +21,10 @@
 							<th>Time</th>
 							<th>Location</th>
 							<th>Information</th>
+							<td><a href="#addDate"
+								class="waves-effect waves-teal btn-flat"> <i
+									class="material-icons">add_circle</i>
+							</a></td>
 						</tr>
 					</thead>
 					<tbody>
@@ -47,8 +51,8 @@
 					data-position="top" data-delay="200"
 					data-tooltip="Click to edit section">
 					<div class="card-content">
-						<span class="card-title">Audition Information:</span>
-						<span id="sectionContent">${auditionInformation.sectionContent}</span>
+						<span class="card-title">Audition Information:</span> <span
+							id="sectionContent">${auditionInformation.sectionContent}</span>
 					</div>
 				</div>
 			</div>
@@ -107,10 +111,37 @@
 				</div>
 			</div>
 			<input id="sectionType" type="hidden" name="sectionType" value="" />
+			<input id="sectionType" type="hidden" name="isDate" value="false" />
 			<div class="modal-footer">
 				<button class="btn waves-effect waves-light" type="submit"
 					name="action">
 					Apply Edits<i class="material-icons right">add_box</i>
+				</button>
+			</div>
+		</form>
+	</div>
+
+	<div id="addDate" class="modal modal-fixed-footer">
+		<form action="/action/admin/auditionChange" method="POST">
+			<div class="modal-content">
+				<div class="row">
+					<div class="input-field col s12">
+					
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<textarea name="information" id="sectionContentInput"
+							class="materialize-textarea"
+							placeholder="Enter section content..." required></textarea>
+					</div>
+				</div>
+			</div>
+			<input id="sectionType" type="hidden" name="isDate" value="true" />
+			<div class="modal-footer">
+				<button class="btn waves-effect waves-light" type="submit"
+					name="action">
+					Add Audition Date<i class="material-icons right">add_box</i>
 				</button>
 			</div>
 		</form>
