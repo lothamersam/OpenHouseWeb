@@ -9,6 +9,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.FormParam;  
 import javax.ws.rs.core.Response; 
 
+import com.sendgrid.Mail;
+
 @Path("/email")
 public class EmailREST {  
     private static final EmailService emailService = ServiceFactory.getEmailService();
