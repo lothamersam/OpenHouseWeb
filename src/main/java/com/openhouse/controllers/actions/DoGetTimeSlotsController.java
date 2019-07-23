@@ -12,17 +12,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/action/times")
+@Path("/times")
 public class DoGetTimeSlotsController extends HttpServlet {
     private static final long serialVersionUID = 1L;
     
     private static final ParameterService parameterService = ServiceFactory.getParameterService();
     private static final AuditionDao auditionDao = DaoFactory.getAuditionDao();
 
-    //TODO: Change return JSON
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-            response.getWriter().write("true");
+    @GET
+    @Path("/{id}")
+    public Response  getTimeSlots(@PathParam int id) {
+        return Response.status(200)  
+        .entity("test")  
+        .build();   
     }
 }
