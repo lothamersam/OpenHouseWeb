@@ -1,4 +1,4 @@
-package com.openhouse.controllers.actions;
+package com.openhouse.rest;
 
 import com.openhouse.daos.AuditionDao;
 import com.openhouse.services.ParameterService;
@@ -11,7 +11,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Response; 
 
 @Path("/times")
-public class DoGetTimeSlotsController {
+public class DoGetTimeSlotsREST {
     private static final long serialVersionUID = 1L;
     
     private static final ParameterService parameterService = ServiceFactory.getParameterService();
