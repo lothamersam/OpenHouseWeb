@@ -39,7 +39,7 @@
 								<td><a
 									href="/action/admin/auditionChange?id=${date.id}&type=date"
 									class="waves-effect waves-teal btn-flat"> <i
-										class="material-icons">delete_forever</i>
+										class="material-icons">clear</i>
 								</a></td>
 							</tr>
 						</c:forEach>
@@ -82,7 +82,7 @@
 								<td><a
 									href="/action/admin/auditionChange?id=${signup.id}&type=signup"
 									class="waves-effect waves-teal btn-flat"> <i
-										class="material-icons">delete_forever</i>
+										class="material-icons">clear</i>
 								</a></td>
 							</tr>
 						</c:forEach>
