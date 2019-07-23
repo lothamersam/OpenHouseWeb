@@ -50,6 +50,6 @@ $(document).ready(function () {
     })
     
     $('.timepicker').on('mousedown',function(event){
-    event.preventDefault();
-})
+    	event.preventDefault();
+    })
 });
