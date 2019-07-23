@@ -12,6 +12,18 @@
 
 	<div class="container row top-row">
 		<div class="col s12 m9 l10">
+			<div class="row">
+				<div id="auditionInformation" id="introduction"
+					class="card section scrollspy hoverable tooltipped"
+					data-position="top" data-delay="200"
+					data-tooltip="Click to edit section">
+					<div class="card-content">
+						<span class="card-title">Audition Information:</span> <span
+							id="sectionContent">${auditionInformation.sectionContent}</span>
+					</div>
+				</div>
+			</div>
+			
 			<div id="dates" class="row section scrollspy">
 				<h5>Available Audition Dates:</h5>
 				<table>
@@ -46,19 +58,6 @@
 					</tbody>
 				</table>
 			</div>
-
-			<div class="row">
-				<div id="auditionInformation" id="introduction"
-					class="card section scrollspy hoverable tooltipped"
-					data-position="top" data-delay="200"
-					data-tooltip="Click to edit section">
-					<div class="card-content">
-						<span class="card-title">Audition Information:</span> <span
-							id="sectionContent">${auditionInformation.sectionContent}</span>
-					</div>
-				</div>
-			</div>
-
 
 			<div id="signUp" class="row section scrollspy">
 				<h4>Audition Signups:</h4>
