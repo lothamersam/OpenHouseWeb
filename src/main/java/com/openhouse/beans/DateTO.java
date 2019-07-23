@@ -6,6 +6,7 @@ public class DateTO {
 	private int id;
 	private String date;
 	private String time;
+	private String endTime;
 	private String location;
 	private String information;
 	private DateType type;
@@ -44,6 +45,14 @@ public class DateTO {
 	
 	public void setTime(String time) {
 		this.time = time;
+	}
+	
+	public String getEndTime() {
+		return endTime;
+	}
+	
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 	
 	public String getLocation() {
