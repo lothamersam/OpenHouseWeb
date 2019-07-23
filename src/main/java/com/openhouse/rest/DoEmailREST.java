@@ -11,7 +11,7 @@ import javax.ws.rs.core.Response;
 
 
 @Path("/email")
-public class DoEmailController extends HttpServlet {
+public class DoEmailREST extends HttpServlet {
     private static final long serialVersionUID = 1L;
     
     private static final EmailService emailService = ServiceFactory.getEmailService();
