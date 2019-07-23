@@ -128,12 +128,10 @@
 			<div class="modal-content">
 				<div class="row">
 					<div class="input-field col s6">
-						<input name="date" type="text" class="datepicker" required>
-						<label for="date">Date</label>
+						<input name="date" type="text" class="datepicker" placeholder="Date" required>
 					</div>
 					<div class="input-field col s6">
-  						<input name="time" type="text" class="timepicker" required>
-  						<label for="time">Time</label>
+  						<input name="time" type="text" class="timepicker" placeholder="Time" required>
 					</div>
 				</div>
 				<div class="row">
