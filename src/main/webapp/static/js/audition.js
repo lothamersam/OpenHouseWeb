@@ -3,7 +3,7 @@ $("#auditionForm").submit(function (event) {
 
     $.post("/action/audition", contactFormData, function (response) {
         Materialize.toast("You have signed up succesfully!", 4000);
-        $("#auditionForm")[].reset();
+        $("#auditionForm")[0].reset();
     })
     .fail(function (response) {
         Materialize.toast("There an error signing up, please try again!", 4000);
