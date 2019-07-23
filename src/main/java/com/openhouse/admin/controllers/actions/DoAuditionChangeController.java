@@ -29,24 +29,20 @@ public class DoAuditionChangeController extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		boolean success = false;
+		boolean status = false;
 		
 		if (StringUtils.isNotBlank(request.getParameter("id"))
 				&& StringUtils.isNotBlank(request.getParameter("type"))) {
 			final int id = Integer.parseInt(request.getParameter("id"));
 			
 			if("date".equals(request.getParameter("type"))) {
-				success = this.dateDao.removeDate(id);
+				status = this.dateDao.removeDate(id);
 			} else if("signup".equals(request.getParameter("type"))) {
-				success = this.auditionDao.deleteAuditionSignup(id);
+				status = this.auditionDao.deleteAuditionSignup(id);
 			}
 		}
 		
-		if(success) {
-			response.sendRedirect("/admin/audition?success=Deletion was successful");
-		} else {
-			response.sendRedirect("/admin/audition?error=Deletion was not successful");
-		}
+		redirect(response, status);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -62,10 +58,14 @@ public class DoAuditionChangeController extends HttpServlet {
 			status = this.auditionDao.editPageSection(pageSection);
 		}
 		
+		redirect(response, status);
+	}
+	
+	private void redirect(HttpServletResponse response, boolean status) throws ServletException, IOException {
 		if (status) {
-			response.sendRedirect("/admin/audition?success=Successfully performed update!");
+			response.sendRedirect("/admin/auditions?success=Successfully performed update!");
 		} else {
-			response.sendRedirect("/admin/audition?error=Your update was not successful!");
+			response.sendRedirect("/admin/auditions?error=Your update was not successful!");
 		}
 	}
 }

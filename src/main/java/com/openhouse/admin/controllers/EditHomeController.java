@@ -1,6 +1,7 @@
-package com.openhouse.controllers;
+package com.openhouse.admin.controllers;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,9 +12,10 @@ import com.openhouse.daos.BasicPageDao;
 import com.openhouse.factory.DaoFactory;
 import com.openhouse.services.enums.PageSectionType;
 
-@WebServlet("/")
-public class HomeController extends HttpServlet {
+@WebServlet("/admin/home")
+public class EditHomeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
 	private final BasicPageDao pageDao = DaoFactory.getPageDao();
 	
 

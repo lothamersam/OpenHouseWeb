@@ -7,7 +7,14 @@ public enum PageSectionType {
 	PRODUCTION_SECTION("productionSection", "production"),
 	DONATE_SECTION("donateSection", "donation"),
 	AUDITION_INFORMATION_SECTION("auditionInformation", "auditionInformation"),
-	CONTACT_SECTION("contactSection", "contactSection");
+	CONTACT_SECTION("contactSection", "contactSection"),
+	HOME_TOP("homeTop", "homeTop"),
+	HOME_COLLAPSE_ONE("homeCollapseOne", "homeCollapseOne"),
+	HOME_COLLAPSE_TWO("homeCollapseTwo", "homeCollapseTwo"),
+	HOME_COLLAPSE_THREE("homeCollapseThree", "homeCollapseThree"),
+	HOME_COL_ONE("homeColOne", "homeColOne"),
+	HOME_COL_TWO("homeColTwo", "homeColTwo"),
+	HOME_COL_THREE("homeColhree", "homeColThree");
 
 	private String sectionType;
 	private String divKey;
