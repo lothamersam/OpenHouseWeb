@@ -74,7 +74,7 @@
 							</div>
 							<div class="input-field col s6">
 								<select name="date" required>
-									<option value="" disabled selected>Choose a date</option>
+									<option value="" disabled selected>Choose a Date</option>
 									<c:forEach items="${auditionDates}" var="date">
 										<option value="${date.date}, ${date.time}">${date.date}, ${date.time}</option>
 									</c:forEach>
