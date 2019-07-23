@@ -16,7 +16,7 @@
 				<div id="homeTop" class="section scrollspy hoverable tooltipped"
 					data-position="top" data-delay="200"
 					data-tooltip="Click to edit section">
-					<span class="sectionContent">${homeTop.sectionContent}</span>
+					<span id="sectionContent">${homeTop.sectionContent}</span>
 				</div>
 			</div>
 
