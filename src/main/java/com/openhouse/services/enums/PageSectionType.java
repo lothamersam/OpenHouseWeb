@@ -14,7 +14,7 @@ public enum PageSectionType {
 	HOME_COLLAPSE_THREE("homeCollapseThree", "homeCollapseThree"),
 	HOME_COL_ONE("homeColOne", "homeColOne"),
 	HOME_COL_TWO("homeColTwo", "homeColTwo"),
-	HOME_COL_THREE("homeColhree", "homeColThree");
+	HOME_COL_THREE("homeColThree", "homeColThree");
 
 	private String sectionType;
 	private String divKey;
