@@ -22,7 +22,7 @@
 					<ul class="collapsible popout" data-collapsible="expandable">
 						<li>
 							<div class="collapsible-header active"><i class="material-icons">filter_drama</i>First</div>
-							<div class="collapsible-body"><span>${homeCollapseOne.sectionContent.sectionContent}</span></div>
+							<div class="collapsible-body"><span>${homeCollapseOne.sectionContent}</span></div>
 						</li>
 						<li>
 							<div class="collapsible-header"><i class="material-icons">place</i>Second</div>
