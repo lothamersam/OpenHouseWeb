@@ -45,7 +45,7 @@
 						<c:forEach items="${auditionDates}" var="date">
 							<tr>
 								<td>${date.date}</td>
-								<td>${date.time}</td>
+								<td>${date.startTime}-${date.endTime}</td>
 								<td>${date.location}</td>
 								<td>${date.information}</td>
 								<td><a
