@@ -1,4 +1,4 @@
-package com.openhouse.admin.controllers.actions;
+package com.openhouse.rest.admin;
 
 import javax.ws.rs.GET;  
 import javax.ws.rs.Path;  
@@ -13,15 +13,15 @@ import com.openhouse.services.ParameterService;
 
 @Path("/admin/page")
 public class PageSectionChangeREST {	
-	  private final ParameterService parameterService = ServiceFactory.getParameterService();
-    private final BasicPageDao aboutDao = DaoFactory.getPageDao();
+	private final ParameterService parameterService = ServiceFactory.getParameterService();
+    	private final BasicPageDao aboutDao = DaoFactory.getPageDao();
     
     @POST
     @Path("/change")
-    public Response changeHomeSection() throws ServletException, IOException {
+    public Response changeHomeSection() {
     	PageSectionTO aboutSection = this.parameterService.getPageSectionFromRequest(request);
 
-        boolean status = this.aboutDao.editPageSection(aboutSection);
+        //boolean status = this.aboutDao.editPageSection(aboutSection);
 
         return Response.status(200)  
           .entity("test")  
