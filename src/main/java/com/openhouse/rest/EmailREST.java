@@ -22,7 +22,7 @@ public class EmailREST {
                                    @FormParam("phoneNumber") String phoneNumber,
                                    @FormParam("category") String category,
                                    @FormParam("message") String message) {
-      
+      final Mail mail = this.parameterService.getMailFromRequest(firstName, lastName, email, phoneNumber, category, message);
         
       return Response.status(200)  
         .entity(firstName)  
