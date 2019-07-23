@@ -63,7 +63,7 @@ public final class ParameterService {
         mail.addContent(content);
         
         mail.addPersonalization(personalization);
-        mail.setFrom(new Email(email)));
+        mail.setFrom(new Email(email));
         mail.setSubject(String.format("%s - %s %s",         
             category, firstName, lastName));     
 
