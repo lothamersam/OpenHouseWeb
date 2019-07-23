@@ -11,7 +11,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Response; 
 
 @Path("/times")
-public class DoGetTimeSlotsREST {
+public class TimeSlotsREST {
     private static final long serialVersionUID = 1L;
     
     private static final ParameterService parameterService = ServiceFactory.getParameterService();
