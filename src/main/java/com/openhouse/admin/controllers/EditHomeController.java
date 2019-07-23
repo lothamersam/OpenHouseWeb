@@ -22,7 +22,7 @@ public class EditHomeController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		setRequsetAttributes(request);
 		
-		request.getRequestDispatcher("/WEB-INF/pages/home.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/pages/admin/adminHome.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
