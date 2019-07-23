@@ -30,7 +30,12 @@ import com.sendgrid.Content;
 public final class ParameterService {
     private static final String CONTACT_DIRECTOR = "Contact Director";
 
-    public Mail getContactMailFromRequest(final HttpServletRequest request) throws IllegalFormatException {
+    public Mail getContactMailFromRequest(String firstName, 
+					  String lastName,
+					  String email,
+					  String phoneNumber,
+					  String category,
+					  String message) throws IllegalFormatException {
         final Mail mail = new Mail();
         
         final Personalization personalization = new Personalization();
@@ -45,27 +50,22 @@ public final class ParameterService {
 
         final StringBuilder messageBody = new StringBuilder();
         messageBody.append(String.format("<h3>%s - %s %s</h3><h5>%s", 
-                request.getParameter("category"), 
-                request.getParameter("firstName"), 
-                request.getParameter("lastName"),
-                request.getParameter("email")));
+                category, firstName, lastName, email));
        
         if(null != request.getParameter("phoneNumber")) {
-            messageBody.append(String.format(" - %s", request.getParameter("phoneNumber")));
+            messageBody.append(String.format(" - %s", phoneNumber));
         }
         
         messageBody.append("</h5>");
-        messageBody.append("<p>" + request.getParameter("message") + "</p>");
+        messageBody.append("<p>" + message + "</p>");
 
         content.setValue(messageBody.toString());
         mail.addContent(content);
         
         mail.addPersonalization(personalization);
-        mail.setFrom(new Email(request.getParameter("email")));
+        mail.setFrom(new Email(email)));
         mail.setSubject(String.format("%s - %s %s",         
-            request.getParameter("category"), 
-            request.getParameter("firstName"), 
-            request.getParameter("lastName")));     
+            category, firstName, lastName));     
 
         return mail;
     }
