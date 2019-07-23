@@ -12,6 +12,16 @@
 
 	<div class="container row top-row">
 		<div class="col s12 m9 l10">
+			<div class="row">
+				<div id="information" class="card section scrollspy">
+					<div class="card-content">
+						<span class="card-title">Audition Information:</span>
+
+						${auditionInformation.sectionContent}
+					</div>
+				</div>
+			</div>			
+			
 			<div id="dates" class="row section scrollspy">
 				<h5>Available Audition Dates:</h5>
 				<table>
@@ -35,17 +45,6 @@
 					</tbody>
 				</table>
 			</div>
-
-			<div class="row">
-				<div id="information" class="card section scrollspy">
-					<div class="card-content">
-						<span class="card-title">Audition Information:</span>
-
-						${auditionInformation.sectionContent}
-					</div>
-				</div>
-			</div>
-
 
 			<div id="signUp" class="row section scrollspy">
 				<h4>Sign up to audition:</h4>
@@ -103,8 +102,8 @@
 
 		<div class="col hide-on-small-only m3 l2">
 			<ul class="section table-of-contents">
-				<li><a href="#dates">Audition Dates</a></li>
 				<li><a href="#information">Audition Information</a></li>
+				<li><a href="#dates">Audition Dates</a></li>
 				<li><a href="#signUp">Sign Up</a></li>
 			</ul>
 		</div>
