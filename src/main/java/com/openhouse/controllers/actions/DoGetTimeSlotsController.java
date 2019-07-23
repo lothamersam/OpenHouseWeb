@@ -19,7 +19,7 @@ public class DoGetTimeSlotsController {
 
     @GET
     @Path("/{id}")
-    public Response getTimeSlots(@PathParam int id) {
+    public Response getTimeSlots(@PathParam("id") int id) {
         return Response.status(200)  
         .entity("test")  
         .build();   
