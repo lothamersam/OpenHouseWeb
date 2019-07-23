@@ -3,7 +3,7 @@ $("#contactForm").submit(function (event) {
 
     $.post("/action/email", contactFormData, function (response) {
         Materialize.toast("Your email has been sent succesfully!", 4000);
-        $("#contactForm").trigger("reset");
+        $("#formReset").clcik();
     })
     .fail(function (response) {
         Materialize.toast("There an error sending your email, please try again!", 4000);

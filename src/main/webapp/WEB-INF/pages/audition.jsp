@@ -94,7 +94,7 @@
 						name="action">
 						Submit <i class="material-icons right">send</i>
 					</button>
-					<button class="btn-flat waves-effect waves-cyan" type="reset"
+					<button id="formReset" class="btn-flat waves-effect waves-cyan" type="reset"
 						name="reset">Reset<i class="material-icons right">refresh</i>
 					</button>
 				</form>
