@@ -11,7 +11,7 @@
 
 		<div class="container row">
 			<div class="row top-row">
-				<form id="contactForm" class="col s12" action="/action/email">
+				<form id="contactForm" class="col s12" action="/do/email/send">
 					<div class="card">
 						<div class="card-content">
 							<span class="card-title">Contact Our Team</span>
