@@ -19,7 +19,12 @@ $(document).ready(function () {
         offset: 0
     });
     
-    $('textarea').trumbowyg();
+    $('textarea').trumbowyg({
+    	 btns: [
+    	        ['fontfamily'],
+    	        ['fontsize']
+    	 ]
+    });
     
 
     $('.datepicker').pickadate({
