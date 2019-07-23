@@ -31,6 +31,7 @@ public class DateDao {
 						results.getInt(1),
 						results.getString(2),
 						results.getString(3),
+						results.getString(3),
 						results.getString(4),
 						results.getString(5)));			
 			}
@@ -47,7 +48,7 @@ public class DateDao {
 										  Statement.RETURN_GENERATED_KEYS);
 			
 			statement.setString(1, date.getDate());
-			statement.setString(3, date.getTime());
+			statement.setString(3, date.getStartTime());
 			statement.setString(2, date.getLocation());
 			statement.setString(4, date.getInformation());
 			statement.setString(5, date.getType());
