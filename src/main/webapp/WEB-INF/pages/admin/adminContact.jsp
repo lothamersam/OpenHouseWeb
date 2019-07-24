@@ -24,7 +24,7 @@
 	</main>
 
 	<div id="editModal" class="modal modal-fixed-footer">
-		<form action="/action/admin/contactChange" method="POST">
+		<form action="/do/admin/page/change/contact" method="POST">
 			<div class="modal-content">
 				<div class="row">
 					<div class="input-field col s12">
