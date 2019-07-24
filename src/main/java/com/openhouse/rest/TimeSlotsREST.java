@@ -20,7 +20,7 @@ public class TimeSlotsREST {
 		int status = 500;
 		final JSONObject timesList = this.dateDao.getTimes(id);
 
-		if (timesList.getJSONArray("times") != null) {
+		if (timesList.getJSONArray("times").getJSONObject(0) != null) {
 			status = 200;
 		}
 

@@ -209,12 +209,12 @@ public final class ParameterService {
 		final DateTO date = new DateTO();
 		
 		if (StringUtils.isNotBlank(request.getParameter("date"))
-				&& StringUtils.isNotBlank(request.getParameter("startTime"))
+				&& StringUtils.isNotBlank(request.getParameter("time"))
 		    		&& StringUtils.isNotBlank(request.getParameter("endTime"))
 				&& StringUtils.isNotBlank(request.getParameter("location"))
 				&& StringUtils.isNotBlank(request.getParameter("information"))) {
 			date.setDate(request.getParameter("date"));
-			date.setStartTime(request.getParameter("startTime"));
+			date.setStartTime(request.getParameter("time"));
 			date.setEndTime(request.getParameter("endTime"));
 			date.setLocation(request.getParameter("location"));
 			date.setInformation(request.getParameter("information"));
