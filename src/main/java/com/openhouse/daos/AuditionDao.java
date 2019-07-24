@@ -58,7 +58,7 @@ public class AuditionDao extends BasicPageDao {
 
 			ResultSet results = statement.getGeneratedKeys();
 			if (results.next()) {
-				return results.getInt(0);
+				return results.getInt(1);
 			}
 		} catch (URISyntaxException | SQLException e) {
 			System.out.println("There was an error when querying the database! " + e.getMessage());
