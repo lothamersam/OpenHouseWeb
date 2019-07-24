@@ -54,6 +54,7 @@ public class DateDao {
 	}
 	
 	public boolean addDate(final DateTO date) {
+		boolean status = false; 
 		try (final Connection connection = DatabaseConnection.getConnection()) {
 			PreparedStatement statement = connection.prepareStatement(ADD_AUDITION_DATE, 
 										  Statement.RETURN_GENERATED_KEYS);
@@ -65,11 +66,12 @@ public class DateDao {
 			statement.setString(4, date.getInformation());
 			statement.setString(5, date.getType());
 			
-			final int id = statement.executeUpdate();
+			status = statement.executeUpdate() > 0;
 			
-			this.addTimes(id, date.getStartTime(), date.getEndTime());
-			
-			return id > 0;
+			ResultSet results = statement.getGeneratedKeys();
+			if(results.next()) {
+				return status && this.addTimes(results.getInt(1), date.getStartTime(), date.getEndTime());
+			}
 		} catch (SQLException | URISyntaxException e) {
 			System.out.println("There was an error when querying the database! " + e.getMessage());
 		} 
