@@ -101,7 +101,7 @@
 	</main>
 
 	<div id="editModal" class="modal modal-fixed-footer">
-		<form action="/action/admin/aboutChange" method="POST">
+		<form action="/do/admin/page/change/about" method="POST">
 			<div class="modal-content">
 				<div class="row">
 					<div class="input-field col s12">
