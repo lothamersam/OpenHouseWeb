@@ -24,7 +24,7 @@
     </div>
     <div class="footer-copyright black-text">
         <div class="container">
-            &copy; 2014 Copyright Open House Theatre Company
+            &copy; 2019 Copyright Open House Theatre Company
             <a href="/login">Admin</a>
         </div>
     </div>
