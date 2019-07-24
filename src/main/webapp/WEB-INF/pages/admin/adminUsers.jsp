@@ -19,7 +19,7 @@
 						<thead>
 							<tr>
 								<th>Last, First</th>
-								<th>UserName</th>
+								<th>Username</th>
 								<td><a href="#editModal"
 									class="waves-effect waves-teal btn-flat modal-trigger tooltipped"
 									data-position="top" data-delay="200" data-tooltip="Add user">
