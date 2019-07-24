@@ -32,7 +32,7 @@ public class LoginREST {
 		final UserTO user = this.userDao.getUser(username);
 
 		if (StringUtils.isNotBlank(user.getUsername()) && StringUtils.isNotBlank(user.getPassword())) {
-			success = BCrypt.checkpw(password, BCrypt.gensalt(10));
+			success = BCrypt.checkpw(password, user.getPassword());
 		}
 
 		if (success) {
