@@ -1,7 +1,5 @@
 package com.openhouse.rest.admin;
 
-import java.net.URI;
-
 import javax.ws.rs.FormParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -31,6 +29,6 @@ public class PageSectionChangeREST {
 
 		this.pageDao.editPageSection(aboutSection);
 
-		return Response.seeOther(uriInfo.getBaseUriBuilder().path("/admin/" + referrer).build()).build();
+		return Response.seeOther(uriInfo.getBaseUriBuilder().path("../admin/" + referrer).build()).build();
 	}
 }
