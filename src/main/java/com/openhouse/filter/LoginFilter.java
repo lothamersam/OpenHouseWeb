@@ -26,7 +26,9 @@ public class LoginFilter implements Filter {
 		
 		HttpSession session = httpRequest.getSession();
 		
-		if(!session.isNew() && session.getAttribute("user") != null) {				
+		if(!session.isNew() && session.getAttribute("user") != null) {
+			httpRequest.setAttribute("loggedIn", true);
+			
 			chain.doFilter(request, response);
 		} else if(session.isNew() || session.getAttribute("user") == null){
 			httpResponse.sendRedirect("/login");
