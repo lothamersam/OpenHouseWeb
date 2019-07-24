@@ -138,7 +138,7 @@ public class DateDao {
 						.put("id", results.getInt(1))
 						.put("audition_id", results.getInt(2))
 						.put("time", results.getString(3));
-				timesArray.put(singleTime.toString());
+				timesArray.put(singleTime);
 			}
 		} catch (SQLException | URISyntaxException e) {
 			System.out.println("There was an error when querying the database! " + e.getMessage());
