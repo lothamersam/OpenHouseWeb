@@ -69,6 +69,7 @@
 							<th>Pronoun</th>
 							<th>Date</th>
 							<th>Email</th>
+							<th>Phone</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -78,6 +79,7 @@
 								<td>${signup.pronouns}</td>
 								<td>${signup.date}</td>
 								<td>${signup.email}</td>
+								<td>${signup.phoneNumber}</td>
 								<td><a
 									href="/action/admin/auditionChange?id=${signup.id}&type=signup"
 									class="waves-effect waves-teal btn-flat"> <i
