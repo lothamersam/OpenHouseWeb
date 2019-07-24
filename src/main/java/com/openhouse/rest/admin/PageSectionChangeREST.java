@@ -1,11 +1,12 @@
 package com.openhouse.rest.admin;
 
+import java.net.URI;
+
 import javax.ws.rs.FormParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Response;
-
-import org.json.JSONObject;
 
 import com.openhouse.beans.PageSectionTO;
 import com.openhouse.daos.BasicPageDao;
@@ -19,20 +20,14 @@ public class PageSectionChangeREST {
 	private final BasicPageDao pageDao = DaoFactory.getPageDao();
 
 	@POST
-	@Path("/change")
-	public Response changeHomeSection(@FormParam("content") String content,
+	@Path("/change/{referrer}")
+	public Response changeHomeSection(@PathParam("referrer") String referrer,
+			@FormParam("content") String content,
 			@FormParam("sectionType") String sectionType) {
-
-		int status = 500;
-		final JSONObject responseBody = new JSONObject().put("success", false);
-
 		PageSectionTO aboutSection = this.parameterService.getPageSectionFromRequest(content, sectionType);
 
-		if (this.pageDao.editPageSection(aboutSection)) {
-			status = 200;
-			responseBody.put("success", true);
-		} 
+		this.pageDao.editPageSection(aboutSection);
 
-		return Response.status(status).entity(responseBody.toString()).build();
+		return Response.seeOther(URI.create("/admin/" + referrer)).build();
 	}
 }
