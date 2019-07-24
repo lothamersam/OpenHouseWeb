@@ -154,7 +154,7 @@ public class DateDao {
 			final PreparedStatement statement = connection.prepareStatement(ASSIGN_TIME_SLOT);
 
 			statement.setInt(1, signupId);
-			statement.setInt(1, auditionId);
+			statement.setInt(2, auditionId);
 			
 			return statement.executeUpdate() > 0;
 		} catch (URISyntaxException | SQLException e) {
