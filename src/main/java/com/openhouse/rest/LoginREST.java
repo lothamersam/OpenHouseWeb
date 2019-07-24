@@ -1,5 +1,7 @@
 package com.openhouse.rest;
 
+import java.net.URI;
+
 import javax.servlet.http.HttpServletRequest;
 
 import javax.ws.rs.FormParam;
@@ -7,7 +9,6 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.UriInfo;
 
 import org.apache.commons.lang3.StringUtils;
 import org.mindrot.jbcrypt.BCrypt;
@@ -22,8 +23,7 @@ public class LoginREST {
 
 	
 	@POST
-	public Response verifyUserAndLogin(@Context UriInfo uriInfo,
-			@Context HttpServletRequest request,
+	public Response verifyUserAndLogin(@Context HttpServletRequest request,
 			@FormParam("username") String username, 
 			@FormParam("password") String password) {
 		boolean success = false;
@@ -40,6 +40,6 @@ public class LoginREST {
 			redirectPath = "../admin";
 		}
 
-		return Response.seeOther(uriInfo.getBaseUriBuilder().path(redirectPath).build()).build();
+		return Response.seeOther(URI.create(redirectPath)).build();
 	}
 }

@@ -1,5 +1,7 @@
 package com.openhouse.rest.admin;
 
+import java.net.URI;
+
 import javax.servlet.http.HttpServletRequest;
 
 import javax.ws.rs.FormParam;
@@ -40,7 +42,7 @@ public class UserREST {
 				.getUserFromRequest(firstName, lastName, username, hashedPassword);
 		final JSONObject responseBody = this.userDao.addUser(user);
 		
-		return Response.seeOther(uriInfo.getBaseUriBuilder().path(PATH).build()).build();
+		return Response.seeOther(URI.create(PATH)).entity(responseBody).build();
 	}
 	
 	@POST
@@ -62,7 +64,7 @@ public class UserREST {
 	public Response removeUser(@PathParam("id") int id) {
 		final JSONObject responseBody = this.userDao.removeUser(id);
 		
-		return Response.seeOther(uriInfo.getBaseUriBuilder().path(PATH).build()).build();
+		return Response.seeOther(URI.create(PATH)).entity(responseBody).build();
 	}
 
 }
