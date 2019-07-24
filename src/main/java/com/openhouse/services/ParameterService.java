@@ -192,13 +192,14 @@ public final class ParameterService {
 		if(StringUtils.isNotBlank(request.getParameter("first_name"))
 				&& StringUtils.isNotBlank(request.getParameter("last_name"))
 				&& StringUtils.isNotBlank(request.getParameter("pronoun"))
-				&& StringUtils.isNotBlank(request.getParameter("date"))
+				&& StringUtils.isNotBlank(request.getParameter("dateText"))
+				&& StringUtils.isNotBlank(request.getParameter("timeText"))
 				&& StringUtils.isNotBlank(request.getParameter("email"))
 				&& StringUtils.isNotBlank(request.getParameter("phone_number"))) {
 			signup.setFirstName(request.getParameter("first_name"));
 			signup.setLastName(request.getParameter("last_name"));
 			signup.setPronouns(request.getParameter("pronoun"));
-			signup.setDate(request.getParameter("date"));
+			signup.setDate(request.getParameter("date") + ", " + request.getParameter("timeText"));
 			signup.setEmail(request.getParameter("email"));
 			signup.setPhoneNumber(request.getParameter("phone_number"));
 		}
