@@ -2,13 +2,14 @@
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
-                <h5>
+                <div class="col l4 m12>
                     <img class="center-content img responsive-img" src="/static/img/logo.png" alt="Open House Logo" title="Open House Theatre Company">
-                    Open House Theatre Company
-                </h5>
-                <p>We started our journey in 2019 with a single mission 
-                in mind; to provide an accessible, educational, and inclusive theatrical experience regardless 
-                of race, ethnicity, gender, sexuality, religion, or economic status.</p>
+                </div>
+                <div class="col l8 s12">
+                    <p>We started our journey in 2019 with a single mission 
+                    in mind; to provide an accessible, educational, and inclusive theatrical experience regardless 
+                    of race, ethnicity, gender, sexuality, religion, or economic status.</p>
+                </div>
             </div>
             <div class="col l4 offset-l2 s12">
                 <h5>Links</h5>
