@@ -24,12 +24,12 @@ import com.openhouse.services.ParameterService;
 
 @Path("/admin/users")
 public class UserREST {
+	private static final String PATH = "../admin/users";
 	private final UserDao userDao = DaoFactory.getUserDao();
 	private final ParameterService parameterService = ServiceFactory.getParameterService();
-
+	
 	@POST
 	@Path("/add")
-	@Produces(MediaType.APPLICATION_JSON)
 	public Response createUser(@FormParam("firstName") String firstName,
 			@FormParam("lastName") String lastName,
 			@FormParam("username") String username,
@@ -40,7 +40,7 @@ public class UserREST {
 				.getUserFromRequest(firstName, lastName, username, hashedPassword);
 		final JSONObject responseBody = this.userDao.addUser(user);
 		
-		return Response.status(200).entity(responseBody.toString()).build();
+		return Response.seeOther(uriInfo.getBaseUriBuilder().path(PATH).build()).build();
 	}
 	
 	@POST
@@ -59,11 +59,10 @@ public class UserREST {
 	
 	@GET
 	@Path("/delete/{id}")
-	@Produces(MediaType.APPLICATION_JSON)
 	public Response removeUser(@PathParam("id") int id) {
 		final JSONObject responseBody = this.userDao.removeUser(id);
 		
-		return Response.status(200).entity(responseBody.toString()).build();
+		return Response.seeOther(uriInfo.getBaseUriBuilder().path(PATH).build()).build();
 	}
 
 }
