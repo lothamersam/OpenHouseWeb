@@ -20,8 +20,8 @@
     </div>
     <div class="footer-copyright black-text">
         <div class="container">
-            © 2014 Copyright Open House Theatre Company
-            <li><a href="/login">Admin</a></li>
+            &copy; 2014 Copyright Open House Theatre Company
+            <a href="/login">Admin</a>
         </div>
     </div>
 </footer>
