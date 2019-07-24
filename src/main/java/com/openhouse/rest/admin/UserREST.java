@@ -27,7 +27,7 @@ public class UserREST {
 	private final ParameterService parameterService = ServiceFactory.getParameterService();
 
 	@POST
-	@Path("/create")
+	@Path("/add")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response createUser(@FormParam("firstName") String firstName,
 			@FormParam("lastName") String lastName,

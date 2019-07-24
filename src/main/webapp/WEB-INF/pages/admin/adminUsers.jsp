@@ -21,10 +21,10 @@
 								<th>Last, First</th>
 								<th>UserName</th>
 								<td><a href="#editModal"
-								class="waves-effect waves-teal btn-flat modal-trigger tooltipped"
-								data-position="top" data-delay="200"
-								data-tooltip="Add user"> <i
-									class="material-icons">add_circle</i></a></td>
+									class="waves-effect waves-teal btn-flat modal-trigger tooltipped"
+									data-position="top" data-delay="200" data-tooltip="Add user">
+										<i class="material-icons">add_circle</i>
+								</a></td>
 							</tr>
 						</thead>
 						<tbody>
@@ -51,25 +51,29 @@
 		<form action="/do/admin/users/add" method="POST">
 			<div class="modal-content">
 				<div class="row">
-					<div class="input-field col s6">
+					<div class="input-field col s12">
 						<input name="firstName" id="firstName" type="text"
 							class="validate"> <label for="firstName" required>First
 							Name</label>
 					</div>
-					<div class="input-field col s6">
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
 						<input name="lastName" id="lastName" type="text" class="validate">
 						<label for="lastName" required>Last Name</label>
 					</div>
 				</div>
 				<div class="row">
-					<div class="input-field col s6">
-						<input name="username" id="username" type="text"
-							class="validate"> <label for="username" required>First
-							Name</label>
+					<div class="input-field col s12">
+						<input name="username" id="username" type="text" class="validate">
+						<label for="username" required> Username</label>
 					</div>
-					<div class="input-field col s6">
-						<input name="password" id="password" type="password" class="validate">
-						<label for="password" required>Temporary Password</label>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input name="password" id="password" type="password"
+							class="validate"> <label for="password" required>Temporary
+							Password</label>
 					</div>
 				</div>
 			</div>
