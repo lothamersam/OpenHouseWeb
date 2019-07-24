@@ -20,7 +20,7 @@ public class EmailREST {
 
 	@POST
 	@Path("/send")
-	protected Response doSendEmail(@FormParam("firstName") String firstName, 
+	public Response doSendEmail(@FormParam("firstName") String firstName, 
 			@FormParam("lastName") String lastName,
 			@FormParam("email") String email, 
 			@FormParam("phoneNumber") String phoneNumber,
