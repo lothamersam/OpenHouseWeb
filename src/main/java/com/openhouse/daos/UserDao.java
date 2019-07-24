@@ -18,7 +18,7 @@ public class UserDao {
 	private static final String GET_USER = "SELECT username, password FROM oh_uman WHERE username = ?";
 	private static final String GET_USER_LIST = "SELECT id, first_name, last_name, username FROM oh_uman";
 	private static final String ADD_USER = "INSERT INTO oh_uman (first_name, last_name, username, password) VALUES (?, ?, ?, ?)";
-	private static final String REMOVE_USER = "DELETE * FROM oh_uman WHERE id = ?";
+	private static final String REMOVE_USER = "DELETE FROM oh_uman WHERE id = ?";
 	private static final String UPDATE_USER = "UPDATE oh_uman SET password = ?, username = ? WHERE id = ?";
 
 	public UserTO getUser(String username) {

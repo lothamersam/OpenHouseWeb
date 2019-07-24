@@ -30,7 +30,7 @@
 						<tbody>
 							<c:forEach items="${userList}" var="user">
 								<tr>
-									<td>${user.lastName},${user.firstName}</td>
+									<td>${user.lastName}, ${user.firstName}</td>
 									<td>${user.username}</td>
 									<td><a href="/do/admin/users/delete/${user.id}"
 										class="waves-effect waves-teal btn-flat"> <i
@@ -44,46 +44,44 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="container row">
 		<div class="card">
 			<form action="/do/admin/users/change" method="POST">
-			<div class="card-content">
-				<span class="card-title">Change your password</span>
-			
-				<div class="row">
-					<div class="input-field col s12">
-						<input name="oldPass" id="password" type="password"
-							class="validate"> <label for="password" minlength="8" required>Old
-							Password</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
-						<input name="password" id="password" type="password"
-							class="validate"> <label for="password" minlength="8" required>New
-							Password</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
-						<input name="passwordValidate" id="password" type="password"
-							class="validate"> <label for="password" minlength="8" required>New
-							Password Validate</label>
-					</div>
-				</div>
-			</div>
-			<input type="hidden" name="id" value="" />
-			<div class="modal-footer">
-				<button class="btn waves-effect waves-light" type="submit"
-					name="action">
-					Add user<i class="material-icons right">add_box</i>
-				</button>
-			</div>
-		</form>
-		</div>	
-	</div>
+				<div class="card-content">
+					<span class="card-title">Change your password</span>
 
+					<div class="row">
+						<div class="input-field col s12">
+							<input name="oldPass" id="password" type="password"
+								class="validate"> <label for="password" minlength="8"
+								required>Old Password</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<input name="password" id="password" type="password"
+								class="validate"> <label for="password" minlength="8"
+								required>New Password</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<input name="passwordValidate" id="password" type="password"
+								class="validate"> <label for="password" minlength="8"
+								required>New Password Validate</label>
+						</div>
+					</div>
+
+					<div class="modal-footer">
+						<button class="btn waves-effect waves-light" type="submit"
+							name="action">
+							Add user<i class="material-icons right">add_box</i>
+						</button>
+					</div>
+					<input type="hidden" name="id" value="" />
+			</form>
+		</div>
 	</main>
 
 	<div id="editModal" class="modal modal-fixed-footer">
@@ -111,8 +109,8 @@
 				<div class="row">
 					<div class="input-field col s12">
 						<input name="password" id="password" type="password"
-							class="validate"> <label for="password" minlength="8" required>Temporary
-							Password</label>
+							class="validate"> <label for="password" minlength="8"
+							required>Temporary Password</label>
 					</div>
 				</div>
 			</div>
