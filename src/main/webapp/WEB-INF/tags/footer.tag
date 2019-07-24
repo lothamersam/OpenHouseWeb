@@ -18,7 +18,7 @@
     </div>
     <div class="footer-copyright">
         <div class="container">
-            © 2014 Copyright Open House Theatre Company
+            © 2019 Copyright Open House Theatre Company
             <a class="grey-text text-lighten-4 right" href="#!">Sitemap</a>
         </div>
     </div>
