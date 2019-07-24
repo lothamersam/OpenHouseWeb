@@ -5,6 +5,7 @@ import java.net.URI;
 import javax.servlet.http.HttpServletRequest;
 
 import javax.ws.rs.FormParam;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Context;
@@ -41,6 +42,14 @@ public class LoginREST {
 			request.getSession().setAttribute("user", user);
 		}
 
+		return Response.seeOther(URI.create(redirectPath)).build();
+	}
+	
+	@GET
+	@Path("/logout")
+	public Response logout() {
+		final String redirectPath = "../";
+		
 		return Response.seeOther(URI.create(redirectPath)).build();
 	}
 }
