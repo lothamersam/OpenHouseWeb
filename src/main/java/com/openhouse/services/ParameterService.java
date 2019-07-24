@@ -154,6 +154,7 @@ public final class ParameterService {
         }
     }
 
+    @Deprecated
 	public PageSectionTO getPageSectionFromRequest(HttpServletRequest request) {
 		final PageSectionTO aboutSection = new PageSectionTO();
 		
@@ -169,6 +170,21 @@ public final class ParameterService {
 		return aboutSection;
 	}
 	
+	public PageSectionTO getPageSectionFromRequest(String content, String sectionType) {
+		final PageSectionTO aboutSection = new PageSectionTO();
+		
+		if (StringUtils.isNotBlank(content)
+				&& StringUtils.isNotBlank(sectionType)) {
+			aboutSection.setSectionContent(content);
+			aboutSection.setSectionType(PageSectionType
+					.getTypeFromKey(sectionType));
+			aboutSection.setAdditionalProperties("");
+		}
+
+		
+		return aboutSection;
+	}
+	
 	public SignupInformationTO getSignupInformationFromRequest(HttpServletRequest request) {
 		final SignupInformationTO signup = new SignupInformationTO();
 		
@@ -176,19 +192,19 @@ public final class ParameterService {
 				&& StringUtils.isNotBlank(request.getParameter("last_name"))
 				&& StringUtils.isNotBlank(request.getParameter("pronoun"))
 				&& StringUtils.isNotBlank(request.getParameter("date"))
-				&& StringUtils.isNotBlank(request.getParameter("email"))) {
+				&& StringUtils.isNotBlank(request.getParameter("email"))
+				&& StringUtils.isNotBlank(request.getParameter("phone_number"))) {
 			signup.setFirstName(request.getParameter("first_name"));
 			signup.setLastName(request.getParameter("last_name"));
 			signup.setPronouns(request.getParameter("pronoun"));
 			signup.setDate(request.getParameter("date"));
 			signup.setEmail(request.getParameter("email"));
+			signup.setPhoneNumber(request.getParameter("phone_number"));
 		}
 		
 		return signup;
 	}
 
-	
-	
 	public DateTO getDateFromRequest(HttpServletRequest request) {
 		final DateTO date = new DateTO();
 		

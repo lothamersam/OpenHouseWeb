@@ -14,8 +14,8 @@ import java.sql.ResultSet;
 
 
 public class AuditionDao extends BasicPageDao {
-	private static final String GET_SIGNUPS = "SELECT first_name, last_name, pronouns, date, email, id FROM oh_audition";
-	private static final String ADD_SIGNUP = "INSERT INTO oh_audition (first_name, last_name, email, pronouns, date) VALUES (?, ?, ?, ?, ?)";
+	private static final String GET_SIGNUPS = "SELECT first_name, last_name, pronouns, date, email, id, phone_number FROM oh_audition";
+	private static final String ADD_SIGNUP = "INSERT INTO oh_audition (first_name, last_name, email, pronouns, date, phone_number) VALUES (?, ?, ?, ?, ?, ?)";
 	private static final String DELETE_SIGNUP = "DELETE FROM oh_audition WHERE id = ?";
 	
 	public List<SignupInformationTO> getAuditionSignups() {
@@ -32,7 +32,8 @@ public class AuditionDao extends BasicPageDao {
 					results.getString(2), 
 					results.getString(3),
 					results.getString(4), 
-					results.getString(5)));
+					results.getString(5),
+					results.getString(6)));
 			}
 		} catch (URISyntaxException | SQLException e) {
 			System.out.println("There was an error when querying the database! " + e.getMessage());
@@ -50,6 +51,7 @@ public class AuditionDao extends BasicPageDao {
 			statement.setString(3, signupInformation.getEmail());
 			statement.setString(4, signupInformation.getPronouns());
 			statement.setString(5, signupInformation.getDate());
+			statement.setString(6, signupInformation.getPhoneNumber());
 
 			if (statement.executeUpdate() > 0) {
 				return true;

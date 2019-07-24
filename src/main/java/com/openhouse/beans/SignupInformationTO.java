@@ -7,6 +7,7 @@ public class SignupInformationTO {
 	private String pronouns;
 	private String date;
 	private String email;
+	private String phoneNumber;
 	
 	public SignupInformationTO() {}
 	
@@ -15,13 +16,15 @@ public class SignupInformationTO {
 			String lastName, 
 			String pronouns, 
 			String date, 
-			String email) {
+			String email, 
+			String phoneNumber) {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.pronouns = pronouns.toUpperCase();
 		this.date = date;
 		this.email = email;
+		this.phoneNumber = phoneNumber;
 	}
 	
 
@@ -71,5 +74,15 @@ public class SignupInformationTO {
 	
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}	
+	
+	
 }
