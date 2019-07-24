@@ -37,6 +37,8 @@ public class LoginREST {
 
 		if (success) {
 			redirectPath = "../admin";
+			user.setPassword(""); // we don't want to pass a request with password hash around
+			request.getSession().setAttribute("user", user);
 		}
 
 		return Response.seeOther(URI.create(redirectPath)).build();
