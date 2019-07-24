@@ -31,6 +31,6 @@ public class DoAuditionSignupController extends HttpServlet {
 		
 		this.emailService.sendMail(this.parameterService.getSignupMailFromRequest(request));
 		int id = this.auditionDao.addAuditionSignup(signup);
-		this.dateDao.assignTime(id, Integer.parseInt(request.getParameter("date")));
+		this.dateDao.assignTime(id, Integer.parseInt(request.getParameter("time")));
 	}
 }
