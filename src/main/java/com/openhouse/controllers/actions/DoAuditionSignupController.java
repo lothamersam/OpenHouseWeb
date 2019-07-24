@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.openhouse.beans.SignupInformationTO;
 import com.openhouse.daos.AuditionDao;
+import com.openhouse.daos.DateDao;
 import com.openhouse.factory.DaoFactory;
 import com.openhouse.factory.ServiceFactory;
 import com.openhouse.services.EmailService;
@@ -20,6 +21,7 @@ public class DoAuditionSignupController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private final AuditionDao auditionDao = DaoFactory.getAuditionDao();
+	private final DateDao dateDao = DaoFactory.getDateDao();
 	private final ParameterService parameterService = ServiceFactory.getParameterService();
 	private final EmailService emailService = ServiceFactory.getEmailService();
 	
@@ -28,7 +30,7 @@ public class DoAuditionSignupController extends HttpServlet {
 		final SignupInformationTO signup = this.parameterService.getSignupInformationFromRequest(request);
 		
 		this.emailService.sendMail(this.parameterService.getSignupMailFromRequest(request));
-		
-		response.getWriter().write(this.auditionDao.addAuditionSignup(signup) ? "true" : "false");
+		int id = this.auditionDao.addAuditionSignup(signup);
+		this.dateDao.assignTime(id, Integer.parseInt(request.getParameter("date")));
 	}
 }

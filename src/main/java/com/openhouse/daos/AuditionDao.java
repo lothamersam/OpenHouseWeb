@@ -42,9 +42,10 @@ public class AuditionDao extends BasicPageDao {
 		return signupList;
 	}
 	
-	public boolean addAuditionSignup(final SignupInformationTO signupInformation) {
+	public int addAuditionSignup(final SignupInformationTO signupInformation) {
 		try (final Connection connection = DatabaseConnection.getConnection()) {
-			final PreparedStatement statement = connection.prepareStatement(ADD_SIGNUP);
+			final PreparedStatement statement = connection.prepareStatement(ADD_SIGNUP, 
+					Statement.RETURN_GENERATED_KEYS);
 
 			statement.setString(1, signupInformation.getFirstName());
 			statement.setString(2, signupInformation.getLastName());
@@ -53,14 +54,17 @@ public class AuditionDao extends BasicPageDao {
 			statement.setString(5, signupInformation.getDate());
 			statement.setString(6, signupInformation.getPhoneNumber());
 
-			if (statement.executeUpdate() > 0) {
-				return true;
+			statement.executeUpdate();
+
+			ResultSet results = statement.getGeneratedKeys();
+			if (results.next()) {
+				return results.getInt(0);
 			}
 		} catch (URISyntaxException | SQLException e) {
 			System.out.println("There was an error when querying the database! " + e.getMessage());
 		} 
 		
-		return false;
+		return 0;
 	}
 	
 	public boolean deleteAuditionSignup(int id) {
