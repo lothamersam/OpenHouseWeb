@@ -62,7 +62,7 @@
 							<button class="btn waves-effect waves-light cyan" type="submit" name="action">Submit
 								<i class="material-icons right">send</i>
 							</button>
-							<button class="btn-flat waves-effect waves-cyan" type="reset" name="reset">Reset
+							<button id="formReset" class="btn-flat waves-effect waves-cyan" type="reset" name="reset">Reset
 								<i class="material-icons right">refresh</i>
 							</button>
 						</div>
