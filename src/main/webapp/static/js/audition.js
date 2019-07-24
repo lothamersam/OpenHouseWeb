@@ -10,4 +10,14 @@ $("#auditionForm").submit(function (event) {
     });
 
     return false;
-})
+});
+
+$("#datesList"),change(function() {
+	let selectId = this.value;
+	
+	$.get("/do/times/" + value, function (data) {
+		for(let i in data["times"])) {
+			$("timesList").append($("<option>", { value : i["id"], text : i["time"] }));
+		}
+	});
+});
