@@ -5,6 +5,7 @@ import com.openhouse.daos.AuditionDao;
 import com.openhouse.daos.BasicPageDao;
 import com.openhouse.daos.DateDao;
 import com.openhouse.daos.StaffDao;
+import com.openhouse.daos.UserDao;
 
 public final class DaoFactory {
 
@@ -23,6 +24,14 @@ public final class DaoFactory {
     public static final DateDao getDateDao() {
         return DATE_DAO_WRAPPER.dateDao;
     } 
+    
+    public static final UserDao getUserDao() {
+        return USER_DAO_WRAPPER.userDao;
+    } 
+
+    private static final class USER_DAO_WRAPPER {
+        private static UserDao userDao = new UserDao();
+    }
 
     private static final class DATE_DAO_WRAPPER {
         private static DateDao dateDao = new DateDao();

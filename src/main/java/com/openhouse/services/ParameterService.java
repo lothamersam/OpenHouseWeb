@@ -24,6 +24,7 @@ import com.openhouse.beans.DateTO;
 import com.openhouse.beans.PageSectionTO;
 import com.openhouse.beans.SignupInformationTO;
 import com.openhouse.beans.StaffMemberTO;
+import com.openhouse.beans.UserTO;
 import com.openhouse.services.enums.PageSectionType;
 import com.sendgrid.Content;
 
@@ -223,5 +224,36 @@ public final class ParameterService {
 		}
 		
 		return date;
+	}
+
+	public UserTO getUserFromRequest(String firstName, 
+			String lastName, 
+			String username, 
+			String hashedPassword) {
+		final UserTO user = new UserTO();
+		
+		if(StringUtils.isNotBlank(firstName)
+				&& StringUtils.isNotBlank(lastName)
+				&& StringUtils.isNotBlank(username)
+				&& StringUtils.isNotBlank(hashedPassword)) {			
+			user.setFirstName(firstName);
+			user.setLastName(lastName);
+			user.setUsername(username);
+			user.setPassword(hashedPassword);
+		}
+		
+		return user;
+	}
+
+	public UserTO getUserFromRequest(String username, String hashedPassword) {
+		final UserTO user = new UserTO();
+		
+		if(StringUtils.isNotBlank(username)
+				&& StringUtils.isNotBlank(hashedPassword)) {			
+			user.setUsername(username);
+			user.setPassword(hashedPassword);
+		}
+		
+		return user;
 	}
 }
