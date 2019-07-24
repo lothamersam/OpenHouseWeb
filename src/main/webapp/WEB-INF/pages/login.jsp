@@ -11,7 +11,7 @@
 
 		<div class="container row">
 			<div class="row top-row">
-				<form method="POST" id="contactForm" class="col s12" action="/do/login">
+				<form method="POST" id="contactForm" class="col s12" action="/do/login/">
 					<div class="card">
 						<div class="card-content">
 							<span class="card-title">Login to Admin Dashboard:</span>
