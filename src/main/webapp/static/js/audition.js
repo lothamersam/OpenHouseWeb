@@ -17,7 +17,7 @@ $("#datesList").change(function() {
 	
 	$.get("/do/times/" + selectId, function (data) {
 		for(let time in data["times"]) {
-			$("timesList").append($("<option>", { value : time["id"], text : time["time"] }));
+			$("timeSlots").append($("<option>", { value : time["id"], text : time["time"] }));
 		}
 	});
 });
