@@ -14,6 +14,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
 import org.json.JSONObject;
+import org.mindrot.jbcrypt.BCrypt;
 
 import com.openhouse.beans.UserTO;
 import com.openhouse.daos.UserDao;
@@ -34,7 +35,7 @@ public class UserREST {
 			@FormParam("username") String username,
 			@FormParam("password") String password) {
 		
-		final String hashedPassword = password;
+		final String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt(10));
 		final UserTO user = this.parameterService
 				.getUserFromRequest(firstName, lastName, username, hashedPassword);
 		final JSONObject responseBody = this.userDao.addUser(user);
@@ -47,10 +48,10 @@ public class UserREST {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response chageUserPassword(@Context UriInfo uriInfo, 
 			@Context HttpServletRequest request,
-			@FormParam("username") String username,
+			@FormParam("id") int id,
 			@FormParam("password") String password) {
-		final String hashedPassword = password;
-		final UserTO user = this.parameterService.getUserFromRequest(username, hashedPassword);
+		final String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt(10));
+		final UserTO user = this.parameterService.getUserFromRequest(id, hashedPassword);
 		final JSONObject responseBody= this.userDao.updateUser(user);
 		
 		return Response.status(200).entity(responseBody.toString()).build();

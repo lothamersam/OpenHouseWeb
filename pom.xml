@@ -88,12 +88,10 @@
 			<version>2.10.3</version>
 		</dependency>
 		<dependency>
-			<groupId>at.favre.lib</groupId>
-			<artifactId>bcrypt</artifactId>
-			<version>0.8.0</version>
+			<groupId>org.mindrot</groupId>
+			<artifactId>jbcrypt</artifactId>
+			<version>0.4</version>
 		</dependency>
-
-
 	</dependencies>
 	<build>
 		<finalName>embeddedTomcatSample</finalName>

@@ -98,7 +98,7 @@ public class UserDao {
 
 			statement.setString(1, user.getPassword());
 			statement.setString(2, user.getUsername());
-			statement.setString(3, user.getUsername());
+			statement.setInt(3, user.getId());
 
 			if (statement.executeUpdate() > 0) {
 				response.put("message", "Password changed successfully!");

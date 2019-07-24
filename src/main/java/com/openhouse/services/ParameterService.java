@@ -245,12 +245,11 @@ public final class ParameterService {
 		return user;
 	}
 
-	public UserTO getUserFromRequest(String username, String hashedPassword) {
+	public UserTO getUserFromRequest(int id, String hashedPassword) {
 		final UserTO user = new UserTO();
 		
-		if(StringUtils.isNotBlank(username)
-				&& StringUtils.isNotBlank(hashedPassword)) {			
-			user.setUsername(username);
+		if(StringUtils.isNotBlank(hashedPassword)) {			
+			user.setId(id);
 			user.setPassword(hashedPassword);
 		}
 		
