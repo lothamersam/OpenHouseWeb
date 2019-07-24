@@ -1,4 +1,6 @@
 $("#auditionForm").submit(function (event) {
+	$("#dateText").val($("#dateList").val())
+	$("#timeText").val($("#timeSlots").val())
     let contactFormData = $("#auditionForm").serialize();
 
     $.post("/action/audition", contactFormData, function (response) {

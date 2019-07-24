@@ -86,11 +86,12 @@ public final class ParameterService {
         
         messageBody.append(String.format("<p> Dear %s, <br><br> This email is to confirm "
         		+ "that you have scheduled an audition with the Open House Theatre Company on:"
-        		+ "<br><br><strong>%s</strong><br><br> We Look forward to seeing you then!<br><br>"
+        		+ "<br><br><strong>%s at %s</strong><br><br> We Look forward to seeing you then!<br><br>"
         		+ "<em>This email has been sent from a no-reply address, "
         		+ "if you respond it will not be seen.</p>",
         		request.getParameter("first_name"),
-        		request.getParameter("date")));
+        		request.getParameter("dateText"),
+        		request.getParameter("timeText")));
 
         content.setValue(messageBody.toString());
         mail.addContent(content);
