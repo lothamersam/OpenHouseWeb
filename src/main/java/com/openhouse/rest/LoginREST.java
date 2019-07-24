@@ -11,11 +11,11 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
 @Path("/login")
-public class PageSectionChangeREST {
+public class LoginREST {
 
 	@POST
 	public Response verifyUserAndLogin(@Context UriInfo uriInfo, 
-      @Context HttpServletRequest request,
+      			@Context HttpServletRequest request,
 			@FormParam("username") String username,
 			@FormParam("password") String password) {
 
