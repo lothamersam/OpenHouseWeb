@@ -21,7 +21,7 @@ public class LoginREST {
 
     System.out.println(username + " " + password);
     
-    request.setAttribute("user", "test");
+    request.getSession().setAttribute("user", "test");
 
 		return Response.seeOther(uriInfo.getBaseUriBuilder().path("../admin/").build()).build();
 	}
