@@ -1,6 +1,6 @@
 $("#auditionForm").submit(function (event) {
-	$("#dateText").val($("#datesList").text())
-	$("#timeText").val($("#timeSlots").text())
+	$("#dateText").val($("#datesList option:selected").html())
+	$("#timeText").val($("#timeSlots option:selected").html())
     let contactFormData = $("#auditionForm").serialize();
 
     $.post("/action/audition", contactFormData, function (response) {
