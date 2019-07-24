@@ -25,6 +25,6 @@ $("#datesList").change(function() {
 	$("#timeSlots").trigger('contentChanged');
 });
 
-$("#timeSlots").on("contentChange", function() { 
+$("#timeSlots").on("contentChanged", function() { 
 	$(this).material_select();
 });
