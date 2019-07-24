@@ -22,9 +22,6 @@ $("#datesList").change(function() {
 		}
 	});
 	
-	$("#timeSlots").trigger('contentChanged');
+	$("#timeSlots").material_select();
 });
 
-$("#timeSlots").on("contentChanged", function() { 
-	$(this).material_select();
-});
