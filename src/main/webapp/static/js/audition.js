@@ -15,7 +15,7 @@ $("#auditionForm").submit(function (event) {
 $("#datesList").change(function() {
 	let selectId = this.value;
 	
-	$.get("/do/times/" + value, function (data) {
+	$.get("/do/times/" + selectId, function (data) {
 		for(let i in data["times"]) {
 			$("timesList").append($("<option>", { value : i["id"], text : i["time"] }));
 		}
