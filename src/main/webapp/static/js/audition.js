@@ -14,14 +14,15 @@ $("#auditionForm").submit(function (event) {
 
 $("#datesList").change(function() {
 	let selectId = this.value;
+
 	$("#timeSlots").find('option').remove();
-	
+
 	$.get("/do/times/" + selectId, function (data) {
 		for(let time in data["times"]) {
 			$("#timeSlots").append("<option value=" + data["times"][time]["id"] + ">" + data["times"][time]["time"] + "</option>");
 		}
+		
+		$("#timeSlots").material_select();
 	});
-	
-	$("#timeSlots").material_select();
 });
 
