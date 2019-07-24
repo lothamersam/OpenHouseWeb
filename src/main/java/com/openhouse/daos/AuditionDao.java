@@ -33,7 +33,7 @@ public class AuditionDao extends BasicPageDao {
 					results.getString(3),
 					results.getString(4), 
 					results.getString(5),
-					results.getString(6)));
+					results.getString(7)));
 			}
 		} catch (URISyntaxException | SQLException e) {
 			System.out.println("There was an error when querying the database! " + e.getMessage());
