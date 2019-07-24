@@ -18,7 +18,7 @@ $("#datesList").change(function() {
 	
 	$.get("/do/times/" + selectId, function (data) {
 		for(let time in data["times"]) {
-			$("#timeSlots").append("<option value=" + data["times"][time]["id"] + ">" + time["times"][time]["time"] + "</option>");
+			$("#timeSlots").append("<option value=" + data["times"][time]["id"] + ">" + data["times"][time]["time"] + "</option>");
 		}
 	});
 	
