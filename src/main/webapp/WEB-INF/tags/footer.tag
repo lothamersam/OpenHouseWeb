@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col l6 s12">
                 <div class="col l4 m12">
-                    <img class="center-content img responsive-img" src="/static/img/logo.png" alt="Open House Logo" title="Open House Theatre Company">
+                    <img class="img responsive-img" src="/static/img/logo.png" alt="Open House Logo" title="Open House Theatre Company">
                 </div>
                 <div class="col l8 s12">
                     <p>We started our journey in 2019 with a single mission 
