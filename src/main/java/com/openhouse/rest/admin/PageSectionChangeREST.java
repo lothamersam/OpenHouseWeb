@@ -6,7 +6,9 @@ import javax.ws.rs.FormParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
 
 import com.openhouse.beans.PageSectionTO;
 import com.openhouse.daos.BasicPageDao;
@@ -21,13 +23,14 @@ public class PageSectionChangeREST {
 
 	@POST
 	@Path("/change/{referrer}")
-	public Response changeHomeSection(@PathParam("referrer") String referrer,
+	public Response changeHomeSection(@Context UriInfo uriInfo, 
+			@PathParam("referrer") String referrer,
 			@FormParam("content") String content,
 			@FormParam("sectionType") String sectionType) {
 		PageSectionTO aboutSection = this.parameterService.getPageSectionFromRequest(content, sectionType);
 
 		this.pageDao.editPageSection(aboutSection);
 
-		return Response.seeOther(URI.create("/admin/" + referrer)).build();
+		return Response.seeOther(uriInfo.getBaseUriBuilder().path("/admin/" + referrer).build()).build();
 	}
 }
