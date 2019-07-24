@@ -21,4 +21,10 @@ $("#datesList").change(function() {
 			$("#timeSlots").append($("<option value=" + time["id"] + ">" + time["time"] + "</option>"));
 		}
 	});
+	
+	$("#timeSlots").trigger('contentChanged');
+});
+
+$("#timeSlots").on("contentChange", function() { 
+	$(this).material_select();
 });
