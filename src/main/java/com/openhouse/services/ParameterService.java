@@ -199,7 +199,7 @@ public final class ParameterService {
 			signup.setFirstName(request.getParameter("first_name"));
 			signup.setLastName(request.getParameter("last_name"));
 			signup.setPronouns(request.getParameter("pronoun"));
-			signup.setDate(request.getParameter("date") + ", " + request.getParameter("timeText"));
+			signup.setDate(request.getParameter("dateText") + ", " + request.getParameter("timeText"));
 			signup.setEmail(request.getParameter("email"));
 			signup.setPhoneNumber(request.getParameter("phone_number"));
 		}
