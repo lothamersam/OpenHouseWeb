@@ -54,21 +54,21 @@
 				<div class="row">
 					<div class="input-field col s12">
 						<input name="oldPass" id="password" type="password"
-							class="validate"> <label for="password" required>Old
+							class="validate"> <label for="password" minlength="8" required>Old
 							Password</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
 						<input name="password" id="password" type="password"
-							class="validate"> <label for="password" required>New
+							class="validate"> <label for="password" minlength="8" required>New
 							Password</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
 						<input name="passwordValidate" id="password" type="password"
-							class="validate"> <label for="password" required>New
+							class="validate"> <label for="password" minlength="8" required>New
 							Password Validate</label>
 					</div>
 				</div>
@@ -105,13 +105,13 @@
 				<div class="row">
 					<div class="input-field col s12">
 						<input name="username" id="username" type="text" class="validate">
-						<label for="username" required> Username</label>
+						<label for="username" minlength="3" required> Username</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
 						<input name="password" id="password" type="password"
-							class="validate"> <label for="password" required>Temporary
+							class="validate"> <label for="password" minlength="8" required>Temporary
 							Password</label>
 					</div>
 				</div>
