@@ -21,22 +21,21 @@ import com.openhouse.factory.DaoFactory;
 public class LoginREST {
 	private final UserDao userDao = DaoFactory.getUserDao();
 
-	
 	@POST
-	public Response verifyUserAndLogin(@Context HttpServletRequest request,
-			@FormParam("username") String username, 
+	public Response verifyUserAndLogin(
+			@Context HttpServletRequest request, 
+			@FormParam("username") String username,
 			@FormParam("password") String password) {
 		boolean success = false;
-		String redirectPath = "../login?error=Invalid username/password combination!";
+		String redirectPath = "../login?error=Invalid credentials!";
+		
 		final UserTO user = this.userDao.getUser(username);
-		
-		if(StringUtils.isNotBlank(user.getUsername())) {
-			if(StringUtils.isNotBlank(user.getPassword())) {
-				success = BCrypt.checkpw(password, BCrypt.gensalt(10));
-			}
+
+		if (StringUtils.isNotBlank(user.getUsername()) && StringUtils.isNotBlank(user.getPassword())) {
+			success = BCrypt.checkpw(password, BCrypt.gensalt(10));
 		}
-		
-		if(success) {
+
+		if (success) {
 			redirectPath = "../admin";
 		}
 
