@@ -8,10 +8,11 @@
             </a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="/about">About Us</a></li>
-                <li><a href="/auditions">Auditions</a></li>
-                <li><a href="/contact">Contact Us</a></li>
                 <li><a href="/upcoming">Productions</a></li>
+                <li><a href="/auditions">Auditions</a></li>
                 <li><a href="/staff">Our Staff</a></li>
+                <li><a href="#">Donate</a></li>
+                <li><a href="/contact">Contact Us</a></li>
             </ul>
         </div>
 
@@ -23,10 +24,11 @@
 
         <ul class="side-nav" id="mobile-nav">
             <li><a href="/about">About Us</a></li>
-            <li><a href="/auditions">Auditions</a></li>
-            <li><a href="/contact">Contact Us</a></li>
             <li><a href="/upcoming">Productions</a></li>
+            <li><a href="/auditions">Auditions</a></li>
             <li><a href="/staff">Our Staff</a></li>
+            <li><a href="#">Donate</a></li>
+            <li><a href="/contact">Contact Us</a></li>
         </ul>
     </nav>
 </div>
