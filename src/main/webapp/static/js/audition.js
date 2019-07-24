@@ -12,7 +12,7 @@ $("#auditionForm").submit(function (event) {
     return false;
 });
 
-$("#datesList"),change(function() {
+$("#datesList").change(function() {
 	let selectId = this.value;
 	
 	$.get("/do/times/" + value, function (data) {
