@@ -71,28 +71,30 @@ public final class ParameterService {
         return mail;
     }
     
-    public Mail getSignupMailFromRequest(final HttpServletRequest request) throws IllegalFormatException {
+    public Mail getSignupMailFromRequest(
+    		String firstName,
+    		String lastName,
+    		String email,
+    		String dateText,
+    		String timeText) throws IllegalFormatException {
         final Mail mail = new Mail();
         
         final Personalization personalization = new Personalization();
-        personalization.addTo(new Email(request.getParameter("email")));
+        personalization.addTo(new Email(email));
         
         final Content content = new Content();
         content.setType("text/html");
 
         final StringBuilder messageBody = new StringBuilder();
         messageBody.append(String.format("<h3>Audition Confirmation - %s %s</h3>", 
-                request.getParameter("first_name"), 
-                request.getParameter("last_name")));
+                firstName, lastName));
         
         messageBody.append(String.format("<p> Dear %s, <br><br> This email is to confirm "
         		+ "that you have scheduled an audition with the Open House Theatre Company on:"
         		+ "<br><br><strong>%s at %s</strong><br><br> We Look forward to seeing you then!<br><br>"
         		+ "<em>This email has been sent from a no-reply address, "
         		+ "if you respond it will not be seen.</p>",
-        		request.getParameter("first_name"),
-        		request.getParameter("dateText"),
-        		request.getParameter("timeText")));
+        		firstName, dateText, timeText));
 
         content.setValue(messageBody.toString());
         mail.addContent(content);
@@ -100,8 +102,7 @@ public final class ParameterService {
         mail.addPersonalization(personalization);
         mail.setFrom(new Email("no-reply@openhousetheatre.com"));
         mail.setSubject(String.format("Audition Confirmation - %s %s",         
-            request.getParameter("first_name"), 
-            request.getParameter("last_name")));     
+        	firstName, lastName));     
 
         return mail;
     }
@@ -187,22 +188,29 @@ public final class ParameterService {
 		return aboutSection;
 	}
 	
-	public SignupInformationTO getSignupInformationFromRequest(HttpServletRequest request) {
+	public SignupInformationTO getSignupInformationFromRequest(
+			String firstName,
+			String lastName,
+			String pronoun,
+			String dateText,
+			String timeText,
+			String email,
+			String phoneNumber) {
 		final SignupInformationTO signup = new SignupInformationTO();
 		
-		if(StringUtils.isNotBlank(request.getParameter("first_name"))
-				&& StringUtils.isNotBlank(request.getParameter("last_name"))
-				&& StringUtils.isNotBlank(request.getParameter("pronoun"))
-				&& StringUtils.isNotBlank(request.getParameter("dateText"))
-				&& StringUtils.isNotBlank(request.getParameter("timeText"))
-				&& StringUtils.isNotBlank(request.getParameter("email"))
-				&& StringUtils.isNotBlank(request.getParameter("phone_number"))) {
-			signup.setFirstName(request.getParameter("first_name"));
-			signup.setLastName(request.getParameter("last_name"));
-			signup.setPronouns(request.getParameter("pronoun"));
-			signup.setDate(request.getParameter("dateText") + ", " + request.getParameter("timeText"));
-			signup.setEmail(request.getParameter("email"));
-			signup.setPhoneNumber(request.getParameter("phone_number"));
+		if(StringUtils.isNotBlank(firstName)
+				&& StringUtils.isNotBlank(lastName)
+				&& StringUtils.isNotBlank(pronoun)
+				&& StringUtils.isNotBlank(dateText)
+				&& StringUtils.isNotBlank(timeText)
+				&& StringUtils.isNotBlank(email)
+				&& StringUtils.isNotBlank(phoneNumber)) {
+			signup.setFirstName(firstName);
+			signup.setLastName(lastName);
+			signup.setPronouns(pronoun);
+			signup.setDate(dateText + ", " + timeText);
+			signup.setEmail(email);
+			signup.setPhoneNumber(phoneNumber);
 		}
 		
 		return signup;

@@ -3,7 +3,7 @@ $("#auditionForm").submit(function (event) {
 	$("#timeText").val($("#timeSlots option:selected").html())
     let contactFormData = $("#auditionForm").serialize();
 
-    $.post("/action/audition", contactFormData, function (response) {
+    $.post("/do/signup/add", contactFormData, function (response) {
         Materialize.toast("You have signed up succesfully!", 4000);
         $("#formReset").click();
     })
