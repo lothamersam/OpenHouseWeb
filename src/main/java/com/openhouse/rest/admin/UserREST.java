@@ -54,7 +54,7 @@ public class UserREST {
 			@FormParam("password") String password) {
 		final String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt(10));
 		final UserTO user = this.parameterService.getUserFromRequest(id, hashedPassword);
-		final JSONObject responseBody= this.userDao.updateUser(user);
+		final JSONObject responseBody = this.userDao.updateUser(user);
 		
 		return Response.status(200).entity(responseBody.toString()).build();
 	}

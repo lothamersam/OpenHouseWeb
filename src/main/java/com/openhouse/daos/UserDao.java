@@ -19,7 +19,7 @@ public class UserDao {
 	private static final String GET_USER_LIST = "SELECT id, first_name, last_name, username FROM oh_uman";
 	private static final String ADD_USER = "INSERT INTO oh_uman (first_name, last_name, username, password) VALUES (?, ?, ?, ?)";
 	private static final String REMOVE_USER = "DELETE FROM oh_uman WHERE id = ?";
-	private static final String UPDATE_USER = "UPDATE oh_uman SET password = ?, username = ? WHERE id = ?";
+	private static final String UPDATE_USER = "UPDATE oh_uman SET password = ? WHERE id = ?";
 
 	public UserTO getUser(String username) {
 		UserTO user = new UserTO();
@@ -97,8 +97,7 @@ public class UserDao {
 			final PreparedStatement statement = connection.prepareStatement(UPDATE_USER);
 
 			statement.setString(1, user.getPassword());
-			statement.setString(2, user.getUsername());
-			statement.setInt(3, user.getId());
+			statement.setInt(2, user.getId());
 
 			if (statement.executeUpdate() > 0) {
 				response.put("message", "Password changed successfully!");
