@@ -4,7 +4,7 @@ $("#auditionForm").submit(function (event) {
     let contactFormData = $("#auditionForm").serialize();
 
     $.post("/do/signup/add", contactFormData, function (response) {
-        Materialize.toast("You have signed up succesfully!", 4000);
+        Materialize.toast(response["message"], 4000);
         $("#formReset").click();
     })
     .fail(function (response) {

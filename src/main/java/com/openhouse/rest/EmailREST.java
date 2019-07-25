@@ -30,17 +30,18 @@ public class EmailREST {
 			@FormParam("category") String category,
 			@FormParam("message") String message) {
 
-		int status = 500; 
-		final JSONObject responseBody = new JSONObject().put("success", false);
+		final JSONObject responseBody = new JSONObject();
 		
 		final Mail mail = this.parameterService.getContactMailFromRequest(firstName, lastName, email, phoneNumber,
 				category, message);
 
 		if (this.emailService.sendMail(mail)) {
-			status = 200;
-			responseBody.put("success", true);
-		} 
+			responseBody.put("message", "Your email has been sent successfully!");
+		} else {
+			responseBody.put("message", "We are sorry, your email could not be sent"
+					+ "at this time.");
+		}
 		
-		return Response.status(status).entity(responseBody.toString()).build();
+		return Response.status(200).entity(responseBody.toString()).build();
 	}
 }

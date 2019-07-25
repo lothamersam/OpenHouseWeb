@@ -37,15 +37,20 @@ public class SignupREST {
 			@FormParam("email") String email,
 			@FormParam("phone_number") String phoneNumber,
 			@FormParam("time") int time) {
+		final JSONObject responseBody = new JSONObject();
 		final SignupInformationTO signup = this.parameterService.getSignupInformationFromRequest(
 				firstName, lastName, pronoun, dateText, timeText, email, phoneNumber);
-		int id = this.auditionDao.addAuditionSignup(signup);		
 
-		this.emailService.sendMail(this.parameterService.getSignupMailFromRequest(
-				firstName, lastName, email, dateText, timeText));
-		this.dateDao.assignTime(id, time);
+		int id = this.auditionDao.addAuditionSignup(signup);		
 		
-		final JSONObject responseBody = new JSONObject();
+		if(this.dateDao.assignTime(id, time) && 
+				this.emailService.sendMail(this.parameterService.getSignupMailFromRequest(
+						firstName, lastName, email, dateText, timeText))) {
+			responseBody.put("message", "You have signed up successfully!");
+		} else {
+			responseBody.put("message", "We are sorry, your signup could "
+					+ "not be processed at this time.");
+		}
 		
 		return Response.status(200).entity(responseBody.toString()).build();
 	}
