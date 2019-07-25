@@ -47,7 +47,7 @@
 
 	<div class="container row">
 		<div class="card">
-			<form action="/do/admin/users/change" method="POST">
+			<form id="passChange" action="/do/admin/users/change" method="POST">
 				<div class="card-content">
 					<span class="card-title">Change your password</span>
 
@@ -78,10 +78,17 @@
 							name="action">
 							Add user<i class="material-icons right">add_box</i>
 						</button>
+						<button id="formReset" class="btn-flat waves-effect waves-cyan"
+							type="reset" name="reset">
+							Reset<i class="material-icons right">refresh</i>
+						</button>
 					</div>
 					<input type="hidden" name="id" value="${signedOnUser.id}" />
+				</div>
 			</form>
 		</div>
+	</div>
+
 	</main>
 
 	<div id="editModal" class="modal modal-fixed-footer">
@@ -126,7 +133,7 @@
 	<tags:footer />
 
 	<script src="/static/js/standardPage.js"></script>
-	<script lang="javascript" src="/static/js/adminPageSection.js"></script>
+	<script lang="javascript" src="/static/js/adminUsers.js"></script>
 </body>
 
 </html>
