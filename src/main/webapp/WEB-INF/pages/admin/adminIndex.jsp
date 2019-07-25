@@ -12,7 +12,7 @@
 		<div class="row top-row">
 			<div class="card">
 				<div class="card-content">
-					<span class="card-titile">Admin Dashboard</span> The admin
+					<span class="card-title">Admin Dashboard</span> The admin
 					dashboard allows authorized members of the Open House Threatre
 					Company to edit various pages of the website. Additionally staff
 					can view audition signups, add production and audition dates, and
