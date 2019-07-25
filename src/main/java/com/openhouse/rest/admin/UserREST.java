@@ -42,7 +42,7 @@ public class UserREST {
 				.getUserFromRequest(firstName, lastName, username, hashedPassword);
 		final JSONObject responseBody = this.userDao.addUser(user);
 		
-		return Response.seeOther(URI.create(PATH)).entity(responseBody).build();
+		return Response.seeOther(URI.create(PATH)).entity(responseBody.toString()).build();
 	}
 	
 	@POST
