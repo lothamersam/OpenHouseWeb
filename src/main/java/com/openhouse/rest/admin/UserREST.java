@@ -51,10 +51,11 @@ public class UserREST {
 	public Response chageUserPassword(@Context UriInfo uriInfo, 
 			@Context HttpServletRequest request,
 			@FormParam("id") int id,
+			@FormParam("oldPass") String oldPass,
 			@FormParam("password") String password) {
 		final String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt(10));
 		final UserTO user = this.parameterService.getUserFromRequest(id, hashedPassword);
-		final JSONObject responseBody = this.userDao.updateUser(user);
+		final JSONObject responseBody = this.userDao.updateUser(user, oldPass);
 		
 		return Response.status(200).entity(responseBody.toString()).build();
 	}

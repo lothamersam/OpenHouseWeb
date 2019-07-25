@@ -23,7 +23,7 @@ public class UserDao {
 	private static final String UPDATE_USER = "UPDATE oh_uman SET password = ? WHERE id = ?";
 
 	public UserTO getUser(String username) {
-		UserTO user = new UserTO();
+		final UserTO user = new UserTO();
 
 		try (final Connection connection = DatabaseConnection.getConnection()) {
 			final PreparedStatement statement = connection.prepareStatement(GET_USER);
@@ -90,10 +90,10 @@ public class UserDao {
 		return response;
 	}
 
-	public JSONObject updateUser(UserTO user) {
+	public JSONObject updateUser(UserTO user, String oldPass) {
 		final JSONObject response = new JSONObject();
 
-		if (this.verifyUser(user)) {
+		if (this.verifyUser(user, oldPass)) {
 			try (final Connection connection = DatabaseConnection.getConnection()) {
 				final PreparedStatement statement = connection.prepareStatement(UPDATE_USER);
 
@@ -133,8 +133,8 @@ public class UserDao {
 		return response;
 	}
 
-	private boolean verifyUser(UserTO user) {
-		UserTO fetchedUser = new UserTO();
+	private boolean verifyUser(UserTO user, String oldPass) {
+		final UserTO fetchedUser = new UserTO();
 
 		try (final Connection connection = DatabaseConnection.getConnection()) {
 			final PreparedStatement statement = connection.prepareStatement(GET_USER_ID);
@@ -151,6 +151,6 @@ public class UserDao {
 			System.out.println("There was an error when querying the database! " + e.getMessage());
 		}
 
-		return StringUtils.equals(user.getPassword(), fetchedUser.getPassword());
+		return StringUtils.equals(oldPass, fetchedUser.getPassword());
 	}
 }

@@ -53,8 +53,8 @@
 
 					<div class="row">
 						<div class="input-field col s12">
-							<input name="oldPass" id="password" type="password"
-								class="validate"> <label for="password" minlength="8"
+							<input name="oldPass" id="oldPass" type="password"
+								class="validate"> <label for="oldPass" minlength="8"
 								required>Old Password</label>
 						</div>
 					</div>
@@ -115,8 +115,8 @@
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
-						<input name="password" id="password" type="password"
-							class="validate"> <label for="password" minlength="8"
+						<input name="password" id="userPassword" type="password"
+							class="validate"> <label for="userPassword" minlength="8"
 							required>Temporary Password</label>
 					</div>
 				</div>
