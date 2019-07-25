@@ -7,7 +7,7 @@ $("#passChange").submit(function (event) {
     		$("#formReset").click();
     	})
     	.fail(function (response) {
-    		Materialize.toast("There an error sending your email, please try again!", 4000);
+    		Materialize.toast("There an error changing your password, please try again!", 4000);
     	});
     }
 
@@ -19,6 +19,7 @@ function checkFields() {
 	
 	if($("#password").val() != $("#passwordValidate").val()){
 		success = false;
+		Materialize.toast("Passwords do not match!", 4000);
 	}
 	
 	return success;
