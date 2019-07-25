@@ -16,7 +16,8 @@
 					dashboard allows authorized members of the Open House Threatre
 					Company to edit various pages of the website. Additionally staff
 					can view audition signups, add production and audition dates, and
-					upload staff photos.
+					upload staff photos. Select the pencil icon to the right of each page
+					to visit the editable version of each page!
 				</div>
 				<div class="card-content">
 					<ul class="collection with-header">

@@ -28,7 +28,7 @@ public class LoginREST {
 			@FormParam("username") String username,
 			@FormParam("password") String password) {
 		boolean success = false;
-		String redirectPath = "../login?error=Invalid credentials!";
+		String redirectPath = "../login";
 		
 		final UserTO user = this.userDao.getUser(username);
 
@@ -37,7 +37,7 @@ public class LoginREST {
 		}
 
 		if (success) {
-			redirectPath = "../admin/";
+			redirectPath = "../admin";
 			user.setPassword(""); // we don't want to pass a request with password hash around
 			request.getSession().setAttribute("user", user);
 		}

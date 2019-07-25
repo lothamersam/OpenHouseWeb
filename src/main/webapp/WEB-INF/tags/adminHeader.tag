@@ -3,7 +3,7 @@
             <div class="nav-wrapper">
                 <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
     
-                <a href="/" class="brand-logo">
+                <a href="/admin" class="brand-logo">
                     <img class="brand-logo-fit" src="/static/img/logo-w.png" />
                     Admin Dashboard
                 </a>
