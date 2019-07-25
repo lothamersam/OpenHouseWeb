@@ -67,8 +67,8 @@
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<input name="passwordValidate" id="password" type="password"
-								class="validate"> <label for="password" minlength="8"
+							<input name="passwordValidate" id="passwordValidate" type="password"
+								class="validate"> <label for="passwordValidate" minlength="8"
 								required>New Password Validate</label>
 						</div>
 					</div>

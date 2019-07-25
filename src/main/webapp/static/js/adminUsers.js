@@ -15,5 +15,11 @@ $("#passChange").submit(function (event) {
 })
 
 function checkFields() {
-	return true;
+	success = true;
+	
+	if($("#password").val() != $("#passwordValidate").val()){
+		success = false;
+	}
+	
+	return success;
 }
