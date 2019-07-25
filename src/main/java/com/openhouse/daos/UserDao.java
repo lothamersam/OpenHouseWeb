@@ -9,8 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.lang3.StringUtils;
 import org.json.JSONObject;
+import org.mindrot.jbcrypt.BCrypt;
 
 import com.openhouse.beans.UserTO;
 
@@ -143,14 +143,14 @@ public class UserDao {
 
 			ResultSet results = statement.executeQuery();
 			while (results.next()) {
-				user.setUsername(results.getString(1));
-				user.setPassword(results.getString(2));
-				user.setId(results.getInt(3));
+				fetchedUser.setUsername(results.getString(1));
+				fetchedUser.setPassword(results.getString(2));
+				fetchedUser.setId(results.getInt(3));
 			}
 		} catch (URISyntaxException | SQLException e) {
 			System.out.println("There was an error when querying the database! " + e.getMessage());
 		}
 
-		return StringUtils.equals(oldPass, fetchedUser.getPassword());
+		return BCrypt.checkpw(oldPass, fetchedUser.getPassword());
 	}
 }
