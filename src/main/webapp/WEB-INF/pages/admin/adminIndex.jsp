@@ -12,11 +12,11 @@
 		<div class="row top-row">
 			<div class="card">
 				<div class="card-content">
-					<span class="card-titile">Admin Dashboard</span>
-					
-					The admin dashboard allows authorized members of the Open House Threatre Company
-					to edit various pages of the website. Additionally staff can view audition signups,
-					add production and audition dates, and upload staff photos.
+					<span class="card-titile">Admin Dashboard</span> The admin
+					dashboard allows authorized members of the Open House Threatre
+					Company to edit various pages of the website. Additionally staff
+					can view audition signups, add production and audition dates, and
+					upload staff photos.
 				</div>
 				<div class="card-content">
 					<ul class="collection with-header">
@@ -47,6 +47,10 @@
 							</div></li>
 						<li class="collection-item"><div>
 								Contact Us<a href="/admin/contact" class="secondary-content"><i
+									class="material-icons">mode_edit</i></a>
+							</div></li>
+						<li class="collection-item"><div>
+								Admin Users<a href="/admin/users" class="secondary-content"><i
 									class="material-icons">mode_edit</i></a>
 							</div></li>
 					</ul>
