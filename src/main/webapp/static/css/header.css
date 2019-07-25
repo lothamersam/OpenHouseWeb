@@ -97,3 +97,16 @@ body {
 nav ul.dropdown-content.active {
     position: fixed !important;
 }
+.center-content {
+	display: block;
+	margin: 0 auto;
+	width: 50% !important;	
+}
+.right-float {
+	display: inline;
+	float: right;
+}
+.left-float {
+	display: inline;
+	float: left;
+}

@@ -14,22 +14,35 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
             <param-value>false</param-value>
         </init-param>
     </servlet>
-    <!-- <servlet>
+    <servlet-mapping>
+        <servlet-name>StaticContent</servlet-name>
+        <url-pattern>/static/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
         <servlet-name>REST</servlet-name>
         <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
         <init-param>
             <param-name>com.sun.jersey.config.property.packages</param-name>
             <param-value>com.openhouse.rest</param-value>
         </init-param>
-		<load-on-startup>1</load-on-startup>
-    </servlet> -->
-
-    <servlet-mapping>
-        <servlet-name>StaticContent</servlet-name>
-        <url-pattern>/static/*</url-pattern>
-    </servlet-mapping>
-    <!-- <servlet-mapping>
+	<load-on-startup>1</load-on-startup>
+    </servlet>
+	<servlet-mapping>
         <servlet-name>REST</servlet-name>
-        <url-pattern>/rest/*</url-pattern>
-    </servlet-mapping> -->
+        <url-pattern>/do/*</url-pattern>
+    </servlet-mapping>
+	
+	<filter>
+		<filter-name>LoginFilter</filter-name>
+		<filter-class>com.openhouse.filter.LoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>/admin/*</url-pattern>
+		<url-pattern>/do/admin/*</url-pattern>
+		<url-pattern>/action/admin/*</url-pattern>
+	</filter-mapping>
+
+
 </web-app>

@@ -11,16 +11,11 @@
 
 		<div class="container row">
 			<div class="row top-row">
-				<form id="contactForm" class="col s12" action="/action/email">
+				<form id="contactForm" class="col s12" action="/do/email/send">
 					<div class="card">
 						<div class="card-content">
 							<span class="card-title">Contact Our Team</span>
-							<%-- Place for data base support --%>
-							Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum, non auctor magnis mollis
-							viverra cubilia pharetra donec, euismod parturient velit diam ultrices mi senectus. Metus
-							lacinia at potenti per est sagittis habitasse scelerisque et, mauris etiam cursus fermentum
-							suspendisse vivamus habitant pulvinar, sed sapien placerat aliquet sollicitudin lectus
-							dapibus elementum.
+							${contactSection.sectionContent}
 						</div>
 						<div class="card-content">
 							<div class="row">
@@ -59,16 +54,15 @@
 							</div>
 							<div class="row">
 								<div class="input-field col s12">
-									<textarea name="message" id="textarea1" class="materialize-textarea"
+									<textarea name="message" class="materialize-textarea" placeholder="Enter your message..."
 										required></textarea>
-									<label for="textarea1">Message Body</label>
 								</div>
 							</div>
 
 							<button class="btn waves-effect waves-light cyan" type="submit" name="action">Submit
 								<i class="material-icons right">send</i>
 							</button>
-							<button class="btn-flat waves-effect waves-cyan" type="reset" name="reset">Reset
+							<button id="formReset" class="btn-flat waves-effect waves-cyan" type="reset" name="reset">Reset
 								<i class="material-icons right">refresh</i>
 							</button>
 						</div>

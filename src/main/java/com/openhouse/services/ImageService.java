@@ -12,12 +12,12 @@ import com.openhouse.beans.StaffMemberTO;
 public class ImageService {
 
     @SuppressWarnings("rawtypes")
-	public StaffMemberTO uploadImage(File image, StaffMemberTO staffMember) throws IOException {
+	public StaffMemberTO uploadImage(final File image, StaffMemberTO staffMember) throws IOException {
         if (staffMember != null) {
             if (image != null) {
-                Cloudinary cloudinary = new Cloudinary(System.getenv("CLOUDINARY_URL"));
+                final Cloudinary cloudinary = new Cloudinary(System.getenv("CLOUDINARY_URL"));
 
-                Map result = cloudinary.uploader().upload(image, ObjectUtils.asMap(
+                final Map result = cloudinary.uploader().upload(image, ObjectUtils.asMap(
                     "transformation", new Transformation().width(400).gravity("face").crop("fill").aspectRatio("1:1")
                 ));
 

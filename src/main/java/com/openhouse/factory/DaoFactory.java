@@ -1,8 +1,11 @@
 
 package com.openhouse.factory;
 
-import com.openhouse.daos.AboutDao;
+import com.openhouse.daos.AuditionDao;
+import com.openhouse.daos.BasicPageDao;
+import com.openhouse.daos.DateDao;
 import com.openhouse.daos.StaffDao;
+import com.openhouse.daos.UserDao;
 
 public final class DaoFactory {
 
@@ -10,12 +13,36 @@ public final class DaoFactory {
         return STAFF_DAO_WRAPPER.staffDao;
     } 
     
-    public static final AboutDao getAboutDao() {
-        return ABOUT_DAO_WRAPPER.aboutDao;
+    public static final AuditionDao getAuditionDao() {
+        return AUDITION_DAO_WRAPPER.auditionDao;
     } 
 
-    private static final class ABOUT_DAO_WRAPPER {
-        private static AboutDao aboutDao = new AboutDao();
+    public static final BasicPageDao getPageDao() {
+        return PAGE_DAO_WRAPPER.pageDao;
+    } 
+    
+    public static final DateDao getDateDao() {
+        return DATE_DAO_WRAPPER.dateDao;
+    } 
+    
+    public static final UserDao getUserDao() {
+        return USER_DAO_WRAPPER.userDao;
+    } 
+
+    private static final class USER_DAO_WRAPPER {
+        private static UserDao userDao = new UserDao();
+    }
+
+    private static final class DATE_DAO_WRAPPER {
+        private static DateDao dateDao = new DateDao();
+    }
+
+    private static final class PAGE_DAO_WRAPPER {
+        private static BasicPageDao pageDao = new BasicPageDao();
+    }
+    
+    private static final class AUDITION_DAO_WRAPPER {
+        private static AuditionDao auditionDao = new AuditionDao();
     }
 
     private static final class STAFF_DAO_WRAPPER {
