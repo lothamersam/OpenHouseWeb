@@ -3,7 +3,7 @@ $("#passChange").submit(function (event) {
 
     if(checkFields()) {    
     	$.post("/do/admin/users/change", passChangeData, function (response) {
-    		Materialize.toast(respose["message"]);
+    		Materialize.toast(response["message"]);
     		$("#formReset").click();
     	})
     	.fail(function (response) {
