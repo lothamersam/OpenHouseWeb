@@ -19,6 +19,7 @@ public class EditUsersController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 		request.setAttribute("userList", this.userDao.getUserList());
+		request.setAttribute("signedOnUser", request.getSession().getAttribute("user"));
 		
 		request.getRequestDispatcher("/WEB-INF/pages/admin/adminUsers.jsp").forward(request, response);
 	}

@@ -15,7 +15,7 @@ import com.openhouse.beans.UserTO;
 
 
 public class UserDao {
-	private static final String GET_USER = "SELECT username, password FROM oh_uman WHERE username = ?";
+	private static final String GET_USER = "SELECT username, password, id FROM oh_uman WHERE username = ?";
 	private static final String GET_USER_LIST = "SELECT id, first_name, last_name, username FROM oh_uman";
 	private static final String ADD_USER = "INSERT INTO oh_uman (first_name, last_name, username, password) VALUES (?, ?, ?, ?)";
 	private static final String REMOVE_USER = "DELETE FROM oh_uman WHERE id = ?";
@@ -33,6 +33,7 @@ public class UserDao {
 			while(results.next()){
 				user.setUsername(results.getString(1));
 				user.setPassword(results.getString(2));
+				user.setId(results.getInt(3));
 			}
 		} catch (URISyntaxException | SQLException e) {
 			System.out.println("There was an error when querying the database! " + e.getMessage());

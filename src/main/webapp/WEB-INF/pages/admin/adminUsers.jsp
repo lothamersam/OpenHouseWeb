@@ -79,7 +79,7 @@
 							Add user<i class="material-icons right">add_box</i>
 						</button>
 					</div>
-					<input type="hidden" name="id" value="" />
+					<input type="hidden" name="id" value="${signedOnUser.id}" />
 			</form>
 		</div>
 	</main>
