@@ -47,7 +47,7 @@ public class LoginREST {
 	
 	@GET
 	@Path("/logout")
-	public Response logout(@Context HttpServletRequest request,) {
+	public Response logout(@Context HttpServletRequest request) {
 		final String redirectPath = "../";
 		
 		return Response.seeOther(URI.create(redirectPath)).build();
