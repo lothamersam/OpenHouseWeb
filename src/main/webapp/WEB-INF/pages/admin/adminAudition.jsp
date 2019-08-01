@@ -103,7 +103,7 @@
 	</main>
 
 	<div id="editModal" class="modal modal-fixed-footer">
-		<form action="/do/admin/page/change/audition" method="POST">
+		<form action="/do/admin/page/change/auditions" method="POST">
 			<div class="modal-content">
 				<div class="row">
 					<div class="input-field col s12">

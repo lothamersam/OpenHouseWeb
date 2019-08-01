@@ -2,7 +2,7 @@ $("#contactForm").submit(function (event) {
     let contactFormData = $("#contactForm").serialize();
 
     $.post("/do/email/send", contactFormData, function (response) {
-        Materialize.toast("Your email has been sent succesfully!", 4000);
+        Materialize.toast(response["message"], 4000);
         $("#formReset").click();
     })
     .fail(function (response) {

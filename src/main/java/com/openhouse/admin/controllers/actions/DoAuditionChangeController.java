@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.lang3.StringUtils;
 
 import com.openhouse.beans.DateTO;
-import com.openhouse.beans.PageSectionTO;
 import com.openhouse.daos.AuditionDao;
 import com.openhouse.daos.DateDao;
 import com.openhouse.factory.DaoFactory;
@@ -27,7 +26,6 @@ public class DoAuditionChangeController extends HttpServlet {
 	private final AuditionDao auditionDao = DaoFactory.getAuditionDao();
 	private final DateDao dateDao = DaoFactory.getDateDao();
 
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		boolean status = false;
 		
@@ -53,10 +51,7 @@ public class DoAuditionChangeController extends HttpServlet {
 			DateTO date = this.parameterService.getDateFromRequest(request);
 			date.setType(DateType.AUDITION);
 			status = this.dateDao.addDate(date);
-		} else {
-			PageSectionTO pageSection = this.parameterService.getPageSectionFromRequest(request);
-			status = this.auditionDao.editPageSection(pageSection);
-		}
+		} 
 		
 		redirect(response, status);
 	}

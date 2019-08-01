@@ -49,7 +49,7 @@
 			<div id="signUp" class="row section scrollspy">
 				<h4>Sign up to audition:</h4>
 
-				<form id="auditionForm" action="/action/audition" method="POST">
+				<form id="auditionForm" action="/do/signup/add" method="POST">
 					<div class="row">
 						<div class="row">
 							<div class="input-field col s6">

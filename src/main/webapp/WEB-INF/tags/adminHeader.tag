@@ -3,7 +3,7 @@
             <div class="nav-wrapper">
                 <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
     
-                <a href="/" class="brand-logo">
+                <a href="/admin" class="brand-logo">
                     <img class="brand-logo-fit" src="/static/img/logo-w.png" />
                     Admin Dashboard
                 </a>
@@ -12,7 +12,7 @@
                         <li><a href="/admin/upcoming">Productions</a></li>
                         <li><a href="/admin/auditions">Auditions</a></li>
                         <li><a href="/admin/staff">Our Staff</a></li>
-                        <li><a href="#">Donate</a></li>
+                        <li><a href="/admin/donate">Donate</a></li>
                         <li><a href="/admin/contact">Contact Us</a></li>
                 </ul>
             </div>
@@ -28,7 +28,7 @@
                 <li><a href="/admin/upcoming">Productions</a></li>
                 <li><a href="/admin/auditions">Auditions</a></li>
                 <li><a href="/admin/staff">Our Staff</a></li>
-                <li><a href="#">Donate</a></li>
+                <li><a href="/admin/donate">Donate</a></li>
                 <li><a href="/admin/contact">Contact Us</a></li>
             </ul>
         </nav>
