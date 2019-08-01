@@ -11,7 +11,7 @@
                 <li><a href="/upcoming">Productions</a></li>
                 <li><a href="/auditions">Auditions</a></li>
                 <li><a href="/staff">Our Staff</a></li>
-                <li><a href="#">Donate</a></li>
+                <li><a href="/donate">Donate</a></li>
                 <li><a href="/contact">Contact Us</a></li>
             </ul>
         </div>
@@ -37,7 +37,7 @@
         <li><a href="/upcoming">Productions</a></li>
         <li><a href="/auditions">Auditions</a></li>
         <li><a href="/staff">Our Staff</a></li>
-        <li><a href="#">Donate</a></li>
+        <li><a href="/donate">Donate</a></li>
         <li><a href="/contact">Contact Us</a></li>
     </ul>
 </div>
