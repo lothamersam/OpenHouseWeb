@@ -17,37 +17,39 @@
 
 					<span class="card-title">Upcoming Productions</span>
 
-					<div class="col l4 m12 s12">
-						<h3>TEMP</h3>
-					</div>
-					<div class="col l8 m12 s12">
-						<table>
-							<thead>
-								<tr>
-									<th>Date</th>
-									<th>Time</th>
-									<th>Location</th>
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach items="${productionDates}" var="date">
+					<div class="row">
+						<div class="col l4 m12 s12">
+							<h3>TEMP</h3>
+						</div>
+						<div class="col l8 m12 s12">
+							<table>
+								<thead>
 									<tr>
-										<td>${date.date}</td>
-										<td>${date.startTime}-${date.endTime}</td>
-										<td>${date.location}</td>
+										<th>Date</th>
+										<th>Time</th>
+										<th>Location</th>
 									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
+								</thead>
+								<tbody>
+									<c:forEach items="${productionDates}" var="date">
+										<tr>
+											<td>${date.date}</td>
+											<td>${date.startTime}-${date.endTime}</td>
+											<td>${date.location}</td>
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
+						</div>
 					</div>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-content">${productionSection.sectionContent}
 				</div>
 			</div>
 		</div>
+		<div class="card">
+			<div class="card-content">${productionSection.sectionContent}</div>
+		</div>
 	</div>
+
 
 	<tags:footer />
 </body>
