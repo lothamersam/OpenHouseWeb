@@ -50,7 +50,6 @@
 		</div>
 	</div>
 
-
 	<tags:footer />
 </body>
 </html>

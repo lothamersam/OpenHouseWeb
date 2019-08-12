@@ -42,8 +42,7 @@
 											<td>${date.date}</td>
 											<td>${date.startTime}-${date.endTime}</td>
 											<td>${date.location}</td>
-											<td><a
-												href="/do/admin/date/delete/${date.id}/upcoming"
+											<td><a href="/do/admin/date/delete/${date.id}/upcoming"
 												class="waves-effect waves-teal btn-flat"> <i
 													class="material-icons">clear</i>
 											</a></td>
@@ -61,77 +60,78 @@
 					data-position="top" data-delay="200"
 					data-tooltip="Click to edit section">
 					<div class="card-content">
-					<span id="sectionContent">${productionSection.sectionContent}</span>
+						<span id="sectionContent">${productionSection.sectionContent}</span>
+					</div>
+				</div>
+			</div>
+
+			<div id="editModal" class="modal modal-fixed-footer">
+				<form action="/do/admin/page/change/upcoming" method="POST">
+					<div class="modal-content">
+						<div class="row">
+							<div class="input-field col s12">
+								<textarea name="content" id="sectionContentInput"
+									class="materialize-textarea"
+									placeholder="Enter section content..." required></textarea>
+							</div>
+						</div>
+					</div>
+					<input id="sectionType" type="hidden" name="sectionType" value="" />
+					<input id="sectionType" type="hidden" name="isDate" value="false" />
+					<div class="modal-footer">
+						<button class="btn waves-effect waves-light" type="submit"
+							name="action">
+							Apply Edits<i class="material-icons right">add_box</i>
+						</button>
+					</div>
+				</form>
+			</div>
+
+			<div id="addDate" class="modal modal-fixed-footer">
+				<form action="/do/admin/date/add/upcoming" method="POST">
+					<div class="modal-content">
+						<div class="row">
+							<div class="input-field col s6">
+								<input name="date" type="text" class="datepicker"
+									placeholder="Date" required>
+							</div>
+							<div class="input-field col s6">
+								<input name="location" type="text" required> <label
+									for="location">Location</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s6">
+								<input name="time" type="text" class="timepicker"
+									placeholder="Start Time" required>
+							</div>
+							<div class="input-field col s6">
+								<input name="endTime" type="text" class="timepicker"
+									placeholder="End Time" required>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s12">
+								<textarea name="information" id="sectionContentInput"
+									class="materialize-textarea"
+									placeholder="Enter date information..." required></textarea>
+							</div>
+						</div>
+					</div>
+					<input id="sectionType" type="hidden" name="isDate" value="true" />
+					<div class="modal-footer">
+						<button class="btn waves-effect waves-light" type="submit"
+							name="action">
+							Add Audition Date<i class="material-icons right">add_box</i>
+						</button>
+					</div>
+				</form>
 			</div>
 		</div>
-	</div>
 
-	<div id="editModal" class="modal modal-fixed-footer">
-		<form action="/do/admin/page/change/upcoming" method="POST">
-			<div class="modal-content">
-				<div class="row">
-					<div class="input-field col s12">
-						<textarea name="content" id="sectionContentInput"
-							class="materialize-textarea"
-							placeholder="Enter section content..." required></textarea>
-					</div>
-				</div>
-			</div>
-			<input id="sectionType" type="hidden" name="sectionType" value="" />
-			<input id="sectionType" type="hidden" name="isDate" value="false" />
-			<div class="modal-footer">
-				<button class="btn waves-effect waves-light" type="submit"
-					name="action">
-					Apply Edits<i class="material-icons right">add_box</i>
-				</button>
-			</div>
-		</form>
-	</div>
+		<script src="/static/js/standardPage.js"></script>
+		<script src="/static/js/adminPageSection.js"></script>
 
-	<div id="addDate" class="modal modal-fixed-footer">
-		<form action="/do/admin/date/add/upcoming" method="POST">
-			<div class="modal-content">
-				<div class="row">
-					<div class="input-field col s6">
-						<input name="date" type="text" class="datepicker"
-							placeholder="Date" required>
-					</div>
-					<div class="input-field col s6">
-						<input name="location" type="text" required> <label
-							for="location">Location</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s6">
-						<input name="time" type="text" class="timepicker"
-							placeholder="Start Time" required>
-					</div>
-					<div class="input-field col s6">
-						<input name="endTime" type="text" class="timepicker"
-							placeholder="End Time" required>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
-						<textarea name="information" id="sectionContentInput"
-							class="materialize-textarea"
-							placeholder="Enter date information..." required></textarea>
-					</div>
-				</div>
-			</div>
-			<input id="sectionType" type="hidden" name="isDate" value="true" />
-			<div class="modal-footer">
-				<button class="btn waves-effect waves-light" type="submit"
-					name="action">
-					Add Audition Date<i class="material-icons right">add_box</i>
-				</button>
-			</div>
-		</form>
-	</div>
-
-	<script src="/static/js/standardPage.js"></script>
-	<script src="/static/js/adminPageSection.js"></script>
-
-	<tags:footer />
+		<tags:footer />
 </body>
 </html>
