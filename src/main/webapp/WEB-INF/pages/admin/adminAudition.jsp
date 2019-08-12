@@ -114,7 +114,6 @@
 				</div>
 			</div>
 			<input id="sectionType" type="hidden" name="sectionType" value="" />
-			<input id="sectionType" type="hidden" name="isDate" value="false" />
 			<div class="modal-footer">
 				<button class="btn waves-effect waves-light" type="submit"
 					name="action">
@@ -155,7 +154,6 @@
 					</div>
 				</div>
 			</div>
-			<input id="sectionType" type="hidden" name="isDate" value="true" />
 			<div class="modal-footer">
 				<button class="btn waves-effect waves-light" type="submit"
 					name="action">
