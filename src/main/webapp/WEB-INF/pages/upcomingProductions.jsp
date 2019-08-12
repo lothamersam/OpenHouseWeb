@@ -43,8 +43,7 @@
 				</div>
 			</div>
 			<div class="card">
-				<div class="card-content">
-					${productionSection.sectionContent}
+				<div class="card-content">${productionSection.sectionContent}
 				</div>
 			</div>
 		</div>
