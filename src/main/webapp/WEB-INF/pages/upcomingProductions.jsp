@@ -19,7 +19,7 @@
 
 					<div class="row">
 						<div class="col l4 m12 s12">
-							<h3>TEMP</h3>
+							<h3>IMAGE COMING SOON</h3>
 						</div>
 						<div class="col l8 m12 s12">
 							<table>
@@ -44,9 +44,9 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="card">
-			<div class="card-content">${productionSection.sectionContent}</div>
+			<div class="card">
+				<div class="card-content">${productionSection.sectionContent}</div>
+			</div>
 		</div>
 	</div>
 
