@@ -49,7 +49,7 @@
 								<td>${date.location}</td>
 								<td>${date.information}</td>
 								<td><a
-									href="/do/admin/date/delete/${date.id}/audition"
+									href="/do/admin/date/delete/${date.id}/auditions"
 									class="waves-effect waves-teal btn-flat"> <i
 										class="material-icons">clear</i>
 								</a></td>
@@ -124,7 +124,7 @@
 	</div>
 
 	<div id="addDate" class="modal modal-fixed-footer">
-		<form action="/do/admin/date/add/audition" method="POST">
+		<form action="/do/admin/date/add/auditions" method="POST">
 			<div class="modal-content">
 				<div class="row">
 					<div class="input-field col s6">
