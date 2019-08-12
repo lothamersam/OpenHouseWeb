@@ -55,7 +55,7 @@
 				</div>
 			</div>
 			<div class="card">
-				<div id="productionSection" id="productionSection"
+				<div id="productionSection"
 					class="card section scrollspy hoverable tooltipped"
 					data-position="top" data-delay="200"
 					data-tooltip="Click to edit section">

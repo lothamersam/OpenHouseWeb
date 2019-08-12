@@ -13,7 +13,7 @@
 	<div class="container row top-row">
 		<div class="col s12 m9 l10">
 			<div class="row">
-				<div id="auditionInformation" id="introduction"
+				<div id="introduction"
 					class="card section scrollspy hoverable tooltipped"
 					data-position="top" data-delay="200"
 					data-tooltip="Click to edit section">
