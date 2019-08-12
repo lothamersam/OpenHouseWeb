@@ -25,7 +25,7 @@ public class EditProductionController extends HttpServlet {
 		request.setAttribute("productionSection", 
 				this.pageDao.getPageSection(PageSectionType.PRODUCTION_PAGE_SECTION));
 		
-		request.getRequestDispatcher("/WEB-INF/pages/upcomingProductions.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/pages/admin/adminProductions.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
