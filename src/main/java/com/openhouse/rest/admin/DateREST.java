@@ -16,6 +16,7 @@ import com.openhouse.daos.DateDao;
 import com.openhouse.factory.DaoFactory;
 import com.openhouse.factory.ServiceFactory;
 import com.openhouse.services.ParameterService;
+import com.openhouse.services.enums.DateType;
 
 @Path("/admin/date")
 public class DateREST {
@@ -37,6 +38,12 @@ public class DateREST {
 				endTime,
 				information);
 
+		if("upcoming".equalsIgnoreCase(referrer)) {
+			dateTo.setType(DateType.PRODUCTION);
+		} else {
+			dateTo.setType(DateType.AUDITION);
+		}
+		
 		this.dateDao.addDate(dateTo);
 		
 		return Response.seeOther(uriInfo.getBaseUriBuilder().path("../admin/" + referrer).build()).build();
