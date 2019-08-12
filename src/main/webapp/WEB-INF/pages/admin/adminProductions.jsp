@@ -55,7 +55,7 @@
 				</div>
 			</div>
 			<div class="card">
-				<div id="productionSection" id="production"
+				<div id="productionSection" id="productionSection"
 					class="card section scrollspy hoverable tooltipped"
 					data-position="top" data-delay="200"
 					data-tooltip="Click to edit section">
@@ -128,10 +128,11 @@
 				</form>
 			</div>
 		</div>
+	</div>
 
-		<script src="/static/js/standardPage.js"></script>
-		<script src="/static/js/adminPageSection.js"></script>
+	<script src="/static/js/standardPage.js"></script>
+	<script src="/static/js/adminPageSection.js"></script>
 
-		<tags:footer />
+	<tags:footer />
 </body>
 </html>
