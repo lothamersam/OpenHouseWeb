@@ -19,7 +19,7 @@
 
 					<div class="row">
 						<div class="col l4 m12 s12">
-							<img src="/static/img/our-town.jpg" title="Our Town Poster" alt="Our Town Poster" />
+							<img class="responsive-img" src="/static/img/our-town.jpg" title="Our Town Poster" alt="Our Town Poster" />
 						</div>
 						<div class="col l8 m12 s12">
 							<table>

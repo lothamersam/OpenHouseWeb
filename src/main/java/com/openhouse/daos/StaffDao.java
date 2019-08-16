@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import com.openhouse.beans.StaffMemberTO;
 
 public class StaffDao {
-	private static final String SELECT_ALL_STAFF = 
+	private static final String SELECT_ALL_STAFF =
 		"SELECT " 
 	+ 		"id, first_name, last_name, title, bio, image_path, image_public_id " 
 	+ 	"FROM " 
@@ -34,15 +34,16 @@ public class StaffDao {
 	+ 			"image_public_id = ? " 
 	+ 		"WHERE " 
 	+ 			"id = ?";
-	
+	public static final String ERROR = "There was an error when querying the database! ";
+
 
 	public List<StaffMemberTO> getStaffList() {
 		List<StaffMemberTO> staffMembers = new ArrayList<>();
 
-		try (final Connection connection = DatabaseConnection.getConnection()) {
-			final Statement statement = connection.createStatement();
-			final ResultSet results = statement.executeQuery(SELECT_ALL_STAFF);
-			
+		try (Connection connection = DatabaseConnection.getConnection();
+			Statement statement = connection.createStatement();
+			ResultSet results = statement.executeQuery(SELECT_ALL_STAFF)) {
+
 			while(results.next()){
 				staffMembers.add(new StaffMemberTO(
 					results.getInt(1),
@@ -54,15 +55,15 @@ public class StaffDao {
 					results.getString(7)));
 			}
 		} catch (URISyntaxException | SQLException e) {
-			System.out.println("There was an error when querying the database! " + e.getMessage());
+			System.out.println(ERROR + e.getMessage());
 		} 
 
 		return staffMembers;
 	}
 
 	public boolean addStaffMember(final StaffMemberTO staffMember) {
-		try (final Connection connection = DatabaseConnection.getConnection()) {
-			final PreparedStatement statement = connection.prepareStatement(INSERT_NEW_STAFF);
+		try (Connection connection = DatabaseConnection.getConnection();
+			PreparedStatement statement = connection.prepareStatement(INSERT_NEW_STAFF)) {
 
 			statement.setString(1, staffMember.getFirstName());
 			statement.setString(2, staffMember.getLastName());
@@ -75,15 +76,15 @@ public class StaffDao {
 				return true;
 			}
 		} catch (URISyntaxException | SQLException e) {
-			System.out.println("There was an error when querying the database! " + e.getMessage());
+			System.out.println(ERROR + e.getMessage());
 		} 
 		
 		return false;
 	}
 
 	public boolean removeStaffMember(final StaffMemberTO staffMember) {
-		try (final Connection connection = DatabaseConnection.getConnection()) {
-			final PreparedStatement statement = connection.prepareStatement(REMOVE_STAFF_MEMBER);
+		try (Connection connection = DatabaseConnection.getConnection();
+			PreparedStatement statement = connection.prepareStatement(REMOVE_STAFF_MEMBER)) {
 
 			statement.setInt(1, staffMember.getId());
 
@@ -91,15 +92,15 @@ public class StaffDao {
 				return true;
 			}
 		} catch (URISyntaxException | SQLException e) {
-			System.out.println("There was an error when querying the database! " + e.getMessage());
+			System.out.println(ERROR + e.getMessage());
 		} 
 
 		return false;
 	}
 
 	public boolean editStaffMember(final StaffMemberTO staffMember) { 
-		try (final Connection connection = DatabaseConnection.getConnection()) {
-			final PreparedStatement statement = connection.prepareStatement(UPDATE_STAFF_MEMBER);
+		try (Connection connection = DatabaseConnection.getConnection();
+			PreparedStatement statement = connection.prepareStatement(UPDATE_STAFF_MEMBER)) {
 
 			statement.setString(1, staffMember.getFirstName());
 			statement.setString(2, staffMember.getLastName());
@@ -113,7 +114,7 @@ public class StaffDao {
 				return true;
 			}
 		} catch (URISyntaxException | SQLException e) {
-			System.out.println("There was an error when querying the database! " + e.getMessage());
+			System.out.println(ERROR + e.getMessage());
 		} 
 
 		return false;

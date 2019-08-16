@@ -17,16 +17,17 @@ public class BasicPageDao {
 	public PageSectionTO getPageSection(final PageSectionType sectionType) {
 		final PageSectionTO aboutSection = new PageSectionTO();
 		
-		try (final Connection connection = DatabaseConnection.getConnection()) {
-			final PreparedStatement statement = connection.prepareStatement(GET_PAGE_SECTION);
-			
+		try (Connection connection = DatabaseConnection.getConnection();
+			PreparedStatement statement = connection.prepareStatement(GET_PAGE_SECTION)) {
+
 			statement.setString(1, sectionType.getSectionType());
 			
-			final ResultSet results = statement.executeQuery();
-			if (results.next()) {
-				aboutSection.setSectionContent(results.getString(1));
-				aboutSection.setAdditionalProperties(results.getString(2));
-				aboutSection.setSectionType(sectionType.getSectionType());				
+			try (ResultSet results = statement.executeQuery()) {
+				if (results.next()) {
+					aboutSection.setSectionContent(results.getString(1));
+					aboutSection.setAdditionalProperties(results.getString(2));
+					aboutSection.setSectionType(sectionType.getSectionType());
+				}
 			}
 		} catch (SQLException | URISyntaxException e) {
 			System.out.println("There was an error when querying the database! " + e.getMessage());
@@ -36,9 +37,9 @@ public class BasicPageDao {
 	}
 	
 	public boolean editPageSection(final PageSectionTO pageSection) {
-		try (final Connection connection = DatabaseConnection.getConnection()) {
-			PreparedStatement statement = connection.prepareStatement(EDIT_PAGE_SECTION);
-			
+		try (Connection connection = DatabaseConnection.getConnection();
+			PreparedStatement statement = connection.prepareStatement(EDIT_PAGE_SECTION)) {
+
 			statement.setString(1, pageSection.getSectionContent());
 			statement.setString(2, pageSection.getAdditionalProperties());
 			statement.setString(3, pageSection.getSectionType());

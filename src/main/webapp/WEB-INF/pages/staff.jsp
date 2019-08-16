@@ -15,7 +15,7 @@
 			<div class="col s12 m12 l4">
 				<div class="card">
 					<div class="card-image">
-						<img src="${member.imagePath}" class="circle responsive-img">
+						<img src="${member.imagePath}" class="circle responsive-img" alt="${member.firstName} Portrait">
 						<a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger"
 							href="#${member.firstName}"><i class="material-icons">add</i></a>
 					</div>
@@ -36,7 +36,7 @@
 			<div class="modal-content">
 				<div class="row">
 					<div class="col s12 m4 l4">
-						<img src="${member.imagePath}" class="circle responsive-img">
+						<img src="${member.imagePath}" class="circle responsive-img" alt="${member.firstName} Portrait">
 						<br><br>
 						<span class="flow-text"><strong>${member.firstName} ${member.lastName}</strong></span>
 						<br>

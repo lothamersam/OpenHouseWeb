@@ -17,7 +17,7 @@ public class EditAboutController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final BasicPageDao aboutDao = DaoFactory.getPageDao();
 
-	
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		setRequestAttributes(request);
 		

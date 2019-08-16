@@ -16,7 +16,7 @@ public class EditUsersController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final UserDao userDao = DaoFactory.getUserDao();
 
-
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 		request.setAttribute("userList", this.userDao.getUserList());
 		request.setAttribute("signedOnUser", request.getSession().getAttribute("user"));
@@ -24,6 +24,7 @@ public class EditUsersController extends HttpServlet {
 		request.getRequestDispatcher("/WEB-INF/pages/admin/adminUsers.jsp").forward(request, response);
 	}
 
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}

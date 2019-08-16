@@ -20,19 +20,22 @@ import com.openhouse.beans.StaffMemberTO;
 @WebServlet("/action/admin/staffChange")
 @MultipartConfig
 public class DoStaffChangeController extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+    private static final String PUBLIC = "public";
+
+	private static final long serialVersionUID = 1L;
 
     private final ParameterService parameterService = ServiceFactory.getParameterService();
     private final ImageService imageService = ServiceFactory.getImageService();
     private final StaffDao staffDao = DaoFactory.getStaffDao();
     
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = this.parameterService.getIntFromRequest(request, "id");
 
         StaffMemberTO staffMember = new StaffMemberTO();
         staffMember.setId(id);
         
-        this.imageService.deleteImage(request.getParameter("public"));
+        this.imageService.deleteImage(request.getParameter(PUBLIC));
 
         if (id > 0 && this.staffDao.removeStaffMember(staffMember)) {
             response.sendRedirect("/admin/staff?success=Successfully performed update!");
@@ -41,6 +44,7 @@ public class DoStaffChangeController extends HttpServlet {
         }
     }
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         StaffMemberTO staffMember = this.parameterService.getStaffMemberTOFromRequest(request);
         File image = this.parameterService.getImageFromRequest(request);
@@ -52,12 +56,12 @@ public class DoStaffChangeController extends HttpServlet {
             status = this.staffDao.addStaffMember(staffMember);
 
         } else if ("edit".equals(request.getParameter("action"))) {
-            this.imageService.deleteImage(request.getParameter("public"));
+            this.imageService.deleteImage(request.getParameter(PUBLIC));
             
             staffMember.setId(this.parameterService.getIntFromRequest(request, "id"));
             if (image == null) {    // only set to old path if image is null
                 staffMember.setImagePath(this.parameterService.getStringFromRequest(request, "image_path"));
-                staffMember.setImagePublicId(this.parameterService.getStringFromRequest(request, "public"));
+                staffMember.setImagePublicId(this.parameterService.getStringFromRequest(request, PUBLIC));
             }
 
             status = this.staffDao.editStaffMember(staffMember);

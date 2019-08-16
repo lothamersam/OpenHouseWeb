@@ -20,6 +20,7 @@ public class EditProductionController extends HttpServlet {
 	private final BasicPageDao pageDao = DaoFactory.getPageDao();
 	private final DateDao dateDao = DaoFactory.getDateDao();
 
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("productionDates", this.dateDao.getDates(DateType.PRODUCTION));
 		request.setAttribute("productionSection", 
@@ -28,6 +29,7 @@ public class EditProductionController extends HttpServlet {
 		request.getRequestDispatcher("/WEB-INF/pages/admin/adminProductions.jsp").forward(request, response);
 	}
 
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
