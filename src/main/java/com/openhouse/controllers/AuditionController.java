@@ -19,7 +19,8 @@ public class AuditionController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final AuditionDao auditionDao = DaoFactory.getAuditionDao();
 	private final DateDao dateDao = DaoFactory.getDateDao();
-	
+
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		request.setAttribute("auditionDates", this.dateDao.getDates(DateType.AUDITION));
 		request.setAttribute("auditionInformation", this.auditionDao.getPageSection(PageSectionType.AUDITION_INFORMATION_SECTION));	

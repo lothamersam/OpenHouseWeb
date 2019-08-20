@@ -1,6 +1,8 @@
 package com.openhouse.beans;
 
-public class UserTO {
+import java.io.Serializable;
+
+public class UserTO implements Serializable {
 	private int id;
 	private String firstName;
 	private String lastName;

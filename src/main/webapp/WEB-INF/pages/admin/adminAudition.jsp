@@ -13,7 +13,7 @@
 	<div class="container row top-row">
 		<div class="col s12 m9 l10">
 			<div class="row">
-				<div id="auditionSection"
+				<div id="auditionInformation"
 					class="card section scrollspy hoverable tooltipped"
 					data-position="top" data-delay="200"
 					data-tooltip="Click to edit section">
@@ -81,7 +81,7 @@
 								<td>${signup.email}</td>
 								<td>${signup.phoneNumber}</td>
 								<td><a
-									href="/action/admin/auditionChange?id=${signup.id}&type=signup"
+									href="/do/admin/signup/delete/${signup.id}/auditions"
 									class="waves-effect waves-teal btn-flat"> <i
 										class="material-icons">clear</i>
 								</a></td>

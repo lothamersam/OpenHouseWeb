@@ -48,7 +48,7 @@ public class UserREST {
 	@POST
 	@Path("/change")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response chageUserPassword(@Context UriInfo uriInfo, 
+	public Response changeUserPassword(@Context UriInfo uriInfo,
 			@Context HttpServletRequest request,
 			@FormParam("id") int id,
 			@FormParam("oldPass") String oldPass,
