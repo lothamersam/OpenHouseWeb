@@ -66,7 +66,6 @@ public class UserREST {
 	public Response removeUser(@PathParam("id") int id) {
 		final JSONObject responseBody = this.userDao.removeUser(id);
 		
-		return Response.seeOther(URI.create(PATH)).entity(responseBody).build();
+		return Response.seeOther(URI.create(PATH)).build();
 	}
-
 }
