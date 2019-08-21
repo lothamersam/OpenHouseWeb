@@ -9,7 +9,7 @@ public class StaffMemberTO {
     private String imagePath;
     private String imagePublicId;
 
-    public StaffMemberTO(){};
+    public StaffMemberTO(){}
 
     public StaffMemberTO(int id, String firstName, String lastName, String title, String bio, String imagePath, String imagePublicId) {
         this.id = id;

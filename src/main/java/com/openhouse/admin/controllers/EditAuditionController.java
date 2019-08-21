@@ -20,6 +20,7 @@ public class EditAuditionController extends HttpServlet {
 	private final AuditionDao auditionDao = DaoFactory.getAuditionDao();
 	private final DateDao dateDao = DaoFactory.getDateDao();
 	
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		request.setAttribute("auditionDates", this.dateDao.getDates(DateType.AUDITION));
 		request.setAttribute("auditionInformation", 

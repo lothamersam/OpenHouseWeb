@@ -6,8 +6,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.net.URI;
 
-public class DatabaseConnection {
-    public static Connection getConnection() throws URISyntaxException, SQLException {
+class DatabaseConnection {
+	private DatabaseConnection() {
+		throw new UnsupportedOperationException("Do not instantiate!");
+	}
+
+    static Connection getConnection() throws URISyntaxException, SQLException {
     	final URI dbUri = new URI(System.getenv("DATABASE_URL"));
 
     	final String username = dbUri.getUserInfo().split(":")[0];

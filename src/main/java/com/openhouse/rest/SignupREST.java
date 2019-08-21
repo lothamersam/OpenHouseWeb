@@ -28,6 +28,7 @@ public class SignupREST {
 	@POST
 	@Path("/add")
 	@Produces(MediaType.APPLICATION_JSON)
+	@SuppressWarnings("squid:S00107")
 	public Response signup(
 			@FormParam("first_name") String firstName,
 			@FormParam("last_name") String lastName,
@@ -54,5 +55,6 @@ public class SignupREST {
 		
 		return Response.status(200).entity(responseBody.toString()).build();
 	}
-		
+
+
 }

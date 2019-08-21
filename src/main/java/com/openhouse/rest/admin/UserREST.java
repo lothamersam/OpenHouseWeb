@@ -48,7 +48,7 @@ public class UserREST {
 	@POST
 	@Path("/change")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response chageUserPassword(@Context UriInfo uriInfo, 
+	public Response changeUserPassword(@Context UriInfo uriInfo,
 			@Context HttpServletRequest request,
 			@FormParam("id") int id,
 			@FormParam("oldPass") String oldPass,
@@ -66,7 +66,7 @@ public class UserREST {
 	public Response removeUser(@PathParam("id") int id) {
 		final JSONObject responseBody = this.userDao.removeUser(id);
 		
-		return Response.seeOther(URI.create(PATH)).entity(responseBody).build();
+		return Response.seeOther(URI.create(PATH)).entity(responseBody.toString()).build();
 	}
 
 }

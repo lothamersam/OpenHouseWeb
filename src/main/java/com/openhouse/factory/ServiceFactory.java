@@ -6,28 +6,31 @@ import com.openhouse.services.ImageService;
 import com.openhouse.services.ParameterService;
 
 public final class ServiceFactory {
+    private ServiceFactory() {
+        throw new UnsupportedOperationException("Do not instantiate");
+    }
 
-    public static final EmailService getEmailService() {
-        return EMAIL_SERVICE_WRAPPER.emailService;
+    public static EmailService getEmailService() {
+        return EmailServiceWrapper.emailService;
     } 
 
-    public static final ParameterService getParameterService() {
-        return PARAMETER_SERVICE_WRAPPER.parameterService;
+    public static ParameterService getParameterService() {
+        return ParameterServiceWrapper.parameterService;
     }
 
-    public static final ImageService getImageService() {
-        return IMAGE_SERVICE_WRAPPER.imageService;
+    public static ImageService getImageService() {
+        return ImageServiceWrapper.imageService;
     }
 
-    private static final class IMAGE_SERVICE_WRAPPER {
+    private static final class ImageServiceWrapper {
         private static ImageService imageService = new ImageService();
     }
 
-    private static final class EMAIL_SERVICE_WRAPPER {
+    private static final class EmailServiceWrapper {
         private static EmailService emailService = new EmailService();
     }
 
-    private static final class PARAMETER_SERVICE_WRAPPER {
+    private static final class ParameterServiceWrapper {
         private static ParameterService parameterService = new ParameterService();
     }
 }

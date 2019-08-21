@@ -27,27 +27,29 @@ public class DateDao {
 	private static final String GET_TIME_SLOTS = "SELECT id, audition_id, time FROM oh_times WHERE audition_id = ? AND signup_id IS NULL";
 	private static final String ASSIGN_TIME_SLOT = "UPDATE oh_times SET signup_id = ? WHERE id = ?";
 	private static final String DELETE_TIME_SLOTS = "DELETE FROM oh_times WHERE audition_id = ?";
-	
+	private static final String ERROR = "There was an error when querying the database! ";
+
 	public List<DateTO> getDates(DateType dateType) {
 		final List<DateTO> datesList = new ArrayList<>();
 				
-		try (final Connection connection = DatabaseConnection.getConnection()) {
-			final PreparedStatement statement = connection.prepareStatement(GET_AUDITION_DATES);
-			
+		try (Connection connection = DatabaseConnection.getConnection();
+			PreparedStatement statement = connection.prepareStatement(GET_AUDITION_DATES)) {
+
 			statement.setString(1, dateType.getType());
 			
-			final ResultSet results = statement.executeQuery();
-			while (results.next()) {
-				datesList.add(new DateTO(
-						results.getInt(1),
-						results.getString(2),
-						results.getString(3),
-						results.getString(6), 
-						results.getString(4),
-						results.getString(5)));			
+			try (ResultSet results = statement.executeQuery()) {
+				while (results.next()) {
+					datesList.add(new DateTO(
+							results.getInt(1),
+							results.getString(2),
+							results.getString(3),
+							results.getString(6),
+							results.getString(4),
+							results.getString(5)));
+				}
 			}
 		} catch (SQLException | URISyntaxException e) {
-			System.out.println("There was an error when querying the database! " + e.getMessage());
+			System.out.println(ERROR + e.getMessage());
 		} 
 				
 		return datesList;
@@ -55,10 +57,10 @@ public class DateDao {
 	
 	public boolean addDate(final DateTO date) {
 		boolean status = false; 
-		try (final Connection connection = DatabaseConnection.getConnection()) {
-			PreparedStatement statement = connection.prepareStatement(ADD_AUDITION_DATE, 
-										  Statement.RETURN_GENERATED_KEYS);
-			
+		try (Connection connection = DatabaseConnection.getConnection();
+			PreparedStatement statement = connection.prepareStatement(ADD_AUDITION_DATE,
+										  Statement.RETURN_GENERATED_KEYS)) {
+
 			statement.setString(1, date.getDate());
 			statement.setString(3, date.getStartTime());
 			statement.setString(6, date.getEndTime());
@@ -68,12 +70,13 @@ public class DateDao {
 			
 			status = statement.executeUpdate() > 0;
 			
-			ResultSet results = statement.getGeneratedKeys();
-			if(results.next()) {
-				return status && this.addTimes(results.getInt(1), date.getStartTime(), date.getEndTime());
+			try (ResultSet results = statement.getGeneratedKeys()) {
+				if (results.next()) {
+					return status && this.addTimes(results.getInt(1), date.getStartTime(), date.getEndTime());
+				}
 			}
 		} catch (SQLException | URISyntaxException e) {
-			System.out.println("There was an error when querying the database! " + e.getMessage());
+			System.out.println(ERROR + e.getMessage());
 		} 
 		
 		return false;
@@ -81,14 +84,14 @@ public class DateDao {
 
 
 	public boolean removeDate(int id) {
-		try (final Connection connection = DatabaseConnection.getConnection()) {
-			final PreparedStatement statement = connection.prepareStatement(DELETE_AUDITION_DATE);
+		try (Connection connection = DatabaseConnection.getConnection();
+			PreparedStatement statement = connection.prepareStatement(DELETE_AUDITION_DATE)) {
 
 			statement.setInt(1, id);
 
 			return statement.executeUpdate() > 0 && this.removeTimes(id);
 		} catch (URISyntaxException | SQLException e) {
-			System.out.println("There was an error when querying the database! " + e.getMessage());
+			System.out.println(ERROR + e.getMessage());
 		} 
 		
 		return false;
@@ -100,9 +103,9 @@ public class DateDao {
 		final LocalTime endLocalTime = formatter.parseLocalTime(endTime);
 		boolean status = false;
 		
-		try (final Connection connection = DatabaseConnection.getConnection()) {
-			PreparedStatement statement = connection.prepareStatement(ADD_TIME_SLOT);
-			
+		try (Connection connection = DatabaseConnection.getConnection();
+			PreparedStatement statement = connection.prepareStatement(ADD_TIME_SLOT)) {
+
 			statement.setInt(1, id);
 			
 			for(LocalTime timeCounter = startLocalTime; 
@@ -116,7 +119,7 @@ public class DateDao {
 			
 			return status;
 		} catch (SQLException | URISyntaxException e) {
-			System.out.println("There was an error when querying the database! " + e.getMessage());
+			System.out.println(ERROR + e.getMessage());
 		} 
 		
 		return status;
@@ -127,21 +130,22 @@ public class DateDao {
 		final JSONArray timesArray = new JSONArray();
 		JSONObject singleTime = new JSONObject();
 		
-		try (final Connection connection = DatabaseConnection.getConnection()) {
-			final PreparedStatement statement = connection.prepareStatement(GET_TIME_SLOTS);
-			
+		try (Connection connection = DatabaseConnection.getConnection();
+			PreparedStatement statement = connection.prepareStatement(GET_TIME_SLOTS)) {
+
 			statement.setInt(1, id);
 			
-			final ResultSet results = statement.executeQuery();
-			while (results.next()) {
-				singleTime = new JSONObject()
-						.put("id", results.getInt(1))
-						.put("audition_id", results.getInt(2))
-						.put("time", results.getString(3));
-				timesArray.put(singleTime);
+			try (ResultSet results = statement.executeQuery()) {
+				while (results.next()) {
+					singleTime = new JSONObject()
+							.put("id", results.getInt(1))
+							.put("audition_id", results.getInt(2))
+							.put("time", results.getString(3));
+					timesArray.put(singleTime);
+				}
 			}
 		} catch (SQLException | URISyntaxException e) {
-			System.out.println("There was an error when querying the database! " + e.getMessage());
+			System.out.println(ERROR + e.getMessage());
 		} 
 		
 		timesList.put("times", timesArray);
@@ -150,29 +154,29 @@ public class DateDao {
 	}
 	
 	public boolean assignTime(int signupId, int auditionId) {
-		try (final Connection connection = DatabaseConnection.getConnection()) {
-			final PreparedStatement statement = connection.prepareStatement(ASSIGN_TIME_SLOT);
+		try (Connection connection = DatabaseConnection.getConnection();
+			PreparedStatement statement = connection.prepareStatement(ASSIGN_TIME_SLOT)) {
 
 			statement.setInt(1, signupId);
 			statement.setInt(2, auditionId);
 			
 			return statement.executeUpdate() > 0;
 		} catch (URISyntaxException | SQLException e) {
-			System.out.println("There was an error when querying the database! " + e.getMessage());
+			System.out.println(ERROR + e.getMessage());
 		} 
 		
 		return false;
 	}
 	
 	private boolean removeTimes(int id) {
-		try (final Connection connection = DatabaseConnection.getConnection()) {
-			final PreparedStatement statement = connection.prepareStatement(DELETE_TIME_SLOTS);
+		try (Connection connection = DatabaseConnection.getConnection();
+			PreparedStatement statement = connection.prepareStatement(DELETE_TIME_SLOTS)) {
 
 			statement.setInt(1, id);
 			
 			return statement.executeUpdate() > 0;
 		} catch (URISyntaxException | SQLException e) {
-			System.out.println("There was an error when querying the database! " + e.getMessage());
+			System.out.println(ERROR + e.getMessage());
 		} 
 		
 		return false;

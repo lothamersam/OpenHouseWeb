@@ -10,42 +10,46 @@ import com.openhouse.daos.UserDao;
 public final class DaoFactory {
 
     public static final StaffDao getStaffDao() {
-        return STAFF_DAO_WRAPPER.staffDao;
+        return StaffDaoWrapper.staffDao;
     } 
     
     public static final AuditionDao getAuditionDao() {
-        return AUDITION_DAO_WRAPPER.auditionDao;
+        return AuditionDaoWrapper.auditionDao;
     } 
 
     public static final BasicPageDao getPageDao() {
-        return PAGE_DAO_WRAPPER.pageDao;
+        return PageDaoWrapper.pageDao;
     } 
     
     public static final DateDao getDateDao() {
-        return DATE_DAO_WRAPPER.dateDao;
+        return DateDaoWrapper.dateDao;
     } 
     
     public static final UserDao getUserDao() {
-        return USER_DAO_WRAPPER.userDao;
+        return UserDaoWrapper.userDao;
     } 
 
-    private static final class USER_DAO_WRAPPER {
+    private DaoFactory() {
+        throw new UnsupportedOperationException("Do not instantiate!");
+    }
+
+    private static final class UserDaoWrapper {
         private static UserDao userDao = new UserDao();
     }
 
-    private static final class DATE_DAO_WRAPPER {
+    private static final class DateDaoWrapper {
         private static DateDao dateDao = new DateDao();
     }
 
-    private static final class PAGE_DAO_WRAPPER {
+    private static final class PageDaoWrapper {
         private static BasicPageDao pageDao = new BasicPageDao();
     }
     
-    private static final class AUDITION_DAO_WRAPPER {
+    private static final class AuditionDaoWrapper {
         private static AuditionDao auditionDao = new AuditionDao();
     }
 
-    private static final class STAFF_DAO_WRAPPER {
+    private static final class StaffDaoWrapper {
         private static StaffDao staffDao = new StaffDao();
     }
 }

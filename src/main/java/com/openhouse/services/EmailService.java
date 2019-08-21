@@ -22,7 +22,7 @@ public class EmailService {
                 status = true;
             }
         } catch (IOException|IllegalFormatException exception) {
-            status = false;
+            System.out.println("Error sending mail!");
         }
         
         return status;

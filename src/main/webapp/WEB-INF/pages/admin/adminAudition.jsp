@@ -13,7 +13,7 @@
 	<div class="container row top-row">
 		<div class="col s12 m9 l10">
 			<div class="row">
-				<div id="auditionInformation" id="introduction"
+				<div id="auditionInformation"
 					class="card section scrollspy hoverable tooltipped"
 					data-position="top" data-delay="200"
 					data-tooltip="Click to edit section">
@@ -49,7 +49,7 @@
 								<td>${date.location}</td>
 								<td>${date.information}</td>
 								<td><a
-									href="/action/admin/auditionChange?id=${date.id}&type=date"
+									href="/do/admin/date/delete/${date.id}/auditions"
 									class="waves-effect waves-teal btn-flat"> <i
 										class="material-icons">clear</i>
 								</a></td>
@@ -81,7 +81,7 @@
 								<td>${signup.email}</td>
 								<td>${signup.phoneNumber}</td>
 								<td><a
-									href="/action/admin/auditionChange?id=${signup.id}&type=signup"
+									href="/do/admin/signup/delete/${signup.id}/auditions"
 									class="waves-effect waves-teal btn-flat"> <i
 										class="material-icons">clear</i>
 								</a></td>
@@ -114,7 +114,6 @@
 				</div>
 			</div>
 			<input id="sectionType" type="hidden" name="sectionType" value="" />
-			<input id="sectionType" type="hidden" name="isDate" value="false" />
 			<div class="modal-footer">
 				<button class="btn waves-effect waves-light" type="submit"
 					name="action">
@@ -125,7 +124,7 @@
 	</div>
 
 	<div id="addDate" class="modal modal-fixed-footer">
-		<form action="/action/admin/auditionChange" method="POST">
+		<form action="/do/admin/date/add/auditions" method="POST">
 			<div class="modal-content">
 				<div class="row">
 					<div class="input-field col s6">
@@ -155,7 +154,6 @@
 					</div>
 				</div>
 			</div>
-			<input id="sectionType" type="hidden" name="isDate" value="true" />
 			<div class="modal-footer">
 				<button class="btn waves-effect waves-light" type="submit"
 					name="action">
