@@ -50,6 +50,8 @@
 		</div>
 	</div>
 
+	<script src="/static/js/standardPage.js"></script>
+
 	<tags:footer />
 </body>
 </html>
