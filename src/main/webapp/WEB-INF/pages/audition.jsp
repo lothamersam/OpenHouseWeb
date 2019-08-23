@@ -69,7 +69,7 @@
 									<option value="" disabled selected>Choose Pronoun</option>
 									<option value="he">He/Him/His</option>
 									<option value="she">She/Her/Hers</option>
-									<option value="they">They/them/Theirs</option>
+									<option value="they">They/Them/Theirs</option>
 								</select> <label>Pronouns</label>
 							</div>
 							<div class="input-field col s6">
