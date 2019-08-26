@@ -21,15 +21,15 @@
 					<h3>Community</h3>
 					<ul class="collapsible popout" data-collapsible="expandable">
 						<li>
-							<div class="collapsible-header active"><i class="material-icons">filter_drama</i>First</div>
+							<div class="collapsible-header active"><i class="material-icons">filter_drama</i>About Us</div>
 							<div class="collapsible-body"><span>${homeCollapseOne.sectionContent}</span></div>
 						</li>
 						<li>
-							<div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+							<div class="collapsible-header"><i class="material-icons">place</i>Our Location</div>
 							<div class="collapsible-body"><span>${homeCollapseTwo.sectionContent}</span></div>
 						</li>
 						<li>
-							<div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+							<div class="collapsible-header"><i class="material-icons">whatshot</i>Our Goal</div>
 							<div class="collapsible-body"><span>${homeCollapseThree.sectionContent}</span></div>
 						</li>
 					</ul>
