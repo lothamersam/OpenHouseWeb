@@ -24,6 +24,9 @@ import com.openhouse.factory.DaoFactory;
 import com.openhouse.factory.ServiceFactory;
 import com.openhouse.services.ParameterService;
 
+/*
+ * @author Sam Lothamer
+ */
 @Path("/admin/users")
 public class UserREST {
 	private static final String PATH = "../admin/users";
