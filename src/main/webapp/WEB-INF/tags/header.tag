@@ -3,9 +3,9 @@
         <div class="nav-wrapper">
             <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
 
-            <a href="/" class="brand-logo">
+            <!--<a href="/" class="brand-logo">
                 <img class="brand-logo-fit" src="/static/img/logo-w.png" />
-            </a>
+            </a>-->
             <ul class="right hide-on-med-and-down">
                 <li><a href="${pageContext.request.contextPath}/about">About Us</a></li>
                 <li><a href="${pageContext.request.contextPath}/upcoming">Productions</a></li>
