@@ -8,11 +8,11 @@
             </a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="${pageContext.request.contextPath}/about">About Us</a></li>
-                <li><a href="/upcoming">Productions</a></li>
-                <li><a href="/auditions">Auditions</a></li>
-                <li><a href="/staff">Our Staff</a></li>
-                <li><a href="/donate">Donate</a></li>
-                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="${pageContext.request.contextPath}/upcoming">Productions</a></li>
+                <li><a href="${pageContext.request.contextPath}/auditions">Auditions</a></li>
+                <li><a href="${pageContext.request.contextPath}/staff">Our Staff</a></li>
+                <li><a href="${pageContext.request.contextPath}/donate">Donate</a></li>
+                <li><a href="${pageContext.request.contextPath}/contact">Contact Us</a></li>
             </ul>
         </div>
 
@@ -23,12 +23,12 @@
         </div>
 
         <ul class="side-nav" id="mobile-nav">
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/upcoming">Productions</a></li>
-            <li><a href="/auditions">Auditions</a></li>
-            <li><a href="/staff">Our Staff</a></li>
-            <li><a href="/donate">Donate</a></li>
-            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="${pageContext.request.contextPath}/about">About Us</a></li>
+            <li><a href="${pageContext.request.contextPath}/upcoming">Productions</a></li>
+            <li><a href="${pageContext.request.contextPath}/auditions">Auditions</a></li>
+            <li><a href="${pageContext.request.contextPath}/staff">Our Staff</a></li>
+            <li><a href="${pageContext.request.contextPath}/donate">Donate</a></li>
+            <li><a href="${pageContext.request.contextPath}/contact">Contact Us</a></li>
         </ul>
     </nav>
 </div>
