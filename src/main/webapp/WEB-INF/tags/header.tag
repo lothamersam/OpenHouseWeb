@@ -7,7 +7,7 @@
                 <img class="brand-logo-fit" src="/static/img/logo-w.png" />
             </a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="/about">About Us</a></li>
+                <li><a href="${pageContext.request.contextPath}/about">About Us</a></li>
                 <li><a href="/upcoming">Productions</a></li>
                 <li><a href="/auditions">Auditions</a></li>
                 <li><a href="/staff">Our Staff</a></li>
